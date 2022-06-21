@@ -74,6 +74,8 @@ Zero Escape- game series (https://en.wikipedia.org/wiki/Zero_Escape)
 People:
 Media:
 Codes from other sources:
+Other useful pages I used:
+https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
 
 
 ## Thank you for reading!

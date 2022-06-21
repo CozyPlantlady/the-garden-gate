@@ -15,29 +15,52 @@ html {
 
 /* */
 body {
-    font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
 }
-h1, h2, p {
-text-align: center;
+
+h1, h2 , p {
+    text-align: center;
+}
+header {
+    display: flex-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: 3rem;
+    margin-top: 10rem;
+    margin-right: auto;
+    margin-bottom: 10rem;
+    margin-left: auto;
+
 }
 
 #game-div {
+    background-color: #fff;
     border-style: dashed;
     border-width: 5px;
     display: flex-box;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     height: 50rem;
     width: 50rem;
     margin-top: 10rem;
     margin-right: auto;
     margin-bottom: 10rem;
     margin-left: auto;
-    background-color: #888;
 }
 
-#game-screen {
+
+#button-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+button {
     background-color: #fff;
-    height: 45rem;
-    width: 45rem;
-    margin: auto auto;
+    font-family: 'Press Start 2P', sans-serif;
+    border-style: hidden;
+    margin: 5rem;
+}
+
+#story {
+    margin: 3rem;
 }
