@@ -8,12 +8,12 @@ Since the project can't be too large I choose to make a limited amount of story 
 
 ### User goals:
 What is their goal? What problem does this product or feature solve for them?
+-It's a game, and hopefully user is going to have some fun playing it.
 
 #### User Stories:
-- New user:User can choose to start the game.
+- User can start the game.
 - User can give a name for the character.
 - User can read the story part, and choose from options what to do next.
-- User can see their previous decision.
 - User can end the game when they want.
 - User can choose to replay.
 - User can see items they have collected.
@@ -21,14 +21,15 @@ What is their goal? What problem does this product or feature solve for them?
 ## Structure
 
 ### Structure of the site
-
+![](assets/images/readme-sitemap.jpeg "")
 ### Structure of the game
-Use Lucidchart to make a roadmap. 
+![](assets/images/readme-story-roadmap.jpeg "")
 
 
 ## Skeleton:
 
-Add Screenshot of the Balsamiq.
+![](assets/images/readme-screens1.jpeg "")
+![](assets/images/readme-screens2.jpeg "")
 
 
 ## Surface:
@@ -41,6 +42,7 @@ Some pictures that might appear during game are pixel art.
 Colors: Black, white and gray tones. Nothing fancy here.
 
 Fonts: Press Start 2P from Google Fonts
+- ![](assets/images/readme-font.jpeg "")
 
 
 ## TESTING
@@ -76,6 +78,8 @@ Media:
 Codes from other sources:
 Other useful pages I used:
 https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 
+https://twinery.org/
 
 ## Thank you for reading!
