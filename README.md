@@ -76,9 +76,10 @@ Zero Escape- game series (https://en.wikipedia.org/wiki/Zero_Escape)
 People:
 Media:
 Codes from other sources:
-Other useful pages I used:
-https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+Other useful pages I used about JSON:
+- https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+- https://www.delftstack.com/howto/javascript/load-json-file-in-javascript/
 
 https://twinery.org/
 
