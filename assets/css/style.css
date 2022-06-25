@@ -49,7 +49,7 @@ header {
 }
 
 
-#button-box {
+#button-box, #start-button-box {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -65,4 +65,9 @@ button {
     margin: 3rem;
     height: 50rem;
     width: 50rem;
+}
+
+.hidden {
+    color: white;
+    background-color: white;
 }
