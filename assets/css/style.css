@@ -18,9 +18,10 @@ body {
     font-family: 'Press Start 2P', sans-serif;
 }
 
-h1, h2 , p {
+h1, h2, p, #page-number {
     text-align: center;
 }
+
 header {
     display: flex-box;
     flex-wrap: wrap;
