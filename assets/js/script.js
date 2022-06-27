@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", startScreen());
 let pageNumber = 0;
 console.log("This is page number " + pageNumber);
 
-/** Start button is visible onle when the game is not started */
+/** Start button is visible only when the game is not started */
 function startScreen() {
     let startBtn = document.getElementById("start-button");
     startBtn.innerHTML = "Start the story";
@@ -17,7 +17,7 @@ function startTheGame() {
     console.log("Game has started");
     btnOneText();
     btnTwoText();
-    storyBox();
+    changePage();
 }
 
 function btnOneText(){
@@ -71,31 +71,27 @@ function btnTwoText(){
         }
     }
 
- function storyBox(){
-    let gameScreen = document.getElementById("game-screen");
+
+function changePage(){
     let storyBox = document.getElementById("story");
-    gameScreen.appendChild(storyBox);
-    function changePage(){
-        const myStory = {
-            page0 : "And so our story begins",
-            page1 : "It was dark and lonely night",
-            page2 : "This too is a sentence"
-        }
-        let page;
-        let pageNumber = 0;/* What user chooses , fix that*/
-        switch (pageNumber) {
-            case 0:
-                page = "myStory: page0";
-                console.log(page);
-                break;
-    
-            case 1:
-                page = document.getElementsByTagName("myStory").innerText;
-            default: 
-            page = "This didn't work. It's not you, it's the code."
-                break;
-        }
-    
+    const myStory = {
+        page0 : "And so our story begins",
+        page1 : "It was dark and lonely night",
+        page2 : "This too is a sentence"
+    }
+    let page;
+    let pageNumber = 0;/* What user chooses , fix that*/
+    switch (pageNumber) {
+        case 0:
+            storyBox.innerHTML = myStory.page0; 
+            console.log(page);
+            break;
+        case 1:
+            page = document.getElementsByTagName("myStory").innerText;
+        default: 
+        page = "This didn't work. It's not you, it's the code."
+            break;
     }
 }
+
 
