@@ -5,11 +5,7 @@ let buttonBox = document.getElementById("button-box");
 
 
 /* Test story*/
-const myStory = [{
-    page0 : "And so our story begins",
-    page1 : "It was dark and lonely night",
-    page2 : "This too is a sentence"
-}]
+
 const myButtons = [{
     option0 : "Nothing here",
     option1 : "Go fish",
@@ -46,41 +42,39 @@ function btnOneText(){
     let btn1 = document.createElement("button");
     let btn1NextText = myButtons.option0;
     btn1.innertext = btn1NextText;
-    buttonBox.appendChild(btn1);
-    console.log(buttonBox.children);
+    buttonBox.appendChild(btn1);;
 }
 function btnTwoText(){
     let btn2 = document.createElement("button");
     btn2.innerHTML = "That way";
     buttonBox.appendChild(btn2);
-    console.log(buttonBox.children);
 }
 
  function storyBox(){
     let gameScreen = document.getElementById("game-screen");
     let storyBox = document.getElementById("story");
     gameScreen.appendChild(storyBox);
-    let text = document.getElementsByName("myStory");
-    document.getElementById('story');
-    text = myStory.page1.innerText;
-
-    console.log(myStory.page1);
-}
-
-function changePage(){
-
-    let page;
-    let pageNumber = 0;/* What user chooses , fix that*/
-    switch (pageNumber) {
-        case 0:
-            page = document.getElementsByName("myStory").innerText;
-            break;
-
-        case 1:
-            page = document.getElementsByTagName("myStory").innerText;
-        default: 
-        page = "This didn't work. It's not you, it's the code."
-            break;
+    function changePage(){
+        const myStory = [{
+            page0 : "And so our story begins",
+            page1 : "It was dark and lonely night",
+            page2 : "This too is a sentence"
+        }]
+        let page;
+        let pageNumber = 0;/* What user chooses , fix that*/
+        switch (pageNumber) {
+            case 0:
+                page = "myStory: page0";
+                console.log(page);
+                break;
+    
+            case 1:
+                page = document.getElementsByTagName("myStory").innerText;
+            default: 
+            page = "This didn't work. It's not you, it's the code."
+                break;
+        }
+    
     }
-
 }
+
