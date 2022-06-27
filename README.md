@@ -56,7 +56,8 @@ User can end the game when they want.
 User can choose to replay.
 User can see items they have collected.
 
-Bugs and other issues
+Bugs and other issues:
+- Had problems with start button function. Changed the start-button from being purely JS to be in HTML instead.
 
 ### DEPLOYMENT
 Site was deployed to Github Pages.
