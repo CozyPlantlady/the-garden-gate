@@ -1,8 +1,8 @@
-
 document.addEventListener("DOMContentLoaded", startScreen());
-var gameHasStarted = false;
-let buttonBox = document.getElementById("button-box");
+let pageNumber = 0;
+console.log("This is page number " + pageNumber);
 
+/** Start button is visible onle when the game is not started */
 function startScreen() {
     let startBtn = document.getElementById("start-button");
     startBtn.innerHTML = "Start the story";
@@ -12,7 +12,6 @@ function startScreen() {
 /**This function uses the other functions to start the game. 
  * It also hides the start button */
 function startTheGame() {
-    gameHasStarted = true;
     let startBtn = document.getElementById("start-button");
     startBtn.classList.add("hidden");
     console.log("Game has started");
@@ -27,24 +26,50 @@ function btnOneText(){
         option1 : "Go fish",
         option2 : "Go home"
     }
+    let btn1NextText = myButtons;
     let btn1 = document.getElementById("btn1");
     btn1.classList.remove("hidden");
     btn1.classList.add("visible");
-    let btn1NextText = myButtons;
-    btn1.textContent = btn1NextText.option0;
+    switch (pageNumber) {
+        case 0:
+            btn1.textContent = btn1NextText.option0; 
+            break;
+        case 1:
+            btn1.textContent = btn1NextText.option1; 
+            break;
+        case 2:
+            btn1.textContent = btn1NextText.option2; 
+            break;
+        default:
+            btn1.textContent = "This didn't work. It's not you, it's the code.";
+            break;
+    }
 }
 function btnTwoText(){
     const myButtons = {
-        option0 : "It's empty",
-        option1 : "I want to go home",
-        option2 : "That's weird"
+        option0 : "It looks like it might rain",
+        option1 : "I need an umbrella",
+        option2 : "I'm homesick"
     }
-    let btn2 = document.getElementById("btn2");
-    btn2.classList.remove("hidden");
-    btn2.classList.add("visible");
     let btn2NextText = myButtons;
-    btn2.textContent = btn2NextText.option0;
-}
+        let btn2 = document.getElementById("btn2");
+        btn2.classList.remove("hidden");
+        btn2.classList.add("visible");
+        switch (pageNumber) {
+            case 0:
+                btn2.textContent = btn2NextText.option0; 
+                break;
+            case 1:
+                btn2.textContent = btn2NextText.option1; 
+                break;
+            case 2:
+                btn2.textContent = btn2NextText.option2; 
+                break;
+            default:
+                btn2.textContent = "This didn't work. How weird is that.";
+                break;
+        }
+    }
 
  function storyBox(){
     let gameScreen = document.getElementById("game-screen");
