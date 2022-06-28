@@ -41,42 +41,43 @@ function startScreen() {
             option3 : "go to page 7",
             option4 : "go to page 9",
             option5 : "go to page 11",
-            option6 : "go to page 13"
+            option6 : "go to page 13",
+            option7 : "This is the end."
         };
         let btn1NextText = myButtons1;
         switch (pageNumber) {
             case 0:
-                btn1.textContent = btn1NextText.option0; 
+                btn1.textContent = btn1NextText.option1; 
                 pageNumber = 1;
                 console.log("btn1case0");
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option1; 
+                btn1.textContent = btn1NextText.option2; 
                 pageNumber = 3;
                 console.log("btn1case1");
                 break;
             case 2:
-                btn1.textContent = btn1NextText.option2; 
+                btn1.textContent = btn1NextText.option3; 
                 pageNumber = 5;
                 console.log("btn1case3");
                 break;
             case 3:
-                btn1.textContent = btn1NextText.option3; 
+                btn1.textContent = btn1NextText.option4; 
                 pageNumber = 7;
                 console.log("btn1case5");
                 break;
             case 4:
-                btn1.textContent = btn1NextText.option4; 
+                btn1.textContent = btn1NextText.option5; 
                 pageNumber = 9;
                 console.log("btn1case7");
                 break;
             case 5:
-                btn1.textContent = btn1NextText.option5; 
+                btn1.textContent = btn1NextText.option6; 
                 pageNumber = 11;
                 console.log("btn1case9");
                 break;
             case 6:
-                btn1.textContent = btn1NextText.option6; 
+                btn1.textContent = btn1NextText.option7; 
                 pageNumber = 13;
                 console.log("btn1case11");
                 break;
@@ -98,42 +99,43 @@ function startScreen() {
             option3 : "go to page 8",
             option4 : "go to page 10",
             option5 : "go to page 12",
-            option6 : "go to page 14"
+            option6 : "go to page 14",
+            option6 : "This is the end"
         };
         let btn2NextText = myButtons2;
         switch (pageNumber) {
             case 0:
-                btn2.textContent = btn2NextText.option0; 
+                btn2.textContent = btn2NextText.option1; 
                 pageNumber = 2;
                 console.log("btn2case0");
                 break;
             case 1:
-                btn2.textContent = btn2NextText.option1; 
+                btn2.textContent = btn2NextText.option2; 
                 pageNumber = 4;
                 console.log("btn2case2");
                 break;
             case 2:
-                btn2.textContent = btn2NextText.option2; 
+                btn2.textContent = btn2NextText.option3; 
                 pageNumber = 6;
                 console.log("btn2case4");
                 break;
             case 3:
-                btn2.textContent = btn2NextText.option3; 
+                btn2.textContent = btn2NextText.option4; 
                 pageNumber = 8;
                 console.log("btn2case6");
                 break;
             case 4:
-                btn2.textContent = btn2NextText.option4; 
+                btn2.textContent = btn2NextText.option5; 
                 pageNumber = 10;
                 console.log("btn2case8");
                 break;
             case 5:
-                btn2.textContent = btn2NextText.option5; 
+                btn2.textContent = btn2NextText.option6; 
                 pageNumber = 12;
                 console.log("btn2case10");
                 break;
             case 6:
-                btn2.textContent = btn2NextText.option6; 
+                btn2.textContent = btn2NextText.option7; 
                 pageNumber = 14;
                 console.log("btn2case12");
                 break;
