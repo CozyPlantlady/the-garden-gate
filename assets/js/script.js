@@ -32,16 +32,16 @@ function startScreen() {
         console.log("This is page number " + pageNumber);
     }
 
-    /*This function changes the option of left button */
+    /*This function changes the option of the button on the left */
     function btnOneText(){
         const myButtons1 = {
-            option0 : "Nothing here",
-            option1 : "Go fish",
-            option2 : "Go home",
-            option3 : "It's too hot today",
-            option4 : "I wonder what's for lunch",
-            option5 : "Look, a bird!",
-            option6 : "I don't want to go there",
+            option0 : "go to page 1",
+            option1 : "Go to page 3",
+            option2 : "Go to page 5",
+            option3 : "go to page 7",
+            option4 : "go to page 9",
+            option5 : "go to page 11",
+            option6 : "go to page 13"
         };
         let btn1NextText = myButtons1;
         switch (pageNumber) {
@@ -81,26 +81,24 @@ function startScreen() {
                 console.log("btn1case11");
                 break;
             default:
-                btn1.textContent = "This didn't work. It's not you, it's the code.";
+                btn1.textContent = "Well his didn't work.";
             
         }
     console.log("Page number " + pageNumber + " from button1");
+    changePage();
     return pageNumber;
     }          
-
-
    
-        /*This function changes the option of the right button */
+    /*This function changes the option of the button on the right */
     function btnTwoText(){
         const myButtons2 = {
-            option0 : "It looks like it might rain",
-            option1 : "I need an umbrella",
-            option2 : "I'm homesick",
-            option3 : "It's too hot today",
-            option4 : "I wonder what's for lunch",
-            option5 : "Look, a bird!",
-            option6 : "I don't want to go there",
-            option7 : "That looks weird"
+            option0 : "Go to page 2",
+            option1 : "go to page 4",
+            option2 : "go to page 6",
+            option3 : "go to page 8",
+            option4 : "go to page 10",
+            option5 : "go to page 12",
+            option6 : "go to page 14"
         };
         let btn2NextText = myButtons2;
         switch (pageNumber) {
@@ -143,6 +141,7 @@ function startScreen() {
                 btn2.textContent = "This didn't work. How weird is that.";
         }
     console.log("Page number " + pageNumber + " from button2");
+    changePage();
     return pageNumber;
     }
             
@@ -152,9 +151,9 @@ function startScreen() {
     function changePage(){
         let storyBox = document.getElementById("story");
         const myStory = {
-            page0 : "And so our story begins",
-            page1 : "It was dark and lonely night",
-            page2 : "This too is a sentence",
+            page0 : "And so our story begins. Page 0.",
+            page1 : "It was dark and lonely night at page 1.",
+            page2 : "This too is a sentence on page 2.",
             page3 : "This is page 3",
             page4 : "This is page 4",
             page5 : "This is page 5",
@@ -230,7 +229,7 @@ function startScreen() {
                 console.log("page 14");
                 break;
             default: 
-                storyBox.innerHTML = "This didn't work. It's not you, it's the code.";
+                storyBox.innerHTML = "This didn't work. It's not you, it's the code. You can fix it.";
                 console.log("Oops");
         }
     }
