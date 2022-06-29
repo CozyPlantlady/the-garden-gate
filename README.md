@@ -60,8 +60,9 @@ User stories:
 - Ended up doing same with thing with option buttons.
 - 29/6: Problem: How to change text of both option buttons at the same time as well as the story text. Trying to have all three to read the pageNumber, but something isn't connecting right. After meeting with mentor I'm going to change code so that all three changes are under one function, since currently they are seperate.
 - "forEach is not a function" Error. Fixed: added Array.from(document.querySelectorAll('')) to make buttons an array.
-- All the different functions that use pageNumber needs to be updated at the same time. I'm going to try using template string to do this.
-- Option buttons are hopping over options. I suspect that they receive the same command too many times.
+- All the different functions that use pageNumber needs to be updated at the same time. 
+- Option buttons are hopping over options. I suspect that they receive the same command too many times. Fixed? The function is right but the texts are wrong. Problem was with the order of option buttons.
+- Added replay button, but it doesnt refresh the page number. Buttons seems to be adding new page number to previous one they used. This seems to be part of the previous problem with pagenumber updating.
 
 ### DEPLOYMENT
 Site was deployed to Github Pages.

@@ -4,34 +4,32 @@ document.addEventListener("DOMContentLoaded", startScreen());
 const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
-let pageNumber = document.querySelector('#page-number');
+var pageNumber = document.querySelector('#page-number');
 pageNumber = 0;
 const startBtn = document.querySelector('#start-button');
 
-
-/*options for button1 */
+/*options for button 1 */
 const myButtons1 = {
-    option0 : "go to page 1",
-    option1 : "Go to page 3",
-    option2 : "Go to page 5",
-    option3 : "go to page 7",
-    option4 : "go to page 9",
-    option5 : "go to page 11",
-    option6 : "go to page 13",
-    option7 : "This is the end."
+    option0 : "Go to page 3",
+    option1 : "Go to page 7",
+    option2 : "Go to page 11",
+    option3 : "Go to page ",
+    option4 : "go to page ",
+    option5 : "go to page 9",
+    option6 : "go to page 13"
 };
 
 /*options for button 2*/ 
 const myButtons2 = {
-    option0 : "Go to page 2",
-    option1 : "go to page 4",
-    option2 : "go to page 6",
+    option0 : "Go to page 6",
+    option1 : "go to page 10",
+    option2 : "go to page 14",
     option3 : "go to page 8",
     option4 : "go to page 10",
     option5 : "go to page 12",
     option6 : "go to page 14",
-    option6 : "This is the end"
 };
+
 /*story pages */
 const myStory = {
     page0 : "And so our story begins. Page 0.",
@@ -52,15 +50,16 @@ const myStory = {
 };
 
 /** Start button is visible only when the game is not started.
- * Pagenumber sets the starting point */
+ * pageNumber sets the starting point */
 function startScreen() {
-    let replay = 0;
     const startBtn = document.querySelector('#start-button');
-        if (replay === 0){
+    let replay;
+        if (replay !== 0){
             startBtn.innerHTML = "Start the story";
     } else {
         startBtn.innerHTML = "Play again?";
     }
+
     startBtn.addEventListener('click', startGame);
     
     /**This function uses the other functions to start the game. 
@@ -73,54 +72,55 @@ function startScreen() {
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
         console.log("Game has started");
+        changePage(pageNumber);
         
         let buttonOption = Array.from(document.querySelectorAll('.option'));
         buttonOption.forEach(button => {
             if(!button)return;
             button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
             button.addEventListener("click",changePage);
+            return pageNumber;
         })
     }
     
-
     /*This function changes the option of the button on the left */
     function btnOneText(){
         let btn1NextText = myButtons1;
         switch (pageNumber) {
             case 0:
-                btn1.textContent = btn1NextText.option1; 
+                btn1.textContent = btn1NextText.option0; 
                 pageNumber = 1;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option2; 
+                btn1.textContent = btn1NextText.option1; 
                 pageNumber = 3;
                 break;
             case 2:
-                btn1.textContent = btn1NextText.option3; 
+                btn1.textContent = btn1NextText.option2; 
                 pageNumber = 5;
                 break;
             case 3:
-                btn1.textContent = btn1NextText.option4; 
+                btn1.textContent = btn1NextText.option3; 
                 pageNumber = 7;
                 break;
             case 4:
-                btn1.textContent = btn1NextText.option5; 
+                btn1.textContent = btn1NextText.option4; 
                 pageNumber = 9;
                 break;
             case 5:
-                btn1.textContent = btn1NextText.option6; 
+                btn1.textContent = btn1NextText.option5; 
                 pageNumber = 11;
                 break;
             case 6:
-                btn1.textContent = btn1NextText.option7; 
+                btn1.textContent = btn1NextText.option6; 
                 pageNumber = 13;
                 break;
             default:
                 btn1.textContent = "Well this didn't work.";
-         
-        console.log("Page number " + pageNumber + " from button1");
-        return pageNumber;
         }
+    console.log("Page number " + pageNumber + " from button1");
+    return pageNumber;
+        
     }          
    
     /*This function changes the option of the button on the right */
@@ -128,38 +128,39 @@ function startScreen() {
         let btn2NextText = myButtons2;
         switch (pageNumber) {
             case 0:
-                btn2.textContent = btn2NextText.option1; 
+                btn2.textContent = btn2NextText.option0; 
                 pageNumber = 2;
                 break;
             case 1:
-                btn2.textContent = btn2NextText.option2; 
+                btn2.textContent = btn2NextText.option1; 
                 pageNumber = 4;
                 break;
             case 2:
-                btn2.textContent = btn2NextText.option3; 
+                btn2.textContent = btn2NextText.option2; 
                 pageNumber = 6;
                 break;
             case 3:
-                btn2.textContent = btn2NextText.option4; 
+                btn2.textContent = btn2NextText.option3; 
                 pageNumber = 8;
                 break;
             case 4:
-                btn2.textContent = btn2NextText.option5; 
+                btn2.textContent = btn2NextText.option4; 
                 pageNumber = 10;
                 break;
             case 5:
-                btn2.textContent = btn2NextText.option6; 
+                btn2.textContent = btn2NextText.option5; 
                 pageNumber = 12;
                 break;
             case 6:
-                btn2.textContent = btn2NextText.option7; 
+                btn2.textContent = btn2NextText.option6; 
                 pageNumber = 14;
                 break;
             default:
                 btn2.textContent = "This didn't work. How weird is that.";
         }
-    console.log("Page number " + pageNumber + " from button2");
-    return pageNumber;
+        console.log("Page number " + pageNumber + " from button2");
+        return pageNumber;
+        
     }
             
 
@@ -232,18 +233,16 @@ function startScreen() {
                 console.log("Oops");
         }
     }
-}    
 
-function theEnd(){
+    function theEnd(){
     btn1.classList.add("hidden");
     btn1.classList.remove("visible");
     btn2.classList.add("hidden");
     btn2.classList.remove("visible")
     startBtn.classList.add("visible")
     startBtn.innerHTML = "Play again?";
-        if ('click'){
-            pageNumber = 0;
-            startScreen()
-        };
+    startBtn.addEventListener('click', startScreen);
+    }
 
-}
+}    
+
