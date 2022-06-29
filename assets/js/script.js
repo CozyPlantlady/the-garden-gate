@@ -8,6 +8,7 @@ let pageNumber = document.querySelector('#page-number');
 pageNumber = 0;
 
 
+
 /*options for button1 */
 const myButtons1 = {
     option0 : "go to page 1",
@@ -55,29 +56,27 @@ const myStory = {
 function startScreen() {
     const startBtn = document.querySelector('#start-button');
     startBtn.innerHTML = "Start the story";
-    startBtn.addEventListener('click', startTheGame);
+    startBtn.addEventListener('click', startGame);
     
     /**This function uses the other functions to start the game. 
     * It also hides the start button and makes option buttons visible*/
-    function startTheGame() {
+    function startGame() {
         startBtn.classList.add("hidden");
         btn1.classList.remove("hidden");
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
         console.log("Game has started");
-        page();
-        changePage();
         
+        let buttonOption = Array.from(document.querySelectorAll('.option'));
+        buttonOption.forEach(button => {
+            if(!button)return;
+            button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
+            button.addEventListener("click",changePage);
+            console.log("This is page number " + pageNumber);
+        })
     }
-
-    function page(){
-        btn1.addEventListener('click', changePage);
-        btn1.addEventListener('click', btnOneText);
-        btn2.addEventListener('click', changePage);
-        btn2.addEventListener('click', btnTwoText);
-        console.log("This is page number " + pageNumber);
-    }
+    
 
     /*This function changes the option of the button on the left */
     function btnOneText(){
@@ -96,27 +95,27 @@ function startScreen() {
             case 2:
                 btn1.textContent = btn1NextText.option3; 
                 pageNumber = 5;
-                console.log("btn1case3");
+                console.log("btn1case2");
                 break;
             case 3:
                 btn1.textContent = btn1NextText.option4; 
                 pageNumber = 7;
-                console.log("btn1case5");
+                console.log("btn1case3");
                 break;
             case 4:
                 btn1.textContent = btn1NextText.option5; 
                 pageNumber = 9;
-                console.log("btn1case7");
+                console.log("btn1case4");
                 break;
             case 5:
                 btn1.textContent = btn1NextText.option6; 
                 pageNumber = 11;
-                console.log("btn1case9");
+                console.log("btn1case5");
                 break;
             case 6:
                 btn1.textContent = btn1NextText.option7; 
                 pageNumber = 13;
-                console.log("btn1case11");
+                console.log("btn1case6");
                 break;
             default:
                 btn1.textContent = "Well this didn't work.";
@@ -139,32 +138,32 @@ function startScreen() {
             case 1:
                 btn2.textContent = btn2NextText.option2; 
                 pageNumber = 4;
-                console.log("btn2case2");
+                console.log("btn2case1");
                 break;
             case 2:
                 btn2.textContent = btn2NextText.option3; 
                 pageNumber = 6;
-                console.log("btn2case4");
+                console.log("btn2case2");
                 break;
             case 3:
                 btn2.textContent = btn2NextText.option4; 
                 pageNumber = 8;
-                console.log("btn2case6");
+                console.log("btn2case3");
                 break;
             case 4:
                 btn2.textContent = btn2NextText.option5; 
                 pageNumber = 10;
-                console.log("btn2case8");
+                console.log("btn2case4");
                 break;
             case 5:
                 btn2.textContent = btn2NextText.option6; 
                 pageNumber = 12;
-                console.log("btn2case10");
+                console.log("btn2case5");
                 break;
             case 6:
                 btn2.textContent = btn2NextText.option7; 
                 pageNumber = 14;
-                console.log("btn2case12");
+                console.log("btn2case6");
                 break;
             default:
                 btn2.textContent = "This didn't work. How weird is that.";
@@ -245,3 +244,4 @@ function startScreen() {
         }
     }
 }    
+

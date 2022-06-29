@@ -47,17 +47,18 @@ Fonts: Press Start 2P from Google Fonts
 
 ## TESTING
 User stories:
+- User can choose to start the game.
+- User can give a name for the character.
+- User can read the story part, and choose from options what to do next.
+- User can see their previous decision.
+- User can end the game when they want.
+- User can choose to replay.
+- User can see items they have collected.
 
-User can choose to start the game.
-User can give a name for the character.
-User can read the story part, and choose from options what to do next.
-User can see their previous decision.
-User can end the game when they want.
-User can choose to replay.
-User can see items they have collected.
-
-Bugs and other issues:
-- Had problems with start button function. Changed the start-button from being purely JS to be in HTML instead.
+### Bugs and other issues:
+- Had problems with start button function that was purely JS. Changed the start-button from being JS to be in HTML instead.
+- Ended up doing same with thing with option buttons.
+- 29/6: Problem: How to change text of both option buttons at the same time as well as the story text. Trying to have all three to read the pageNumber, but something isn't connecting right. After meeting with mentor I'm going to change code so that all three changes are under one function, since currently they are seperate.
 
 ### DEPLOYMENT
 Site was deployed to Github Pages.
