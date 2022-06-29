@@ -1,17 +1,64 @@
 document.addEventListener("DOMContentLoaded", startScreen());
-let pageNumber = document.getElementById('page-number');
+
+/*HTML elements*/
+const btn1 = document.querySelector('#btn1');
+const btn2 = document.querySelector('#btn2');
+const storyBox = document.querySelector('#story');
+let pageNumber = document.querySelector('#page-number');
 pageNumber = 0;
 
-/** Start button is visible only when the game is not started */
+
+/*options for button1 */
+const myButtons1 = {
+    option0 : "go to page 1",
+    option1 : "Go to page 3",
+    option2 : "Go to page 5",
+    option3 : "go to page 7",
+    option4 : "go to page 9",
+    option5 : "go to page 11",
+    option6 : "go to page 13",
+    option7 : "This is the end."
+};
+
+/*options for button 2*/ 
+const myButtons2 = {
+    option0 : "Go to page 2",
+    option1 : "go to page 4",
+    option2 : "go to page 6",
+    option3 : "go to page 8",
+    option4 : "go to page 10",
+    option5 : "go to page 12",
+    option6 : "go to page 14",
+    option6 : "This is the end"
+};
+/*story pages */
+const myStory = {
+    page0 : "And so our story begins. Page 0.",
+    page1 : "It was dark and lonely night at page 1.",
+    page2 : "This too is a sentence on page 2.",
+    page3 : "This is page 3",
+    page4 : "This is page 4",
+    page5 : "This is page 5",
+    page6 : "This is page 6",
+    page7 : "This is page 7. The End.",
+    page8 : "This is page 8. The End.",
+    page9 : "This is page 9. The End.",
+    page10 : "This is page 10. The End.",
+    page11 : "This is page 11. The End.",
+    page12 : "This is page 12. The End.",
+    page13 : "This is page 13. The End.",
+    page14 : "This is page 14. The End."
+};
+
+/** Start button is visible only when the game is not started.
+ * Pagenumber sets the starting point */
 function startScreen() {
-    let startBtn = document.getElementById("start-button");
+    const startBtn = document.querySelector('#start-button');
     startBtn.innerHTML = "Start the story";
-    let btn1 = document.getElementById("btn1");
-    let btn2 = document.getElementById("btn2");
     startBtn.addEventListener('click', startTheGame);
     
     /**This function uses the other functions to start the game. 
-    * It also hides the start button */
+    * It also hides the start button and makes option buttons visible*/
     function startTheGame() {
         startBtn.classList.add("hidden");
         btn1.classList.remove("hidden");
@@ -34,16 +81,6 @@ function startScreen() {
 
     /*This function changes the option of the button on the left */
     function btnOneText(){
-        const myButtons1 = {
-            option0 : "go to page 1",
-            option1 : "Go to page 3",
-            option2 : "Go to page 5",
-            option3 : "go to page 7",
-            option4 : "go to page 9",
-            option5 : "go to page 11",
-            option6 : "go to page 13",
-            option7 : "This is the end."
-        };
         let btn1NextText = myButtons1;
         switch (pageNumber) {
             case 0:
@@ -82,7 +119,7 @@ function startScreen() {
                 console.log("btn1case11");
                 break;
             default:
-                btn1.textContent = "Well his didn't work.";
+                btn1.textContent = "Well this didn't work.";
             
         }
     console.log("Page number " + pageNumber + " from button1");
@@ -92,16 +129,6 @@ function startScreen() {
    
     /*This function changes the option of the button on the right */
     function btnTwoText(){
-        const myButtons2 = {
-            option0 : "Go to page 2",
-            option1 : "go to page 4",
-            option2 : "go to page 6",
-            option3 : "go to page 8",
-            option4 : "go to page 10",
-            option5 : "go to page 12",
-            option6 : "go to page 14",
-            option6 : "This is the end"
-        };
         let btn2NextText = myButtons2;
         switch (pageNumber) {
             case 0:
@@ -151,24 +178,6 @@ function startScreen() {
 
     /*This function moves story to the next chosen page*/
     function changePage(){
-        let storyBox = document.getElementById("story");
-        const myStory = {
-            page0 : "And so our story begins. Page 0.",
-            page1 : "It was dark and lonely night at page 1.",
-            page2 : "This too is a sentence on page 2.",
-            page3 : "This is page 3",
-            page4 : "This is page 4",
-            page5 : "This is page 5",
-            page6 : "This is page 6",
-            page7 : "This is page 7. The End.",
-            page8 : "This is page 8. The End.",
-            page9 : "This is page 9. The End.",
-            page10 : "This is page 10. The End.",
-            page11 : "This is page 11. The End.",
-            page12 : "This is page 12. The End.",
-            page13 : "This is page 13. The End.",
-            page14 : "This is page 14. The End."
-        };
         switch (pageNumber) {
             case 0:
                 storyBox.innerHTML = myStory.page0; 
