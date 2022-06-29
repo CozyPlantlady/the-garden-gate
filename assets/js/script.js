@@ -6,7 +6,7 @@ const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
 let pageNumber = document.querySelector('#page-number');
 pageNumber = 0;
-
+const startBtn = document.querySelector('#start-button');
 
 
 /*options for button1 */
@@ -61,6 +61,7 @@ function startScreen() {
     /**This function uses the other functions to start the game. 
     * It also hides the start button and makes option buttons visible*/
     function startGame() {
+        pageNumber = 0;
         startBtn.classList.add("hidden");
         btn1.classList.remove("hidden");
         btn1.classList.add("visible");
@@ -74,6 +75,7 @@ function startScreen() {
             button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
             button.addEventListener("click",changePage);
             console.log("This is page number " + pageNumber);
+            return pageNumber;
         })
     }
     
@@ -85,37 +87,30 @@ function startScreen() {
             case 0:
                 btn1.textContent = btn1NextText.option1; 
                 pageNumber = 1;
-                console.log("btn1case0");
                 break;
             case 1:
                 btn1.textContent = btn1NextText.option2; 
                 pageNumber = 3;
-                console.log("btn1case1");
                 break;
             case 2:
                 btn1.textContent = btn1NextText.option3; 
                 pageNumber = 5;
-                console.log("btn1case2");
                 break;
             case 3:
                 btn1.textContent = btn1NextText.option4; 
                 pageNumber = 7;
-                console.log("btn1case3");
                 break;
             case 4:
                 btn1.textContent = btn1NextText.option5; 
                 pageNumber = 9;
-                console.log("btn1case4");
                 break;
             case 5:
                 btn1.textContent = btn1NextText.option6; 
                 pageNumber = 11;
-                console.log("btn1case5");
                 break;
             case 6:
                 btn1.textContent = btn1NextText.option7; 
                 pageNumber = 13;
-                console.log("btn1case6");
                 break;
             default:
                 btn1.textContent = "Well this didn't work.";
@@ -133,37 +128,37 @@ function startScreen() {
             case 0:
                 btn2.textContent = btn2NextText.option1; 
                 pageNumber = 2;
-                console.log("btn2case0");
+                console.log("next is 2");
                 break;
             case 1:
                 btn2.textContent = btn2NextText.option2; 
                 pageNumber = 4;
-                console.log("btn2case1");
+                console.log("next is 4");
                 break;
             case 2:
                 btn2.textContent = btn2NextText.option3; 
                 pageNumber = 6;
-                console.log("btn2case2");
+                console.log("next is 6");
                 break;
             case 3:
                 btn2.textContent = btn2NextText.option4; 
                 pageNumber = 8;
-                console.log("btn2case3");
+                console.log("next is 8");
                 break;
             case 4:
                 btn2.textContent = btn2NextText.option5; 
                 pageNumber = 10;
-                console.log("btn2case4");
+                console.log("next is 10");
                 break;
             case 5:
                 btn2.textContent = btn2NextText.option6; 
                 pageNumber = 12;
-                console.log("btn2case5");
+                console.log("next is 12");
                 break;
             case 6:
                 btn2.textContent = btn2NextText.option7; 
                 pageNumber = 14;
-                console.log("btn2case6");
+                console.log("next is 14");
                 break;
             default:
                 btn2.textContent = "This didn't work. How weird is that.";
@@ -208,35 +203,35 @@ function startScreen() {
                 break;
             case 7:
                 storyBox.innerHTML = myStory.page7; 
-                console.log("page 7");
+                theEnd();
                 break;
             case 8:
                 storyBox.innerHTML = myStory.page8; 
-                console.log("page 8");
+                theEnd();
                 break;
             case 9:
                 storyBox.innerHTML = myStory.page9; 
-                console.log("page 9");
+                theEnd();
                 break;
             case 10:
                 storyBox.innerHTML = myStory.page10; 
-                console.log("page 10");
+                theEnd();
                 break;
             case 11:
                 storyBox.innerHTML = myStory.page11; 
-                console.log("page 11");
+                theEnd();
                 break;
             case 12:
                 storyBox.innerHTML = myStory.page12; 
-                console.log("page 12");
+                theEnd();
                 break;
             case 13:
                 storyBox.innerHTML = myStory.page13; 
-                console.log("page 13");
+                theEnd();
                 break;
             case 14:
                 storyBox.innerHTML = myStory.page14; 
-                console.log("page 14");
+                theEnd();
                 break;
             default: 
                 storyBox.innerHTML = "This didn't work. It's not you, it's the code. You can fix it.";
@@ -245,3 +240,15 @@ function startScreen() {
     }
 }    
 
+function theEnd(){
+    btn1.classList.add("hidden");
+    btn1.classList.remove("visible");
+    btn2.classList.add("hidden");
+    btn2.classList.remove("visible")
+    startBtn.classList.add("visible")
+    startBtn.innerHTML = "Play again?";
+        if ('click'){
+            startGame()
+        };
+
+}

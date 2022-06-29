@@ -59,6 +59,9 @@ User stories:
 - Had problems with start button function that was purely JS. Changed the start-button from being JS to be in HTML instead.
 - Ended up doing same with thing with option buttons.
 - 29/6: Problem: How to change text of both option buttons at the same time as well as the story text. Trying to have all three to read the pageNumber, but something isn't connecting right. After meeting with mentor I'm going to change code so that all three changes are under one function, since currently they are seperate.
+- "forEach is not a function" Error. Fixed: added Array.from(document.querySelectorAll('')) to make buttons an array.
+- All the different functions that use pageNumber needs to be updated at the same time. I'm going to try using template string to do this.
+- Option buttons are hopping over options. I suspect that they receive the same command too many times.
 
 ### DEPLOYMENT
 Site was deployed to Github Pages.
