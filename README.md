@@ -62,31 +62,38 @@ User stories:
 - "forEach is not a function" Error. Fixed: added Array.from(document.querySelectorAll('')) to make buttons an array.
 - All the different functions that use pageNumber needs to be updated at the same time. 
 - Option buttons are hopping over options. I suspect that they receive the same command too many times. Fixed? The function is right but the texts are wrong. Problem was with the order of option buttons.
-- Added replay button, but it doesnt refresh the page number. Buttons seems to be adding new page number to previous one they used. This seems to be part of the previous problem with pagenumber updating.
+- Added replay button, but it doesnt refresh the page number. Buttons seems to be adding new page number to previous one they used. This seems to be part of the ongoing problem with pagenumber updating.
 
 ### DEPLOYMENT
-Site was deployed to Github Pages.
-From Github, I chose the current project Lairhaven and Settings.
-On the leftside of the page there is Pages.
-Choose the Main branch
-Site will be published.
-This site is published at: 
+- Site was deployed to Github Pages.
+- From Github, I chose the current project The Garden Gate and Settings.
+- On the leftside of the page there is Pages.
+- Choose the Main branch
+- Site will be published.
+- This site is published at: 
 
 ### Inspiration:
-Interactive fiction (https://en.wikipedia.org/wiki/Interactive_fiction)
-Text adventures
-Choose your own adventure-books (https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure)
-Zero Escape- game series (https://en.wikipedia.org/wiki/Zero_Escape)
+- Interactive fiction (https://en.wikipedia.org/wiki/Interactive_fiction)
+- Text adventures
+- Choose your own adventure-books (https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure)
+- Zero Escape- game series (https://en.wikipedia.org/wiki/Zero_Escape)
 
 ### CREDITS
-People:
-Media:
-Codes from other sources:
-Other useful pages I used about JSON:
-- https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-- https://www.delftstack.com/howto/javascript/load-json-file-in-javascript/
+- People:
+- Media:
+- Codes from other sources:
 
+#### Other things I used while doing this page:
+
+-Choose your own story builder (used in this project only to visualize the road map)
 https://twinery.org/
+
+- Balsamiq wireframes
+
+-Favicon converter
+https://favicon.io/favicon-converter/
+
+-Pixel art page and tool
+https://www.pixilart.com/
 
 ## Thank you for reading!
