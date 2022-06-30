@@ -9,15 +9,7 @@ function gameFile(){
 const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
-
 let pageNumber = document.querySelector('#page-number');
-pageNumber = 0;
-/**Need to figure out what value to use in this to get the information from other functions */
-function pageCounter(number){
-    let gamePage = `${number}`;
-    pageNumber.innerHTML = Number(gamePage);
-    return pageNumber;
-}
 
 /**Create also a replayCounter when the other one works */
 
@@ -84,23 +76,29 @@ const myStory = {
     /**This function uses the other functions to start the game. 
     * It also hides the start button and makes option buttons visible*/
     function startGame() {
-        pageNumber = 0;
+        pageNumber = 1;
         startBtn.classList.add("hidden");
         btn1.classList.remove("hidden");
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
         console.log("Game has started");
-        changePage(pageNumber);
         
         let buttonOption = Array.from(document.querySelectorAll('.option'));
         buttonOption.forEach(button => {
             if(!button)return;
             button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
             button.addEventListener("click",changePage);
-            return pageNumber;
+            pageCounter();
         })
     }
+
+    /**Need to figure out what value to use in this to get the information from other functions */
+function pageCounter(number){
+    let gamePage = `${number}`;
+    pageNumber.innerHTML = Number(gamePage);
+    return pageNumber;
+}
     
     /*This function changes the option of the button on the left */
     function btnOneText(){
@@ -108,36 +106,37 @@ const myStory = {
         switch (pageNumber) {
             case 0:
                 btn1.textContent = btn1NextText.option0; 
-                pageCounter(1);
+                pageNumber = 1;
                 break;
             case 1:
                 btn1.textContent = btn1NextText.option1; 
-                pageCounter(3);
+                pageNumber = 3;
                 break;
             case 2:
                 btn1.textContent = btn1NextText.option2; 
-                pageCounter(5);
+                pageNumber = 5;
                 break;
             case 3:
                 btn1.textContent = btn1NextText.option3; 
-                pageCounter(7);
+                pageNumber = 7;
                 break;
             case 4:
                 btn1.textContent = btn1NextText.option4; 
-                pageCounter(9);
+                pageNumber = 9;
                 break;
             case 5:
                 btn1.textContent = btn1NextText.option5; 
-                pageCounter(11);
+                pageNumber = 11;
                 break;
             case 6:
                 btn1.textContent = btn1NextText.option6; 
-                pageCounter(13);
+                pageNumber = 13;
                 break;
             default:
                 btn1.textContent = "Well this didn't work.";
         }
-    console.log("Turning page now");
+    pageCounter(pageNumber);
+    console.log("Turning page now (1)");
         
     }          
    
@@ -176,9 +175,8 @@ const myStory = {
             default:
                 btn2.textContent = "This didn't work. How weird is that.";
         }
-        console.log("Page number " + pageNumber + " from button2");
-        return pageNumber;
-        
+        console.log("Turning page now (2)");
+        pageCounter(pageNumber);
     }
             
 
