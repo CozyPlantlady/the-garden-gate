@@ -5,26 +5,26 @@ const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
-let pageNumber = document.querySelector('#page-number');
+
 
 /*options for button 1 */
 const myButtons1 = {
-    option0 : "Go to page 1",
-    option1 : "Go to page 3",
-    option2 : "Go to page 5",
-    option3 : "Go to page 7",
-    option4 : "go to page 9",
-    option5 : "go to page 11",
+    option0 : "Go to page 3",
+    option1 : "Go to page 7",
+    option2 : "Go to page 7",
+    option3 : "Go to page 9",
+    option4 : "go to page 11",
+    option5 : "go to page 13",
     option6 : "go to page 13"
     };
 
 /*options for button 2*/ 
 const myButtons2 = {
-    option0 : "Go to page 2",
+    option0 : "Go to page 6",
     option1 : "go to page 4",
-    option2 : "go to page 6",
-    option3 : "go to page 8",
-    option4 : "go to page 10",
+    option2 : "go to page 12",
+    option3 : "go to page 12",
+    option4 : "go to page 14",
     option5 : "go to page 12",
     option6 : "go to page 14",
 };
@@ -51,25 +51,26 @@ const myStory = {
 /**This function holds everything else inside of it. This is hopefully giving some structure. */
 function gameFile(){
     console.log("Game loading...");
+    let pageNumber = document.querySelector('#page-number');
+    pageNumber = 0;
     startScreen();
-
 
     /**Create also a replayCounter when the other one works */
     /**Most important function. It receives and updates the page number */
-    function pageCounter(number){
-        
-        let gamePage = `${number}`;
 
-        pageNumber.innerHTML = Number(gamePage);
+    function pageCounter(bob){
+        let gamePage = `${bob}`;
+        pageNumber.textContent = gamePage;
         console.log("This is from counter: " + pageNumber);
         return pageNumber;
     }
-
     /** Start button is visible only when the game is not started.
      * pageCounter sets the starting point */
     function startScreen() {
         const startBtn = document.querySelector('#start-button');
-        pageCounter(0);
+        btn1 = "";
+        pageNumber = 0;
+        pageCounter(pageNumber);
 
         let replay;
             if (replay !== 0){
