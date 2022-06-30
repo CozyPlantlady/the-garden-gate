@@ -63,6 +63,7 @@ User stories:
 - All the different functions that use pageNumber needs to be updated at the same time. 
 - Option buttons are hopping over options. I suspect that they receive the same command too many times. Fixed? The function is right but the texts are wrong. Problem was with the order of option buttons.
 - Added replay button, but it doesnt refresh the page number. Buttons seems to be adding new page number to previous one they used. This seems to be part of the ongoing problem with pagenumber updating.
+- Bug that shows html span element instead of the page number value. Fixed: The initial pageNumber value needs to be "0".
 
 ### DEPLOYMENT
 - Site was deployed to Github Pages.

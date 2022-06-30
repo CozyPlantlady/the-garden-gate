@@ -22,7 +22,7 @@ const myButtons1 = {
 const myButtons2 = {
     option0 : "Go to page 6",
     option1 : "go to page 4",
-    option2 : "go to page 12",
+    option2 : "go to page 14",
     option3 : "go to page 12",
     option4 : "go to page 14",
     option5 : "go to page 12",
@@ -68,13 +68,12 @@ function gameFile(){
      * pageCounter sets the starting point */
     function startScreen() {
         const startBtn = document.querySelector('#start-button');
-        btn1 = "";
         pageNumber = 0;
         pageCounter(pageNumber);
 
         let replay;
-            if (replay !== 0){
-                startBtn.innerHTML = "Start the story";
+        if (replay !== 0){
+            startBtn.innerHTML = "Start the story";
         } else {
             startBtn.innerHTML = "Play again?";
         }
@@ -90,7 +89,10 @@ function gameFile(){
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
+        btn1.textContent = "option 1";
+        btn2.textContent = "option 2";
         console.log("Game has started");
+        changePage();
 
         let buttonOption = Array.from(document.querySelectorAll('.option'));
         buttonOption.forEach(button => {
@@ -106,33 +108,40 @@ function gameFile(){
     /*This function changes the option of the button on the left */
     function btnOneText(){
         let btn1NextText = myButtons1;
+        let btn2NextText = myButtons2;
         switch (pageNumber) {
             case 0:
                 btn1.textContent = btn1NextText.option0; 
                 pageNumber = 1;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option1; 
+                btn1.textContent = btn1NextText.option1;
+                btn2.textContent = btn2NextText.option1; 
                 pageNumber = 3;
                 break;
             case 2:
                 btn1.textContent = btn1NextText.option2; 
+                btn2.textContent = btn2NextText.option2;
                 pageNumber = 5;
                 break;
             case 3:
-                btn1.textContent = btn1NextText.option3; 
+                btn1.textContent = btn1NextText.option3;
+                btn2.textContent = btn2NextText.optio3;
                 pageNumber = 7;
                 break;
             case 4:
-                btn1.textContent = btn1NextText.option4; 
+                btn1.textContent = btn1NextText.option4;
+                btn2.textContent = btn2NextText.option4;
                 pageNumber = 9;
                 break;
             case 5:
-                btn1.textContent = btn1NextText.option5; 
+                btn1.textContent = btn1NextText.option5;
+                btn2.textContent = btn2NextText.option5; 
                 pageNumber = 11;
                 break;
             case 6:
-                btn1.textContent = btn1NextText.option6; 
+                btn1.textContent = btn1NextText.option6;
+                btn2.textContent = btn2NextText.option6;
                 pageNumber = 13;
                 break;
             default:
@@ -144,32 +153,39 @@ function gameFile(){
     /*This function changes the option of the button on the right */
     function btnTwoText(){
         let btn2NextText = myButtons2;
+        let btn1NextText = myButtons1;
         switch (pageNumber) {
             case 0:
                 btn2.textContent = btn2NextText.option0; 
                 pageNumber = 2;
                 break;
             case 1:
+                btn1.textContent = btn1NextText.option1;
                 btn2.textContent = btn2NextText.option1; 
                 pageNumber = 4;
                 break;
             case 2:
+                btn1.textContent = btn1NextText.option2;
                 btn2.textContent = btn2NextText.option2; 
                 pageNumber = 6;
                 break;
             case 3:
+                btn1.textContent = btn1NextText.option3;
                 btn2.textContent = btn2NextText.option3; 
                 pageNumber = 8;
                 break;
             case 4:
+                btn1.textContent = btn1NextText.option4;
                 btn2.textContent = btn2NextText.option4; 
                 pageNumber = 10;
                 break;
             case 5:
+                btn1.textContent = btn1NextText.option5;
                 btn2.textContent = btn2NextText.option5; 
                 pageNumber = 12;
                 break;
             case 6:
+                btn1.textContent = btn1NextText.option6;
                 btn2.textContent = btn2NextText.option6; 
                 pageNumber = 14;
                 break;
