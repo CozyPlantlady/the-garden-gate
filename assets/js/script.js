@@ -1,19 +1,11 @@
 document.addEventListener("DOMContentLoaded", gameFile());
 
-/**This function holds everything else inside of it. This is hopefully giving some structure. */
-function gameFile(){
-    console.log("Game loading...");
-    startScreen();
-
 /*HTML elements*/
 const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
-let pageNumber = document.querySelector('#page-number');
-
-/**Create also a replayCounter when the other one works */
-
 const startBtn = document.querySelector('#start-button');
+let pageNumber = document.querySelector('#page-number');
 
 /*options for button 1 */
 const myButtons1 = {
@@ -24,7 +16,7 @@ const myButtons1 = {
     option4 : "go to page 9",
     option5 : "go to page 11",
     option6 : "go to page 13"
-};
+    };
 
 /*options for button 2*/ 
 const myButtons2 = {
@@ -56,14 +48,29 @@ const myStory = {
     page14 : "This is page 14. The End."
 };
 
+/**This function holds everything else inside of it. This is hopefully giving some structure. */
+function gameFile(){
+    console.log("Game loading...");
+    startScreen();
 
 
+    /**Create also a replayCounter when the other one works */
+    /**Most important function. It receives and updates the page number */
+    function pageCounter(number){
+        
+        let gamePage = `${number}`;
 
+        pageNumber.innerHTML = Number(gamePage);
+        console.log("This is from counter: " + pageNumber);
+        return pageNumber;
+    }
 
     /** Start button is visible only when the game is not started.
-     * pageNumber sets the starting point */
+     * pageCounter sets the starting point */
     function startScreen() {
         const startBtn = document.querySelector('#start-button');
+        pageCounter(0);
+
         let replay;
             if (replay !== 0){
                 startBtn.innerHTML = "Start the story";
@@ -73,33 +80,28 @@ const myStory = {
         startBtn.addEventListener('click', startGame);
     }
 
+
     /**This function uses the other functions to start the game. 
     * It also hides the start button and makes option buttons visible*/
     function startGame() {
-        pageNumber = 1;
         startBtn.classList.add("hidden");
         btn1.classList.remove("hidden");
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
         console.log("Game has started");
-        
+
         let buttonOption = Array.from(document.querySelectorAll('.option'));
         buttonOption.forEach(button => {
             if(!button)return;
             button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
             button.addEventListener("click",changePage);
-            pageCounter();
+
         })
     }
 
-    /**Need to figure out what value to use in this to get the information from other functions */
-function pageCounter(number){
-    let gamePage = `${number}`;
-    pageNumber.innerHTML = Number(gamePage);
-    return pageNumber;
-}
     
+
     /*This function changes the option of the button on the left */
     function btnOneText(){
         let btn1NextText = myButtons1;
@@ -135,9 +137,7 @@ function pageCounter(number){
             default:
                 btn1.textContent = "Well this didn't work.";
         }
-    pageCounter(pageNumber);
-    console.log("Turning page now (1)");
-        
+        console.log("Turning page now (1)");
     }          
    
     /*This function changes the option of the button on the right */
@@ -146,7 +146,7 @@ function pageCounter(number){
         switch (pageNumber) {
             case 0:
                 btn2.textContent = btn2NextText.option0; 
-                pageCounter(2);
+                pageNumber = 2;
                 break;
             case 1:
                 btn2.textContent = btn2NextText.option1; 
@@ -176,10 +176,8 @@ function pageCounter(number){
                 btn2.textContent = "This didn't work. How weird is that.";
         }
         console.log("Turning page now (2)");
-        pageCounter(pageNumber);
     }
             
-
 
     /*This function moves story to the next chosen page*/
     function changePage(){
@@ -248,16 +246,18 @@ function pageCounter(number){
                 storyBox.innerHTML = "This didn't work. It's not you, it's the code. You can fix it.";
                 console.log("Oops");
         }
+    console.log("This is page " + pageNumber);
+    pageCounter(pageNumber);
     }
 
 
-function theEnd(){
-btn1.classList.add("hidden");
-btn1.classList.remove("visible");
-btn2.classList.add("hidden");
-btn2.classList.remove("visible")
-startBtn.classList.add("visible")
-startBtn.innerHTML = "Play again?";
-startBtn.addEventListener('click', startScreen);
-}
+    function theEnd(){
+    btn1.classList.add("hidden");
+    btn1.classList.remove("visible");
+    btn2.classList.add("hidden");
+    btn2.classList.remove("visible")
+    startBtn.classList.add("visible")
+    startBtn.innerHTML = "Play again?";
+    startBtn.addEventListener('click', startScreen);
+    }
 }
