@@ -55,6 +55,8 @@ function gameFile(){
     console.log("Game loading...");
     let pageNumber = document.querySelector('#page-number');
     pageNumber = 0;
+    let replay = document.querySelector("#replay-number");
+    replay= 0;
     startScreen();
 
     /**Create also a replayCounter when the other one works */
@@ -85,7 +87,7 @@ function gameFile(){
         const startBtn = document.querySelector('#start-button');
         pageNumber = 0;
         pageCounter(pageNumber);
-        let replay = document.querySelector("#replay-number");
+        
 
         if (replay === 0){
             startBtn.innerHTML = "Start the story";
