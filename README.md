@@ -64,12 +64,13 @@ User stories:
 - Option buttons are hopping over options. I suspect that they receive the same command too many times. Solution: The function is right but the texts are wrong. Problem was with the order of buttons options. *Fixed*
 - Added replay button, but it doesnt refresh the page number. Buttons seems to be adding new page number to previous one they used. This seems to be part of the ongoing problem with pagenumber updating. *Fixed*
 - 30/6: Bug that shows html span element instead of the page number value. Solution: The initial pageNumber value needs to be "0". *Fixed*
-- On a second play round forward "start button" changes the text to "replay", but it changes right back to "start game" when clicked/ Update: Now it shows "Play again" from start.
+- On a second play round forward "start button" changes the text to "replay", but it changes right back to "start game" when clicked/ Update: Now it shows "Play again" from start. Solution: Give value of Zero in the start, and jump to startScreen on replays. *Fixed*
 - Only the option button that gets clicked gets updated. Solved by adding both btn1 and btn1 receiving a new message when one of them is clicked. *Fixed*
 - 1/7: When replayed, you have to click one extra time for screen to refresh (Text getting to page zero and option buttons to appear). Solution: Function theEnd had unnecessary event listener *Fixed*
 - Replay counter shows Nan instead of a number. *Fixed*
 - Quick reminder for myself to never name name just name *Fixed*
 - Value given for the name box appears in story pages, but can´t be given by user.
+- As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
 
 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.

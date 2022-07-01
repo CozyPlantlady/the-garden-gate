@@ -54,6 +54,7 @@ const myStory = {
 function gameFile(){
     console.log("Game loading...");
     let pageNumber = document.querySelector('#page-number');
+    pageNumber.classList("hidden");
     pageNumber = 0;
     let replay = document.querySelector("#replay-number");
     replay= 0;
@@ -87,7 +88,6 @@ function gameFile(){
         const startBtn = document.querySelector('#start-button');
         pageNumber = 0;
         pageCounter(pageNumber);
-        
 
         if (replay === 0){
             startBtn.innerHTML = "Start the story";
