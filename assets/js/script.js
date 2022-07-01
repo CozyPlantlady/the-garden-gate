@@ -7,7 +7,8 @@ const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
 let replay = 0;
 
-let playerName = document.querySelector('#player-name');
+let playerName = document.querySelector('#player-name').value;
+console.log(playerName);
 
 
 /*options for button 1 */

@@ -69,6 +69,7 @@ User stories:
 - 1/7: When replayed, you have to click one extra time for screen to refresh (Text getting to page zero and option buttons to appear). Solution: Function theEnd had unnecessary event listener *Fixed*
 - Replay counter shows Nan instead of a number. *Fixed*
 - Quick reminder for myself to never name name just name *Fixed*
+- Value given for the name box appears in story pages, but can´t be given by user.
 
 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
