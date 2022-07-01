@@ -13,8 +13,8 @@ const myButtons1 = {
     option1 : "Go to page 5", 
     option2 : "Go to page 7",
     option3 : "Go to page 9",
-    option4 : "go to page 11", 
-    option5 : "go to page 13"
+    option4 : "Go to page 11", 
+    option5 : "Go to page 13"
     };
 
 /*options for button 2*/ 
@@ -80,15 +80,16 @@ function gameFile(){
 
 
     /**This function uses the other functions to start the game. 
-    * It also hides the start button and makes option buttons visible*/
+    * Hide start button and make option buttons visible.
+    * Holds default text that goes inside button 1 and button 2 in start*/
     function startGame() {
         startBtn.classList.add("hidden");
         btn1.classList.remove("hidden");
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
-        btn1.textContent = "option 1";
-        btn2.textContent = "option 2";
+        btn1.textContent = "Go to page 1";
+        btn2.textContent = "Go to page 2";
         console.log("Game has started");
         changePage();
 
@@ -103,7 +104,7 @@ function gameFile(){
 
     
 
-    /*This function changes the option of the button on the left */
+    /*This function triggers when button on the left is clicked */
     function btnOneText(){
         let btn1NextText = myButtons1;
         let btn2NextText = myButtons2;
@@ -139,9 +140,10 @@ function gameFile(){
                 btn1.textContent = "Well this didn't work.";
         }
         console.log("Turning page now (1)");
+        pageNumber.textContent
     }          
    
-    /*This function changes the option of the button on the right */
+    /*This function triggers when button on the right is clicked */
     function btnTwoText(){
         let btn2NextText = myButtons2;
         let btn1NextText = myButtons1;
