@@ -61,6 +61,8 @@ function gameFile(){
         let gamePage = `${bob}`;
         pageNumber.textContent = gamePage;
         console.log("This is from counter: " +"Page Number" + pageNumber);
+        document.querySelector("#page-number").innerText = pageNumber;
+
         return pageNumber;
     }
 
@@ -68,6 +70,7 @@ function gameFile(){
         let howManyTimesPlayed = `${john}`;
         Number.howManyTimesPlayed;
         replay.textContent = howManyTimesPlayed;
+        document.querySelector("#replay-number").innerText = howManyTimesPlayed;
         console.log("This is from counter: " + "replay " + replay);
         return replay;
 
@@ -255,7 +258,7 @@ function gameFile(){
                 theEnd();
                 break;
             case 14:
-                storyBox.innerHTML = myStory.page14; 
+                storyBox.innerHTML = myStory.page14;
                 theEnd();
                 break;
             default: 
