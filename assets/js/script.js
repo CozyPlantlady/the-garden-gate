@@ -72,10 +72,13 @@ function gameFile(){
         let replay;
         if (replay !== 0){
             startBtn.innerHTML = "Start the story";
+            startBtn.addEventListener('click', startGame);
         } else {
             startBtn.innerHTML = "Play again?";
+            startBtn.addEventListener('click', startGame);
         }
-        startBtn.addEventListener('click', startGame);
+      
+        
     }
 
 
@@ -83,6 +86,7 @@ function gameFile(){
     * Hide start button and make option buttons visible.
     * Holds default text that goes inside button 1 and button 2 in start*/
     function startGame() {
+        startBtn.classList.remove("visible");
         startBtn.classList.add("hidden");
         btn1.classList.remove("hidden");
         btn1.classList.add("visible");
