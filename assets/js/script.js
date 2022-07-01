@@ -54,7 +54,7 @@ const myStory = {
 function gameFile(){
     console.log("Game loading...");
     let pageNumber = document.querySelector('#page-number');
-    pageNumber.classList("hidden");
+    pageNumber.classList.add("hidden");
     pageNumber = 0;
     let replay = document.querySelector("#replay-number");
     replay= 0;

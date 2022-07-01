@@ -73,6 +73,7 @@ User stories:
 - As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
 
 
+
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
 
 ### DEPLOYMENT
@@ -94,7 +95,9 @@ User stories:
 - Media:
 - Codes from other sources:
 
+
 #### Other things I used while doing this page:
+- Use JavaScript to get value from textbox and display on the page https://www.youtube.com/watch?v=aEj0Wu33hJM
 
 -Choose your own story builder (used in this project only to visualize the road map)
 https://twinery.org/
