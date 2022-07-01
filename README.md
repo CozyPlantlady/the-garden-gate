@@ -66,7 +66,7 @@ User stories:
 - 30/6: Bug that shows html span element instead of the page number value. The initial pageNumber value needs to be "0". *Fixed*
 - On a second round "start button" changes the text to "replay", but it changes right back to "start game" when clicked.
 - Only that option button that gets clicked gets updated.  Solved by adding both btn1 and btn1 receiving a new message when one of them is clicked. *Fixed*
-- 1/7: 
+- 1/7: When replayed, you have to click one extra time for screen to refresh (Text getting to page zero and option buttons to appear)
 
 ### DEPLOYMENT
 - Site was deployed to Github Pages.

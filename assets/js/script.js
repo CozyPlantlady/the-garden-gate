@@ -5,6 +5,7 @@ const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
+let replay = 0;
 
 
 /*options for button 1 */
@@ -59,25 +60,32 @@ function gameFile(){
     function pageCounter(bob){
         let gamePage = `${bob}`;
         pageNumber.textContent = gamePage;
-        console.log("This is from counter: " + pageNumber);
+        console.log("This is from counter: " +"Page Number" + pageNumber);
         return pageNumber;
     }
+
+    function replayTest(){
+        let replayedThisManyTimes;
+        replay = ++replayedThisManyTimes;
+        console.log("This is from counter: " + "replay" + replay);
+        return replay;
+
+    }
+    
     /** Start button is visible only when the game is not started.
      * pageCounter sets the starting point */
     function startScreen() {
         const startBtn = document.querySelector('#start-button');
         pageNumber = 0;
         pageCounter(pageNumber);
-
         let replay;
-        if (replay !== 0){
+
+        if (replay === 0){
             startBtn.innerHTML = "Start the story";
-            startBtn.addEventListener('click', startGame);
         } else {
             startBtn.innerHTML = "Play again?";
-            startBtn.addEventListener('click', startGame);
         }
-      
+        startBtn.addEventListener('click', startGame);
         
     }
 
@@ -264,7 +272,7 @@ function gameFile(){
     btn2.classList.add("hidden");
     btn2.classList.remove("visible")
     startBtn.classList.add("visible")
-    startBtn.innerHTML = "Play again?";
+    replayTest();
     startBtn.addEventListener('click', startScreen);
     }
 }
