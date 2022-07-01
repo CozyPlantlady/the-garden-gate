@@ -7,6 +7,8 @@ const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
 let replay = 0;
 
+let playerName = document.querySelector('#player-name');
+
 
 /*options for button 1 */
 const myButtons1 = {
@@ -30,7 +32,7 @@ const myButtons2 = {
 
 /*story pages */
 const myStory = {
-    page0 : "And so our story begins. Page 0.",
+    page0 : `And so our story begins. Welcome, ${playerName}.`,
     page1 : "It was dark and lonely night at page 1.",
     page2 : "This too is a sentence on page 2.",
     page3 : "This is page 3",
@@ -156,7 +158,6 @@ function gameFile(){
                 btn1.textContent = "Well this didn't work.";
         }
         console.log("Turning page now (1)");
-        pageNumber.textContent
     }          
    
     /*This function triggers when button on the right is clicked */
