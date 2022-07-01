@@ -67,6 +67,7 @@ User stories:
 - On a second play round forward "start button" changes the text to "replay", but it changes right back to "start game" when clicked/ Update: Now it shows "Play again" from start.
 - Only the option button that gets clicked gets updated. Solved by adding both btn1 and btn1 receiving a new message when one of them is clicked. *Fixed*
 - 1/7: When replayed, you have to click one extra time for screen to refresh (Text getting to page zero and option buttons to appear). Solution: Function theEnd had unnecessary event listener *Fixed*
+- Replay counter shows Nan instead of a number.
 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
 

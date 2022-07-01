@@ -64,10 +64,11 @@ function gameFile(){
         return pageNumber;
     }
 
-    function replayTest(){
-        let replayedThisManyTimes;
-        replay = ++replayedThisManyTimes;
-        console.log("This is from counter: " + "replay" + replay);
+    function replayTest(john){
+        let howManyTimesPlayed = `${john}`;
+        Number.howManyTimesPlayed;
+        replay.textContent = howManyTimesPlayed;
+        console.log("This is from counter: " + "replay " + replay);
         return replay;
 
     }
@@ -78,7 +79,7 @@ function gameFile(){
         const startBtn = document.querySelector('#start-button');
         pageNumber = 0;
         pageCounter(pageNumber);
-        let replay;
+        let replay = document.querySelector("#replay-number");
 
         if (replay === 0){
             startBtn.innerHTML = "Start the story";
@@ -272,7 +273,9 @@ function gameFile(){
     btn2.classList.add("hidden");
     btn2.classList.remove("visible")
     startBtn.classList.add("visible")
-    replayTest();
+    ++replay;
+    replayTest(replay);
     startScreen();
+    console.log(replay + " is how many times you have played")
     }
 }
