@@ -273,6 +273,6 @@ function gameFile(){
     btn2.classList.remove("visible")
     startBtn.classList.add("visible")
     replayTest();
-    startBtn.addEventListener('click', startScreen);
+    startScreen();
     }
 }
