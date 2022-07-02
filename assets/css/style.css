@@ -16,6 +16,7 @@ html {
 /* */
 body {
     font-family: 'Press Start 2P', sans-serif;
+    line-height: 2rem;
 }
 
 .center {
@@ -47,10 +48,6 @@ header {
     margin-right: auto;
     margin-bottom: 1rem;
     margin-left: auto;
-}
-
-#game-screen {
-
 }
 
 #button-box, #start-button-box {
