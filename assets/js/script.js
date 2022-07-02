@@ -14,7 +14,7 @@ console.log(playerName);
 /*options for button 1 */
 const myButtons1 = {
     option0 : "0",
-    option1 : "1", 
+    option1 : "To labyrinth", 
     option2 : "2",
     option3 : "3",
     option4 : "4", 
@@ -30,20 +30,21 @@ const myButtons1 = {
 const myButtons2 = {
     option0 : "0",
     option1 : "1",
-    option2 : "2",
+    option2 : "Inspect the garden shed",
     option3 : "3",
     option4 : "4",
     option5 : "5",
     option6 : "6",
     option7 : "7",
     option8 : "8",
-    option9 : "9"
+    option9 : "9",
+    option10 : "10"
 };
 
 /*story pages */
 const myStory = {
     page0 : `Welcome, ${playerName}. \n Place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
-    page1 : "Go along the wall You go along the garden wall. It's made of big stone blocks, and you should be able to easily get over it, or maybe through it now that you are a ghost. However, something seems to be holding you in the garden. You arrive to a clearing and see entrance to a labyrinth, a shed, and a gate that must be the main entrance to the garden.",
+    page1 : "Go along the wall You go along the garden wall. It's made of big stone blocks, and you should be able to easily get over it, or maybe through it now that you are a ghost. However, something seems to be holding you in the garden. You arrive to a clearing and see entrance to a labyrinth and a shed and further away a gate that must be the main entrance to the garden.",
     page2 : "The rose garden is full of different roses, most just past their best bloom. Ground is covered with petals. You have a faint memory being here before, enjoying the flowers and having a picnic.You go through the garden and arrive to it's other end. You see an old oak and a  tiny pond glimmering in moonlight.",
     page3 : "The labyrith is made of brick walls and bushes. It looks like it has been neglected, but someone has been here recently. You see tracks on the ground, like something hevy has been dragged to the labyrinth. Do you try to get to the centre of the labyrinth by following the trail, or do you just float through the walls?",
     page4 : "You go to the small garden shed. Door to the shed is locked, but you just float through it. Inside you find a collection of ceramic garden pots, cobwebs and... a bloody shovel.",
@@ -124,8 +125,8 @@ function gameFile(){
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
-        btn1.textContent = "Go to page 1";
-        btn2.textContent = "Go to page 2";
+        btn1.textContent = "Follow the wall";
+        btn2.textContent = "Go to rose garden";
         console.log("Game has started");
         changePage();
 
@@ -146,49 +147,59 @@ function gameFile(){
         let btn2NextText = myButtons2;
         switch (pageNumber) {
             case 0:
-                btn1.textContent = btn1NextText.option0; 
-                btn2.textContent = btn2NextText.option0;
+                btn1.textContent = btn1NextText.option1; 
+                btn2.textContent = btn2NextText.option2;
                 pageNumber = 1;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option1;
-                btn2.textContent = btn2NextText.option2; 
+                btn1.textContent = btn1NextText.option2;
+                btn2.textContent = btn2NextText.option1; 
                 pageNumber = 3;
                 break;
             case 2:
-                btn1.textContent = btn1NextText.option6;
-                btn2.textContent = btn2NextText.option8; 
+                btn1.textContent = btn1NextText.option7;
+                btn2.textContent = btn2NextText.option6; 
                 pageNumber = 6;
                 break;
             case 3:
-                btn1.textContent = btn1NextText.option2;
-                btn2.textContent = btn2NextText.option1; 
+                btn1.textContent = btn1NextText.option3;
+                btn2.textContent = ""; 
                 pageNumber = 8;
                 break;
             case 4:
-                btn1.textContent = btn1NextText.option4;
-                btn2.textContent = btn2NextText.option3; 
+                btn1.textContent = "";
+                btn2.textContent = ""; 
                 pageNumber = 10;
                 break;
             case 5:
-                btn1.textContent = btn1NextText.option5;
-                btn2.textContent = btn2NextText.option4; 
+                btn1.textContent = "";
+                btn2.textContent = ""; 
                 pageNumber = 11;
                 break;
             case 6:
-                btn1.textContent = btn1NextText.option7;
-                btn2.textContent = btn2NextText.option6; 
+                btn1.textContent = "";
+                btn2.textContent = btn2NextText.option7; 
                 pageNumber = 13;
                 break;
             case 7:
-                btn1.textContent = btn1NextText.option8;
+                btn1.textContent = "";
                 btn2.textContent = ""; 
                 pageNumber = 17;
                 break;
             case 8:
-                btn1.textContent = btn1NextText.option3;
+                btn1.textContent = "";
                 btn2.textContent = ""; 
                 pageNumber = 9;
+                break;
+            case 14:
+                btn1.textContent = btn1NextText.option7;
+                btn2.textContent = btn2NextText.option9; 
+                pageNumber = 18;
+                break;
+            case 15:
+                btn1.textContent = btn1NextText.option10;
+                btn2.textContent = btn2NextText.option10; 
+                pageNumber = 17;
                 break;
             default:
                 btn1.textContent = "There has been an error. Please refresh the page";
@@ -202,37 +213,63 @@ function gameFile(){
         let btn1NextText = myButtons1;
         switch (pageNumber) {
             case 0:
-                btn1.textContent = btn1NextText.option8;
-                btn2.textContent = btn2NextText.option6; 
+                btn1.textContent = btn1NextText.option6;
+                btn2.textContent = btn2NextText.option8; 
                 pageNumber = 2;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option3;
+                btn1.textContent = btn1NextText.option4;
                 btn2.textContent = btn2NextText.option3; 
                 pageNumber = 4;
                 break;
             case 2:
-                btn1.textContent = btn1NextText.option5;
-                btn2.textContent = btn2NextText.option5; 
-                pageNumber = 6;
+                btn1.textContent = btn1NextText.option10;
+                btn2.textContent = ""; 
+                pageNumber = 7;
                 break;
-            case 2:
-                btn1.textContent = btn1NextText.option5;
-                btn2.textContent = btn2NextText.option5; 
-                pageNumber = 6;
+            case 3:
+                btn1.textContent = "";
+                btn2.textContent = ""; 
+                pageNumber = 9;
                 break;
-            case 2:
+            case 4:
                 btn1.textContent = btn1NextText.option5;
-                btn2.textContent = btn2NextText.option5; 
-                pageNumber = 6;
+                btn2.textContent = btn2NextText.option4; 
+                pageNumber = 5;
                 break;
-            case 2:
-                btn1.textContent = btn1NextText.option5;
+            case 5:
+                btn1.textContent = "";
                 btn2.textContent = btn2NextText.option5; 
-                pageNumber = 6;
-                break;
+                pageNumber = 12;
             case 6:
+                btn1.textContent = btn1NextText.option8;
+                btn2.textContent = btn2NextText.option9; 
                 pageNumber = 14;
+                break;
+            case 7:
+                btn1.textContent = "";
+                btn2.textContent = ""; 
+                pageNumber = 17;
+                break;
+            case 12:
+                btn1.textContent = "";
+                btn2.textContent = ""; 
+                pageNumber = 11;
+                break;
+            case 13:
+                btn1.textContent = btn1NextText.option5;
+                btn2.textContent = btn2NextText.option4; 
+                pageNumber = 5;
+                break;
+            case 14:
+                btn1.textContent = btn1NextText.option10;
+                btn2.textContent = btn2NextText.option10; 
+                pageNumber = 15;
+                break;
+            case 15:
+                btn1.textContent = "";
+                btn2.textContent = ""; 
+                pageNumber = 16;
                 break;
             default:
                 btn2.textContent = "This didn't work. How weird is that.";
@@ -268,7 +305,6 @@ function gameFile(){
                 break;
             case 7:
                 storyBox.innerHTML = myStory.page7; 
-                theEnd();
                 break;
             case 8:
                 storyBox.innerHTML = myStory.page8; 
@@ -287,15 +323,12 @@ function gameFile(){
                 break;
             case 12:
                 storyBox.innerHTML = myStory.page12; 
-                theEnd();
                 break;
             case 13:
                 storyBox.innerHTML = myStory.page13; 
-                theEnd();
                 break;
             case 14:
                 storyBox.innerHTML = myStory.page14;
-                theEnd();
                 break;
             case 15:
                 storyBox.innerHTML = myStory.page15;
