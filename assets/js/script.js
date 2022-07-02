@@ -13,22 +13,31 @@ console.log(playerName);
 
 /*options for button 1 */
 const myButtons1 = {
-    option0 : "Go to page 3",
-    option1 : "Go to page 5", 
-    option2 : "Go to page 7",
-    option3 : "Go to page 9",
-    option4 : "Go to page 11", 
-    option5 : "Go to page 13"
+    option0 : "0",
+    option1 : "1", 
+    option2 : "2",
+    option3 : "3",
+    option4 : "4", 
+    option5 : "5",
+    option6 : "6",
+    option7 : "7",
+    option8 : "8",
+    option9 : "9",
+    option10 : "10"
     };
 
 /*options for button 2*/ 
 const myButtons2 = {
-    option0 : "Go to page 4",
-    option1 : "go to page 6",
-    option2 : "go to page 8",
-    option3 : "go to page 10",
-    option4 : "go to page 12",
-    option5 : "go to page 14"
+    option0 : "0",
+    option1 : "1",
+    option2 : "2",
+    option3 : "3",
+    option4 : "4",
+    option5 : "5",
+    option6 : "6",
+    option7 : "7",
+    option8 : "8",
+    option9 : "9"
 };
 
 /*story pages */
@@ -142,29 +151,47 @@ function gameFile(){
                 pageNumber = 1;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option2;
-                btn2.textContent = btn2NextText.option2; 
+                btn1.textContent = btn1NextText.option;
+                btn2.textContent = btn2NextText.option4; 
                 pageNumber = 3;
                 break;
             case 2:
-                btn1.textContent = btn1NextText.option4; 
-                btn2.textContent = btn2NextText.option4;
-                pageNumber = 5;
+                btn1.textContent = btn1NextText.option6;
+                btn2.textContent = btn2NextText.option8; 
+                pageNumber = 6;
                 break;
             case 3:
-                pageNumber = 7;
+                btn1.textContent = btn1NextText.option2;
+                btn2.textContent = btn2NextText.option1; 
+                pageNumber = 8;
                 break;
             case 4:
-                pageNumber = 9;
+                btn1.textContent = btn1NextText.option4;
+                btn2.textContent = btn2NextText.option3; 
+                pageNumber = 10;
                 break;
             case 5:
+                btn1.textContent = btn1NextText.option5;
+                btn2.textContent = btn2NextText.option4; 
                 pageNumber = 11;
                 break;
             case 6:
+                btn1.textContent = btn1NextText.option7;
+                btn2.textContent = btn2NextText.option6; 
                 pageNumber = 13;
                 break;
+            case 7:
+                btn1.textContent = btn1NextText.option8;
+                btn2.textContent = ""; 
+                pageNumber = 17;
+                break;
+            case 8:
+                btn1.textContent = btn1NextText.option3;
+                btn2.textContent = ""; 
+                pageNumber = 9;
+                break;
             default:
-                btn1.textContent = "Well this didn't work.";
+                btn1.textContent = "There has been an error. Please refresh the page";
         }
         console.log("Turning page now (1)");
     }          
@@ -219,6 +246,7 @@ function gameFile(){
                 break;
             case 2:
                 storyBox.innerHTML = myStory.page2;
+
                 break;
             case 3:
                 storyBox.innerHTML = myStory.page3;

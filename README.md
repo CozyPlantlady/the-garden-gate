@@ -71,6 +71,7 @@ User stories:
 - Quick reminder for myself to never name name just name *Fixed*
 - Value given for the name box appears in story pages, but can´t be given by user.
 - As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
+- 2/7: Was going to add 3th option button, but decided not to. It would make code more complicated with little value to add. Changing story page order so that it doesnt matter *Fixed*
 
 
 
