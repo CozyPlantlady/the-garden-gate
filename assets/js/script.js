@@ -151,8 +151,8 @@ function gameFile(){
                 pageNumber = 1;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option;
-                btn2.textContent = btn2NextText.option4; 
+                btn1.textContent = btn1NextText.option1;
+                btn2.textContent = btn2NextText.option2; 
                 pageNumber = 3;
                 break;
             case 2:
@@ -202,8 +202,8 @@ function gameFile(){
         let btn1NextText = myButtons1;
         switch (pageNumber) {
             case 0:
-                btn1.textContent = btn1NextText.option1;
-                btn2.textContent = btn2NextText.option1; 
+                btn1.textContent = btn1NextText.option8;
+                btn2.textContent = btn2NextText.option6; 
                 pageNumber = 2;
                 break;
             case 1:
@@ -216,14 +216,20 @@ function gameFile(){
                 btn2.textContent = btn2NextText.option5; 
                 pageNumber = 6;
                 break;
-            case 3:
-                pageNumber = 8;
+            case 2:
+                btn1.textContent = btn1NextText.option5;
+                btn2.textContent = btn2NextText.option5; 
+                pageNumber = 6;
                 break;
-            case 4:
-                pageNumber = 10;
+            case 2:
+                btn1.textContent = btn1NextText.option5;
+                btn2.textContent = btn2NextText.option5; 
+                pageNumber = 6;
                 break;
-            case 5:
-                pageNumber = 12;
+            case 2:
+                btn1.textContent = btn1NextText.option5;
+                btn2.textContent = btn2NextText.option5; 
+                pageNumber = 6;
                 break;
             case 6:
                 pageNumber = 14;
