@@ -33,8 +33,8 @@ const myButtons2 = {
 
 /*story pages */
 const myStory = {
-    page0 : `And so our story begins. Welcome, ${playerName}.`,
-    page1 : "It was dark and lonely night at page 1.",
+    page0 : `Welcome, ${playerName}. Place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
+    page1 : "Go along the wall You go along the garden wall. It's made of big stone blocks, and you should be able to easily get over it, or maybe through it now that you are a ghost. However, something seems to be holding you in the garden. You arrive to a clearing and see entrance to a labyrinth, a shed, and a gate that must be the main entrance to the garden.",
     page2 : "This too is a sentence on page 2.",
     page3 : "This is page 3",
     page4 : "This is page 4",
