@@ -213,31 +213,24 @@ function gameFile(){
         switch (pageNumber) {
             case 0:
                 storyBox.innerHTML = myStory.page0; 
-                console.log("Beginning");
                 break;
             case 1:
                 storyBox.innerHTML = myStory.page1;
-                console.log("page 1");
                 break;
             case 2:
                 storyBox.innerHTML = myStory.page2;
-                console.log("page 2");
                 break;
             case 3:
                 storyBox.innerHTML = myStory.page3;
-                console.log("page 3");
                 break;
             case 4:
                 storyBox.innerHTML = myStory.page4;
-                console.log("page 4");
                 break;
             case 5:
                 storyBox.innerHTML = myStory.page5;
-                console.log("page 5");
                 break;
             case 6:
                 storyBox.innerHTML = myStory.page6; 
-                console.log("page 6");
                 break;
             case 7:
                 storyBox.innerHTML = myStory.page7; 
@@ -245,7 +238,6 @@ function gameFile(){
                 break;
             case 8:
                 storyBox.innerHTML = myStory.page8; 
-                theEnd();
                 break;
             case 9:
                 storyBox.innerHTML = myStory.page9; 
@@ -269,6 +261,28 @@ function gameFile(){
                 break;
             case 14:
                 storyBox.innerHTML = myStory.page14;
+                theEnd();
+                break;
+            case 15:
+                storyBox.innerHTML = myStory.page15;
+                break;
+            case 16:
+                storyBox.innerHTML = myStory.page16;
+                theEnd();
+                break;
+            case 17:
+                storyBox.innerHTML = myStory.page17;
+                theEnd();
+                break;
+            case 18:
+                storyBox.innerHTML = myStory.page18;
+                theEnd();
+                break;
+            case 19:
+                storyBox.innerHTML = myStory.page19;
+                break;
+            case 20:
+                storyBox.innerHTML = myStory.page20;
                 theEnd();
                 break;
             default: 
