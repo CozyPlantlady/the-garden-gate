@@ -18,7 +18,7 @@ body {
     font-family: 'Press Start 2P', sans-serif;
 }
 
-h1, h2, p, #page-number, #name-div {
+.center {
     text-align: center;
 }
 
@@ -49,6 +49,9 @@ header {
     margin-left: auto;
 }
 
+#game-screen {
+
+}
 
 #button-box, #start-button-box {
     display: flex;
@@ -63,7 +66,7 @@ button {
 }
 
 #story {
-    margin: 3rem;
+    margin-top: 1rem;
     height: 50rem;
     width: 50rem;
 }
