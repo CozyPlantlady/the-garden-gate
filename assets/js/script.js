@@ -7,9 +7,6 @@ const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
 let replay = 0;
 const nameBox = document.querySelector('#name-div');
-const playerName = document.querySelector('#player-name');
-
-console.log(playerName);
 
 /* variables that trigger the final story piece*/
 let murderWeapon;
@@ -51,7 +48,7 @@ const myButtons2 = {
 
 /*story pages. These could be moved to Json file later*/
 const myStory = {
-    page0 : `The place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
+    page0 : `${playerName}, The place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
     page1 : `You go along the garden wall. It's made of big stone blocks, and you should be able to easily get over it, or maybe through it now that you are a ghost. However, something seems to be holding you in the garden. You arrive to a clearing and see entrance to a labyrinth and a garden shed.`,
     page2 : `The rose garden is full of different roses, most just past their best bloom. Ground is covered with petals. You have a faint memory being here before, enjoying the flowers and having a picnic.You go through the garden and arrive to it's other end. You see an old oak and a  tiny pond glimmering in moonlight.`,
     page3 : `The labyrith is made of brick walls and bushes. It looks like it has been neglected, but someone has been here recently. You see tracks on the ground, like something heavy has been dragged to the labyrinth. Do you try to get to the centre of the labyrinth by following the trail, or do you just float through the walls?`,
@@ -81,12 +78,25 @@ const myStory = {
 /*This function holds the game inside of it*/
 function gameFile(){
     console.log("Game loading...");
+    const btnName = document.querySelector('#name-button');
     let pageNumber = document.querySelector('#page-number');
     pageNumber.classList.add("hidden");
     pageNumber = 0;
     let replay = document.querySelector("#replay-number");
     replay= 0;
-    startScreen();
+    btnName.addEventListener('click', nameGetter);
+    
+
+    /*Get the name user have chosen and use it in the game*/
+    function nameGetter(){
+        let userName = document.getElementById('#player-name');
+        let playerName;
+        playerName.textContent = userName.textContent;
+        console.log(userName);
+        console.log(playerName);
+        startScreen();
+    }
+
 
     /*Most important function. It receives and updates the page number */
     function pageCounter(pagenumber){
@@ -98,16 +108,16 @@ function gameFile(){
     }
 
     /*Counts how many times user has played */
-    function replayCounter(again){
-        let howManyTimesPlayed = `${again}`;
+    function replayCounter(playAgain){
+        let howManyTimesPlayed = `${playAgain}`;
         Number.howManyTimesPlayed;
         replay.textContent = howManyTimesPlayed;
         document.querySelector("#replay-number").innerText = howManyTimesPlayed;
         console.log("This is from counter: " + "replay " + replay);
         return replay;
-
     }
-    
+
+
     /** Start button is visible only when the game is not started.
      * pageCounter sets the starting point */
     function startScreen() {
@@ -121,7 +131,6 @@ function gameFile(){
             startBtn.innerHTML = "Play again?";
         }
         startBtn.addEventListener('click', startGame);
-        
     }
 
 
@@ -440,7 +449,6 @@ function gameFile(){
     if (murderWeapon && familiarFace && labyrinthSecret === true){
         trueEnding = true;
         alert("You unlocked the secret ending! Head to the garden gate!")
-        pageNumber = 19;
     }
     ++replay;
     replayCounter(replay);
