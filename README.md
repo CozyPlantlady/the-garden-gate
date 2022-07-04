@@ -72,10 +72,16 @@ User stories:
 - Value given for the name box appears in story pages, but can´t be given by user.
 - As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
 - 2/7: Was going to add 3th option button, but decided not to. It would make code more complicated with little value to add. Changing story page order so that it doesnt matter *Fixed*
-
-
-
+- 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
+
+### Possible features to add
+- Choice to choose between dark and light color theme.
+- Json to hold all the text options. This would make code a lot cleaner, but I didn't have enough time to throw myself in to it.
+- Choice to choose another font for the text. Current font is a style choice, but another font would be eaiser to read.
+- Pixel art pictures for some story points
+
+
 
 ### DEPLOYMENT
 - Site was deployed to Github Pages.
