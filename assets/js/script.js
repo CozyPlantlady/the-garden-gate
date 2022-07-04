@@ -427,7 +427,7 @@ function gameFile(){
         alert("You found the murderer!")
     }
     if (murderWeapon && familiarFace && labyrinthSecret === true){
-        TrueEnding = true;
+        trueEnding = true;
         alert("You found the secret ending! Head to the garden gate!")
         pageNumber = 19;
     }

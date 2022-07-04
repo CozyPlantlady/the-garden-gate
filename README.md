@@ -50,8 +50,8 @@ User stories:
 - User can choose to start the game.
 - User can give a name for the character.
 - User can read the story part, and choose from options what to do next.
-- User can see their previous decision. (This I decided to remove. Story is very short and easily replayable.)
-- User can end the game when they want.
+- User can see their previous decision. (This feature is removed. Story is very short and easily replayable.)
+- User can end the game when they want.(This feature is removed. Story is very short and easily replayable.)
 - User can choose to replay.
 - User can see items they have collected.
 
@@ -59,7 +59,7 @@ User stories:
 - Had problems with start button function that was purely JS. Changed the start-button from being JS to be in HTML instead. *Fixed*
 - Ended up doing same with thing with option buttons. *Fixed*
 - 29/6: Problem: How to change text of both option buttons at the same time as well as the story text. Trying to have all three to read the pageNumber, but something isn't connecting right. After meeting with mentor I'm going to change code so that all three changes are under one function, since currently they are seperate. (Note: functions are under same function, and then in their seperate ones) *Fixed*
-- "forEach is not a function" Error. Added Array.from(document.querySelectorAll('')) to make buttons an array. *Fixed*
+- "forEach is not a function" Error. Fixed: Added Array.from(document.querySelectorAll('')) to make buttons an array. *Fixed*
 - All the different functions that use pageNumber needs to be updated at the same time. Solution: a function (pageCounter) that collects the number everytime. *Fixed*
 - Option buttons are hopping over options. I suspect that they receive the same command too many times. Solution: The function is right but the texts are wrong. Problem was with the order of buttons options. *Fixed*
 - Added replay button, but it doesnt refresh the page number. Buttons seems to be adding new page number to previous one they used. This seems to be part of the ongoing problem with pagenumber updating. *Fixed*
