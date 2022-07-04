@@ -13,51 +13,51 @@ console.log(playerName);
 
 /*options for button 1 */
 const myButtons1 = {
-    option0 : "0",
+    option0 : "Go along the wall",
     option1 : "To labyrinth", 
-    option2 : "2",
-    option3 : "3",
-    option4 : "4", 
-    option5 : "5",
-    option6 : "6",
-    option7 : "7",
-    option8 : "8",
+    option2 : "Follow the labyrinth",
+    option3 : "Go to the center of the labyrinth",
+    option4 : "Inspect closer", 
+    option5 : "Try to leave the garden",
+    option6 : "Get closer to the old oak",
+    option7 : "Follow trail to the garden gate",
+    option8 : "Read the letters",
     option9 : "9",
-    option10 : "10"
+    option10 : "This is too much.Run away"
     };
 
 /*options for button 2*/ 
 const myButtons2 = {
-    option0 : "0",
-    option1 : "1",
+    option0 : "Go to the rose garden",
+    option1 : "No time to waste, go to center of labyrinth",
     option2 : "Inspect the garden shed",
-    option3 : "3",
-    option4 : "4",
-    option5 : "5",
-    option6 : "6",
+    option3 : "Go to garden gate",
+    option4 : "Inspect closer",
+    option5 : "Try to leave",
+    option6 : "Inspect the letters",
     option7 : "7",
-    option8 : "8",
-    option9 : "9",
-    option10 : "10"
+    option8 : "Go to the pond",
+    option9 : "Follow the tracks to the pond",
+    option10 : "Get closer"
 };
 
 /*story pages */
 const myStory = {
-    page0 : `Welcome, ${playerName}. \n Place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
-    page1 : "Go along the wall You go along the garden wall. It's made of big stone blocks, and you should be able to easily get over it, or maybe through it now that you are a ghost. However, something seems to be holding you in the garden. You arrive to a clearing and see entrance to a labyrinth and a shed and further away a gate that must be the main entrance to the garden.",
+    page0 : `Welcome, ${playerName}. Place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
+    page1 : "You go along the garden wall. It's made of big stone blocks, and you should be able to easily get over it, or maybe through it now that you are a ghost. However, something seems to be holding you in the garden. You arrive to a clearing and see entrance to a labyrinth and a garden shed.",
     page2 : "The rose garden is full of different roses, most just past their best bloom. Ground is covered with petals. You have a faint memory being here before, enjoying the flowers and having a picnic.You go through the garden and arrive to it's other end. You see an old oak and a  tiny pond glimmering in moonlight.",
-    page3 : "The labyrith is made of brick walls and bushes. It looks like it has been neglected, but someone has been here recently. You see tracks on the ground, like something hevy has been dragged to the labyrinth. Do you try to get to the centre of the labyrinth by following the trail, or do you just float through the walls?",
+    page3 : "The labyrith is made of brick walls and bushes. It looks like it has been neglected, but someone has been here recently. You see tracks on the ground, like something heavy has been dragged to the labyrinth. Do you try to get to the centre of the labyrinth by following the trail, or do you just float through the walls?",
     page4 : "You go to the small garden shed. Door to the shed is locked, but you just float through it. Inside you find a collection of ceramic garden pots, cobwebs and... a bloody shovel.",
     page5 : "In front of you looms an old, metallic garden gate. It's black, and everything around is over grown with wild vine. Only the doorway is clear of any plants. Strangely, the door has a shiny new metallic padlock on it. ",
     page6 : "The oak is growing tall, covering the sky and moon from your sight. Under it is small clearing, and a pair metallic garden chairs and a table. You can see the rose garden and pond from here, as well as   the gate to the garden. On the ground you see letters. Investigate the scene, or go to the garden gate?",
     page7 : `Moonlight is reflecting from the ponds calm surface, and mist is gently wrapping itself around you. It's so quiet in here. Then you see a white form appearing from the mist. -${playerName}...${playerName}...${playerName}...`,
     page8 : "When you enter the labyrith you remember being there before. You have been playing hide and seek in there so may times it's not scary at all. It's overgrown, but it doesnt't bother your ghostly form. Someone else has not been as lucky you think, as you follow the tracks of broken twigs, torn pieces of clothing and what you now suspect to be a faint trail of blood to the center of the labyrinth.",
-    page9 : "As you arrive to the center of the labyrinth you are surprised that you are not there alone. First, you see a candle light. Then, a person that is sitting on the ground. He looks disheveled, dirty, and seems to be chanting something with their eyes closed. You know this person too. It's your cousin, Dren. You used to play here together as kids. You feel the cold chill going through you and know for sure, that he is the one that killed you. And here, center of the labyrinth, is where he dragged your body and buried you. Dren keeps chanting and you feel your surrounding go black. He is trying to keep your spirit in the garden. You remember him always being so afraid of ghosts... You wish to give him something to be afraid of, but before you can, your form fades as you see the sun rising. Morning came.",
+    page9 : "As you arrive to the center of the labyrinth you are surprised that you are not there alone. First, you see a candle light. Then, a person that is sitting on the ground. He looks disheveled, dirty, and seems to be chanting something with their eyes closed. You know this person too. It's your cousin, Drew. You used to play here together as kids. You feel the cold chill going through you and know for sure, that he is the one that killed you. And here, center of the labyrinth, is where he dragged your body and buried you. Drew keeps chanting and you feel your surrounding go black. He is trying to keep your spirit in the garden. You remember him always being so afraid of ghosts... You wish to give him something to be afraid of, but before you can, your form fades as you see the sun rising.",
     page10 : "A chill goes through your body, again. You are sure that this shovel has been used to kill you. Unfortunately, there doesn't seem to be anything else to see here. At that moment you see first sunrays shining through the dirty window, and your form slowly disappears from the sight. Morning has come.",
     page11 : "You go to the gate, and touch it's surface. As you push your hand through the gate you feel uncomfortable tingling and then get violently pushed back in the garden. You try it couple of times, and same happens again. Something is holding you here, and you cant't leave before you know what it is. You still wait by the garden gate when the morning sun rises, and you disappear from the sight.",
     page12 : "You look the area around the gate closer. In distance you can see the manor this garden belongs to. Everything around the gate is overgrown, except the door of the gate that seems to be in frequent use. You see fresh footprints on the ground that seem to be going towards a labyrinth. The padlock on the gate is open, and hanging from the door.",
     page13 : "You feel uncomfortable staying under the oak, and leave right away. Your way continues to the garden gate, maybe you can get out from here.",
-    page14 : "There are letters laying on the ground. They have been stomped over, and you get the feeling that there have been a struggle.You read whats on the letter, and recognise your own handwriting:“Dear aunt Agatha,I'm sorry to hear that your health is declining. I'll be sure to come see you as soon as I can!From ${}”You see tracks going towards the pond.",
+    page14 : `There are letters laying on the ground. They have been stomped over, and you get the feeling that there have been a struggle.You read whats on the top most letter, and recognise your own handwriting:“Dear aunt Agatha,I'm sorry to hear that your health is declining. I'll be sure to come see you as soon as I can!From ${playerName}”You see tracks going towards the pond.`,
     page15 : "Tiny pond is bathing in the moonlight as mist swirls slowly on it's surface. You see a ghostly figure appear on the pier, and you hear it calling your name.-”${}...${}...${}...",
     page16 : `You approach the misty figure. As you get closer, you recognize the familiar face.“Dear ${playerName}, is it really you? You finally came!” she speaks with voice that could be a whisper.It's your aunt, Agatha, who is the owner of the manor this garden belongs to. You have spend so many summers here, playing in the garden and the labyrinth. Oh how you missed those days.“I came here to read your letters, but your cousin Drew followed me. He drowned me. I have been waiting for you to come.”Agatha grabs your hand, and you feel peace flowing through you. At least you are not alone here.You dont mind the sun coming up, and you feel warmth as you both disappear from the sight.`,
     page17 : "You get so terrified that you simply just run away. You keep going until morning comes and your form fades away from sight.",
@@ -125,8 +125,10 @@ function gameFile(){
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
-        btn1.textContent = "Follow the wall";
-        btn2.textContent = "Go to rose garden";
+        let btn1NextText = myButtons1;
+        let btn2NextText = myButtons2;
+        btn1.textContent = btn1NextText.option0; 
+        btn2.textContent = btn2NextText.option0;
         console.log("Game has started");
         changePage();
 
