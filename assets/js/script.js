@@ -38,7 +38,8 @@ const myButtons2 = {
     option7 : "Lets go to garden gate",
     option8 : "Go to the pond",
     option9 : "Follow the tracks to the pond",
-    option10 : "Get closer"
+    option10 : "Get closer",
+    option11 : "Continue"
 };
 
 /*story pages */
@@ -59,14 +60,14 @@ const myStory = {
     page13 : `You feel uncomfortable staying under the oak, and leave right away. Your way continues to the garden gate, maybe you can get out from here.`,
     page14 : `There are letters laying on the ground. They have been stomped over, and you get the feeling that there have been a struggle.You read whats on the top most letter, and recognise your own handwriting:“Dear aunt Agatha,I'm sorry to hear that your health is declining. I'll be sure to come see you as soon as I can!From ${playerName}”You see tracks going towards the pond.`,
     page15 : `Tiny pond is bathing in the moonlight as mist swirls slowly on it's surface. You see a ghostly figure appear on the pier, and you hear it calling your name.-”${playerName}...${playerName}...${playerName}...`,
-    page16 : `You approach the misty figure. As you get closer, you recognize the familiar face.“Dear ${playerName}, is it really you? You finally came!” she speaks with voice that could be a whisper.It's your aunt, Agatha, who is the owner of the manor this garden belongs to. You have spend so many summers here, playing in the garden and the labyrinth. Oh how you missed those days.“I came here to read your letters, but your cousin Drew followed me. He drowned me. I have been waiting for you to come.”Agatha grabs your hand, and you feel peace flowing through you. At least you are not alone here.You dont mind the sun coming up, and you feel warmth as you both disappear from the sight.`,
+    page16 : `You approach the misty figure. As you get closer, you recognize the familiar face.“Dear ${playerName}, is it really you? You finally came!” she speaks with voice that could be a whisper.It's your aunt, Agatha, who is the owner of the manor this garden belongs to. You have spend so many summers here, playing in the garden and the labyrinth. Oh how you missed those days.`,
     page17 : `You get so terrified that you simply just run away. You keep going until morning comes and your form fades away from sight.`,
     page18 : `As you inspect closer you see that these are all the letters you wrote to your aunt Agatha over the years. They start from when you were just a child and learning to write, full of scribbles of things you had seen. Agatha has saved each and everyone.You are lost in memories as the sun climbs up.`,
     page19 : `As you wake up in the gazebo once again it all clicks.You had been summoned by aunt Agatha to come see her since she had fallen ill. When you arrived you were met by cousin Drew instead, who told you that Agatha had gone to the garden, and that you could find her in the gazebo.  Drew said that he would tag along. When you got there, Drew hit your head with a garden shovel, killing you. Then he dragged your body to the middle of the labyrinth, burying you to the shallow grave.But cousin Drew was superstitious, and had always been afraid of ghosts. That made him make some sort of spell to make sure your spirit, as well as Agathas, would stay in the garden...`,
     page20 : `As you arrive to the garden gate, you hear You hear Agathas voice: ”You know ${playerName}, all I wanted was to give the manor to you. It is yours, if you ask me. I think we should go and pay Drew a visit. “You are finally able to leave the garden, and head through the gate. It's still dark, moon shines over the garden and the road leading towards the manor. It's time for the master of the house to arrive home.The end.`,
     page21 : `You feel the cold chill going through you and know for sure, that he is the one that killed you. And here, center of the labyrinth, is where he dragged your body and buried you. Drew keeps chanting and you feel your surrounding go black. He is trying to keep your spirit in the garden. You remember him always being so afraid of ghosts... You wish to give him something to be afraid of, but before you can, your form fades as you see the sun rising.`,
+    page22 : `“I came here to read your letters, but your cousin Drew followed me. He drowned me. I have been waiting for you to come.”Agatha grabs your hand, and you feel peace flowing through you. At least you are not alone here.You dont mind the sun coming up, and you feel warmth as you both disappear from the sight.`,
 };  
-
 /**This function holds everything else inside of it. This is hopefully giving some structure. */
 function gameFile(){
     console.log("Game loading...");
@@ -282,9 +283,13 @@ function gameFile(){
                 break;
             case 15:
                 btn1.textContent = "";
-                btn2.textContent = ""; 
+                btn2.textContent = btn2NextText.option11; 
                 pageNumber = 16;
                 break;
+            case 16:
+                btn1.textContent = "";
+                btn2.textContent = "";
+                pageNumber = 22;
             default:
                 btn2.textContent = "This didn't work. How weird is that.";
         }
@@ -347,7 +352,6 @@ function gameFile(){
                 break;
             case 16:
                 storyBox.innerHTML = myStory.page16;
-                theEnd();
                 break;
             case 17:
                 storyBox.innerHTML = myStory.page17;
@@ -370,6 +374,10 @@ function gameFile(){
                 break;
             case 21:
                 storyBox.innerHTML = myStory.page21;
+                theEnd();
+                break;
+            case 22:
+                storyBox.innerHTML = myStory.page22;
                 theEnd();
                 break;
             
