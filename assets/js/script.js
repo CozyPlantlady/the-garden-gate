@@ -9,6 +9,7 @@ let replay = 0;
 const nameBox = document.querySelector('#name-div');
 let playerName = document.querySelector('#player-name').value;
 console.log(playerName);
+let murderWeapon;
 
 
 /*options for button 1 */
@@ -332,6 +333,7 @@ function gameFile(){
                 break;
             case 10:
                 storyBox.innerHTML = myStory.page10; 
+                murderWeapon = true;
                 theEnd();
                 break;
             case 11:
@@ -396,6 +398,9 @@ function gameFile(){
     btn2.classList.add("hidden");
     btn2.classList.remove("visible")
     startBtn.classList.add("visible")
+    if (murderWeapon === true){
+        alert("You discovered the murder weapon!");
+    }
     ++replay;
     replayTest(replay);
     startScreen();
