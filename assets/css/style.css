@@ -53,8 +53,8 @@ button:hover {
     border-width: 5px;
     display: flex-box;
     flex-wrap: wrap;
-    height: 30rem;
-    width: 30rem;
+    height: 40rem;
+    width: 35rem;
     margin-top: 1rem;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -69,7 +69,8 @@ button:hover {
 
 #story {
     margin: 1rem;
-    height: 30rem;
+    padding: 1rem;
+    height: 40rem;
     width: 30rem;
 }
 

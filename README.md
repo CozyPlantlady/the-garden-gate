@@ -37,7 +37,7 @@ Style:
 I wanted this small game to have old school Nintendo gameboy feeling, 
 mixed with "choose your own adventure"-type of text adventure mixed with gothic romance horror story.
 The style would be visible in the background, and the "game screen" would be mostly white.
-Some pictures that might appear during game are pixel art.
+- For the sake of hiding the buttons when there is no text option available the chosen border style is "hidden". This is not the best option when thinking accessability, but on my current skill set it was the way I chose to do things.
 
 Colors: Black, white and gray tones. Nothing fancy here.
 
@@ -72,9 +72,10 @@ User stories:
 - Value given for the name box appears in story pages, but can´t be given by user.
 - As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
 - 2/7: Was going to add 3th option button, but decided not to. It would make code more complicated with little value to add. Changing story page order so that it doesnt matter *Fixed*
-- 
+- After adding some styling the option buttons wont disappear fully.
 - 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
+
 
 ### Possible features to add
 - Choice to choose between dark and light color theme.
