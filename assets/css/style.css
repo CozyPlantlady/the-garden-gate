@@ -7,20 +7,17 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
 }
+
 * {
     margin: 0;
     padding: 0;
     border: none;
 }
 
-/* */
+/* Main HTML elements*/
 body {
     font-family: 'Press Start 2P', sans-serif;
     line-height: 2rem;
-}
-
-.center {
-    text-align: center;
 }
 
 header {
@@ -33,8 +30,16 @@ header {
     margin-right: auto;
     margin-bottom: 10rem;
     margin-left: auto;
-
 }
+
+button {
+    background-color: #999;
+    font-family: 'Press Start 2P', sans-serif;
+    border-style: hidden;
+    margin: 5rem;
+}
+
+/* ID's in order of appearance */
 
 #game-div {
     background-color: #fff;
@@ -55,12 +60,6 @@ header {
     justify-content: center;
     align-content: center;
 }
-button {
-    background-color: #999;
-    font-family: 'Press Start 2P', sans-serif;
-    border-style: hidden;
-    margin: 5rem;
-}
 
 #story {
     margin-top: 1rem;
@@ -68,12 +67,47 @@ button {
     width: 50rem;
 }
 
+/*Classes in alphabetical order*/
+.center {
+    text-align: center;
+}
+
 .hidden {
     color: white;
     background-color: white;
 }
-
-/*This is called by JS to make buttons visible*/
 .visible {
     color: #000;
+}
+
+/* For media screen 548px and up */
+@media screen and (min-width: 548px) {
+    #main {
+        margin: 0 10rem;
+    }
+
+}
+
+/* For media screen 768px and up */
+@media screen and (min-width: 768px) {
+    #main {
+        margin: 0 10rem;
+    }
+
+}
+
+/* For media screen 920px and up */
+@media screen and (min-width: 920px) {
+    #main {
+        margin: 0 10rem;
+    }
+
+}
+
+/* For media screen 1024px and up */
+@media screen and (min-width: 1024px) {
+    #main {
+        margin: 0 30rem;
+    }
+
 }

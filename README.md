@@ -50,7 +50,7 @@ User stories:
 - User can choose to start the game.
 - User can give a name for the character.
 - User can read the story part, and choose from options what to do next.
-- User can see their previous decision.
+- User can see their previous decision. (This I decided to remove. Story is very short and easily replayable.)
 - User can end the game when they want.
 - User can choose to replay.
 - User can see items they have collected.
@@ -72,6 +72,7 @@ User stories:
 - Value given for the name box appears in story pages, but can´t be given by user.
 - As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
 - 2/7: Was going to add 3th option button, but decided not to. It would make code more complicated with little value to add. Changing story page order so that it doesnt matter *Fixed*
+- 
 - 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
 
