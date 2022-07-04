@@ -75,6 +75,7 @@ User stories:
 - 4/7: After adding some styling the option buttons wont disappear fully. Reason: Padding. Might have to ditch it all together.
 - Some story pages are too long and text overflows. To fix this some longer pages go to two pages. I add these to last of the list.
 - Depending of the button color and its's background color it may or may not be visible when having a empty a string of text. I want them to be invisible.
+- As fun as it is to have a lot of text in the buttons, it's not functional. Let buttons have one size, and shorten the long texts. Update: This really makes it obvious that there is an empty box. To solve this I have removed background color of the button, but to give a visual que for the user the text gets bigger when user hovers mouse over it.
 - 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
 
