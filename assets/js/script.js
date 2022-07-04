@@ -23,20 +23,20 @@ const myButtons1 = {
     option0 : "Go along the wall",
     option1 : "To labyrinth", 
     option2 : "Follow the labyrinth",
-    option3 : "Go to the center of the labyrinth",
+    option3 : "Go to the labyrinth center",
     option4 : "Inspect closer", 
     option5 : "Try to leave the garden",
     option6 : "Get closer to the old oak",
-    option7 : "Follow trail to the garden gate",
+    option7 : "Go to the garden gate",
     option8 : "Read the letters",
     option9 : "Get closer",
-    option10 : "This is too much.Run away"
+    option10 : "This is too much"
     };
 
 /*text options for button 2*/ 
 const myButtons2 = {
     option0 : "Go to the rose garden",
-    option1 : "No time to waste, go to center of labyrinth",
+    option1 : "Go to center of labyrinth",
     option2 : "Inspect the garden shed",
     option3 : "Go to garden gate",
     option4 : "Inspect closer",
@@ -44,7 +44,7 @@ const myButtons2 = {
     option6 : "Inspect the letters",
     option7 : "Lets go to garden gate",
     option8 : "Go to the pond",
-    option9 : "Follow the tracks to the pond",
+    option9 : "Follow the tracks",
     option10 : "Get closer",
     option11 : "Continue"
 };
