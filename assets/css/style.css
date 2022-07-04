@@ -26,9 +26,9 @@ header {
     justify-content: center;
     align-content: center;
     height: 3rem;
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-right: auto;
-    margin-bottom: 10rem;
+    margin-bottom: 1rem;
     margin-left: auto;
 }
 
@@ -37,12 +37,18 @@ button {
     font-family: 'Press Start 2P', sans-serif;
     border-style: hidden;
     margin: 5rem;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+button:hover {
+    color: #fff;
 }
 
 /* ID's in order of appearance */
 
 #game-div {
-    background-color: #fff;
+    background-color: rgb(214, 214, 214);
     border-style: dashed;
     border-width: 5px;
     display: flex-box;
