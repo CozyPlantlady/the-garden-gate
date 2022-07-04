@@ -7,15 +7,18 @@ const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
 let replay = 0;
 const nameBox = document.querySelector('#name-div');
-let playerName = document.querySelector('#player-name').value;
+const playerName = document.querySelector('#player-name');
+
 console.log(playerName);
+
+/* variables that trigger the final story piece*/
 let murderWeapon;
 let familiarFace;
 let labyrinthSecret;
 let trueEnding;
 
 
-/*options for button 1 */
+/*text options for button 1 */
 const myButtons1 = {
     option0 : "Go along the wall",
     option1 : "To labyrinth", 
@@ -30,7 +33,7 @@ const myButtons1 = {
     option10 : "This is too much.Run away"
     };
 
-/*options for button 2*/ 
+/*text options for button 2*/ 
 const myButtons2 = {
     option0 : "Go to the rose garden",
     option1 : "No time to waste, go to center of labyrinth",
@@ -46,9 +49,9 @@ const myButtons2 = {
     option11 : "Continue"
 };
 
-/*story pages */
+/*story pages. These could be moved to Json file later*/
 const myStory = {
-    page0 : `Welcome, ${playerName}. Place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
+    page0 : `The place where you come to your senses is an old gazebo. It's paint is peeling, and in the middle of the floor you see a faint stain. Chill goes through you. What has happened to you? It's time to investigate! You can follow the garden wall to the entrance, or go to rose garden near the gazebo.`,
     page1 : `You go along the garden wall. It's made of big stone blocks, and you should be able to easily get over it, or maybe through it now that you are a ghost. However, something seems to be holding you in the garden. You arrive to a clearing and see entrance to a labyrinth and a garden shed.`,
     page2 : `The rose garden is full of different roses, most just past their best bloom. Ground is covered with petals. You have a faint memory being here before, enjoying the flowers and having a picnic.You go through the garden and arrive to it's other end. You see an old oak and a  tiny pond glimmering in moonlight.`,
     page3 : `The labyrith is made of brick walls and bushes. It looks like it has been neglected, but someone has been here recently. You see tracks on the ground, like something heavy has been dragged to the labyrinth. Do you try to get to the centre of the labyrinth by following the trail, or do you just float through the walls?`,
@@ -73,8 +76,9 @@ const myStory = {
     page22 : `“I came here to read your letters, but your cousin Drew followed me. He drowned me. I have been waiting for you to come.”Agatha grabs your hand, and you feel peace flowing through you. At least you are not alone here.You dont mind the sun coming up, and you feel warmth as you both disappear from the sight.`,
     page23 : `You touch the gate and get violently pushed back to the garden. You try it couple of times, and same happens again. Something is holding you here, and you cant't leave before you know what it is. You still wait by the garden gate when the morning sun rises, and you disappear from the sight.`,
     page24 : `Then he dragged your body to the middle of the labyrinth, burying you to the shallow grave. But cousin Drew was superstitious, and had always been afraid of ghosts. That made him make some sort of spell to make sure your spirit, as well as Agathas, would stay in the garden...`,
-};  
-/**This function holds everything else inside of it. This is hopefully giving some structure. */
+}; 
+
+/*This function holds the game inside of it*/
 function gameFile(){
     console.log("Game loading...");
     let pageNumber = document.querySelector('#page-number');
@@ -84,20 +88,18 @@ function gameFile(){
     replay= 0;
     startScreen();
 
-    /**Create also a replayCounter when the other one works */
-    /**Most important function. It receives and updates the page number */
-
-    function pageCounter(bob){
-        let gamePage = `${bob}`;
+    /*Most important function. It receives and updates the page number */
+    function pageCounter(pagenumber){
+        let gamePage = `${pagenumber}`;
         pageNumber.textContent = gamePage;
         console.log("This is from counter: " +"Page Number" + pageNumber);
         document.querySelector("#page-number").innerText = pageNumber;
-
         return pageNumber;
     }
 
-    function replayTest(john){
-        let howManyTimesPlayed = `${john}`;
+    /*Counts how many times user has played */
+    function replayCounter(again){
+        let howManyTimesPlayed = `${again}`;
         Number.howManyTimesPlayed;
         replay.textContent = howManyTimesPlayed;
         document.querySelector("#replay-number").innerText = howManyTimesPlayed;
@@ -124,7 +126,7 @@ function gameFile(){
 
 
     /**This function uses the other functions to start the game. 
-    * Hide start button and make option buttons visible.
+    * Hides start button and makes option buttons visible.
     * Holds default text that goes inside button 1 and button 2 in start*/
     function startGame() {
         startBtn.classList.remove("visible");
@@ -133,7 +135,6 @@ function gameFile(){
         btn1.classList.add("visible");
         btn2.classList.remove("hidden");
         btn2.classList.add("visible");
-        nameBox.classList.add("hidden");
         let btn1NextText = myButtons1;
         let btn2NextText = myButtons2;
         btn1.textContent = btn1NextText.option0; 
@@ -141,18 +142,21 @@ function gameFile(){
         console.log("Game has started");
         changePage();
 
+        /*In most cases user chooses between left or right option button. They have different story text to show*/
         let buttonOption = Array.from(document.querySelectorAll('.option'));
         buttonOption.forEach(button => {
             if(!button)return;
             button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
             button.addEventListener("click",changePage);
-
         })
     }
 
-    
 
-    /*This function triggers when button on the left is clicked */
+    /**This function triggers when button on the left is clicked 
+     *How it works: function reads the current page number.
+     *It then gives the next page number and the button options visible 
+     on that page. When there is no button text to show it prints
+     an empty string*/
     function btnOneText(){
         let btn1NextText = myButtons1;
         let btn2NextText = myButtons2;
@@ -238,7 +242,11 @@ function gameFile(){
         console.log("Turning page now (1)");
     }          
    
-    /*This function triggers when button on the right is clicked */
+    /**This function triggers when button on the right is clicked 
+    *How it works: function reads the current page number.
+    *It then gives the next page number and the button options visible 
+    *on that page. When there is no button text to show it prints
+    *an empty string*/
     function btnTwoText(){
         let btn2NextText = myButtons2;
         let btn1NextText = myButtons1;
@@ -319,7 +327,9 @@ function gameFile(){
     }
             
 
-    /*This function moves story to the next chosen page*/
+    /**This function moves story to the next chosen page
+     * When it's the last page of a storyline, it starts theEnd function
+     * that lets the user to replay*/
     function changePage(){
         switch (pageNumber) {
             case 0:
@@ -410,7 +420,8 @@ function gameFile(){
     pageCounter(pageNumber);
     }
 
-
+    /**theEnd wraps up the game. If certain storypoints are met
+    it unlocks the final part of the story*/
     function theEnd(){
     btn1.classList.add("hidden");
     btn1.classList.remove("visible");
@@ -428,12 +439,11 @@ function gameFile(){
     }
     if (murderWeapon && familiarFace && labyrinthSecret === true){
         trueEnding = true;
-        alert("You found the secret ending! Head to the garden gate!")
+        alert("You unlocked the secret ending! Head to the garden gate!")
         pageNumber = 19;
     }
     ++replay;
-    replayTest(replay);
+    replayCounter(replay);
     startScreen();
-    console.log(replay + " is how many times you have played")
     }
 }
