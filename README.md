@@ -156,6 +156,16 @@ As a small touch I added favicon icon.
 - Safari browser shows several story pages at once. No known fix.
 - User gets an alert when they find a story point. However, these stack up and before the final ending they are receiving 4 different alerts each time they finish a story line. This could be fixed just by removing the alert, and change it to something else. Original idea was to show an item to symbolize the found story point.
 
+### Possible features to add
+- Choice to choose between dark and light color theme.
+- Json to hold all the text options. This would make code a lot cleaner, but I didn't have enough time to throw myself in to it.
+- Choice to choose another font for the text. Current font is a style choice, but another font would be easier to read.
+- Pixel art pictures for some story points
+- Pixel art background image, that would be mostly visibe in wider screens.
+- Instead of alerts show icons when certain story point is met. For example, Item is first visible in the story page and is then moved to a box under the story page to symbolise that user has earned something.
+- If nothing else, alert box could redone with style (and help of JQuery).
+
+
 ### Testing with code validators
 Tested with JSHint validator:
 
@@ -174,16 +184,6 @@ Tested with W3C CSS-validator:
 
 Tested with W3C markup-validator:
 - No mentionable issues
-
-
-### Possible features to add
-- Choice to choose between dark and light color theme.
-- Json to hold all the text options. This would make code a lot cleaner, but I didn't have enough time to throw myself in to it.
-- Choice to choose another font for the text. Current font is a style choice, but another font would be easier to read.
-- Pixel art pictures for some story points
-- Pixel art background image, that would be mostly visibe in wider screens.
-- Instead of alerts show icons when ceratin story point is met.
-
 
 ### DEPLOYMENT
 - Site was deployed to Github Pages.
