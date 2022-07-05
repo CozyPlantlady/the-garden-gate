@@ -22,8 +22,8 @@ body {
 }
 
 header {
-    display: flex-box;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     height: 3rem;
@@ -80,7 +80,7 @@ footer{
     background-color: rgb(214, 214, 214);
     border-style: dashed;
     border-width: 5px;
-    display: flex-box;
+    display: flex;
     flex-wrap: wrap;
     height: 40rem;
     max-width: 35rem;
@@ -91,9 +91,9 @@ footer{
 }
 
 #button-box, #start-button-box {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 #story {
@@ -114,8 +114,8 @@ footer{
     margin-right: auto;
     width: 35rem;
     height: auto;
-    display: flexbox;
-    flex:content;
+    display: flex;
+    flex-direction: column;
 }
 
 #disclaimer {
@@ -144,36 +144,4 @@ footer{
 }
 .visible {
     color: #000;
-}
-
-/* For media screen 548px and up */
-@media screen and (min-width: 548px) {
-    #main {
-        margin: 0 10rem;
-    }
-
-}
-
-/* For media screen 768px and up */
-@media screen and (min-width: 768px) {
-    #main {
-        margin: 0 10rem;
-    }
-
-}
-
-/* For media screen 920px and up */
-@media screen and (min-width: 920px) {
-    #main {
-        margin: 0 10rem;
-    }
-
-}
-
-/* For media screen 1024px and up */
-@media screen and (min-width: 1024px) {
-    #main {
-        margin: 0 30rem;
-    }
-
 }

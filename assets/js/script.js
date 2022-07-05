@@ -5,7 +5,6 @@ const btn1 = document.querySelector('#btn1');
 const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
-let replay = 0;
 let playerName = document.querySelector('#player-name').value;
 
 /* variables that trigger the final story piece*/
@@ -157,7 +156,7 @@ function gameFile(){
             if(!button)return;
             button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
             button.addEventListener("click",changePage);
-        })
+        });
     }
 
 
@@ -311,7 +310,7 @@ function gameFile(){
                 pageNumber = 21;
                 break;
             case 11:
-                btn1.textContent = ""
+                btn1.textContent = "";
                 btn2.textContent = myButtons2.option11;
                 pageNumber = 23;
                 break;
@@ -337,13 +336,14 @@ function gameFile(){
                 break;
             case 15:
                 btn1.textContent = "";
-                btn2.textContent = btn1NextText.option11;;
+                btn2.textContent = btn1NextText.option11;
                 pageNumber = 16;
                 break;
             case 16:
                 btn1.textContent = "";
                 btn2.textContent = "";
                 pageNumber = 22;
+                break;
             default:
                 btn2.textContent = "Error. Please refresh the page.";
         }
@@ -456,20 +456,20 @@ function gameFile(){
     btn1.classList.add("hidden");
     btn1.classList.remove("visible");
     btn2.classList.add("hidden");
-    btn2.classList.remove("visible")
-    startBtn.classList.add("visible")
+    btn2.classList.remove("visible");
+    startBtn.classList.add("visible");
     if (murderWeapon === true){
         alert("You discovered the murder weapon!");
     }
     if (familiarFace === true){
-        alert("You found the reason you came here!")
+        alert("You found the reason you came here!");
     }
     if (labyrinthSecret === true){
-        alert("You found the murderer!")
+        alert("You found the murderer!");
     }
     if (murderWeapon && familiarFace && labyrinthSecret === true){
         trueEnding = true;
-        alert("You unlocked the secret ending! Head to the garden gate!")
+        alert("You unlocked the secret ending! Head to the garden gate!");
     }
     ++replay;
     replayCounter(replay);

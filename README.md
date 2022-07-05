@@ -78,7 +78,7 @@ When game is started it shows two option buttons. Sometimes only one option is v
 
 When the story line has come to an end user can choose to replay. Replay adds to a replay counter (No other function) and it's inmpossible to get the final ending without replaying.
 
-![](assets/images/readme-tgg5.jpeg "")
+![](assets/images/readmetgg5.jpeg "")
 
 When special story point is found user gets an alert.
 
@@ -96,32 +96,29 @@ Fonts: Press Start 2P from Google Fonts
 
 
 ## TESTING
-User stories:
-### User can choose to start the game.
-#### User Stories:
 
-User can start the game: 
+### User Stories:
+
+#### User can start the game: 
 - Click the "Start the story" button in the main page
 
-User can give a name for the character.
+#### User can give a name for the character.
 - User can write the name they want to use to the name field, and submit it. *This feature is currntly replaced by default name, Willow*
 
-User can read the story part, and choose from options what to do next.
+#### User can read the story part, and choose from options what to do next.
 - When game is started, user can see the story page and two (or one) option buttons under it. User can click one to go forward in the story.
 
-User can get more information about the game.
+#### User can get more information about the game.
 - Click "info", or scroll down the page to come to info section.
 
-User can see their previous decision.
+#### User can see their previous decision.
 - *This feature is removed.*
 
-User can end the game when they want.
+#### User can end the game when they want.
 - *This feature is removed. Story is very short.*
 
-User can choose to replay.
+#### User can choose to replay.
 - After story line has ended, "Play again?" text appears. By clicking it user goes back to the beginning of the story. Each replay adds to the counter, and if user has found one or more of the three special endings those stay in memory. When all three endings are found the final ending is unlocked.
-
-
 
 ### Bugs and other issues:
 - Had problems with start button function that was purely JS. Changed the start-button from being JS to be in HTML instead. *Fixed*
@@ -148,6 +145,20 @@ User can choose to replay.
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose. These is main problem when playing.
 - Safari browser shows several story pages at once. No known fix.
 
+### Testing with code validators
+Tested with JSHint validator:
+
+![](assets/images/readme-jshint.jpeg "")
+
+- First warning comes from replayCounter function, and it should turn array to a number, that function can use.
+- Second warning is coming from buttonOption array. This notices if it's left or right button that gets clicked, and moves forward to either btnOneText or btnTwoText accordingly. I didn't find any problem with this part of the code.
+
+- Unused variable "replay" removed.
+
+- Other small bugs, like forgotten colons, fixed.
+
+Validators I used:
+JSHint https://jshint.com
 
 ### Possible features to add
 - Choice to choose between dark and light color theme.
@@ -178,17 +189,17 @@ User can choose to replay.
 
 
 #### Other things I used while doing this page:
-- Use JavaScript to get value from textbox and display on the page https://www.youtube.com/watch?v=aEj0Wu33hJM
 
--Choose your own story builder (used in this project only to visualize the road map)
+Twinery
+- Choose your own story builder (used in this project only to visualize the road map)
 https://twinery.org/
 
-- Balsamiq wireframes
+Balsamiq wireframes
 
--Favicon converter
+Favicon converter
 https://favicon.io/favicon-converter/
 
--Pixel art page and tool
+Pixel art page and tool
 https://www.pixilart.com/
 
 ## Thank you for reading!
