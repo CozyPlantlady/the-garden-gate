@@ -1,10 +1,12 @@
 # The Garden Gate - Interactive story
+In this README-file I'm using both the words "game" and "story" to talk about same project.
+The Garden Gate is original work written by creator.
 
 ## Strategy
-This game is Choose your own adventure- type of story.  Player can choose to play only one story line or, if replayed, unlock the final story. This game is for fun, but has some darkes themes and is not suitable for young players. 
+This game is Choose your own adventure- type of story. User can choose to play only one story line or, if replayed, unlock the final story. This game is for fun, but has some darker themes (death) and hence is not suitable for younger audience. 
 
 ## Scope
-Since the project can't be too large I choose to make a limited amount of story lines and make the game re-playable. To Make this sort of text-heavy game I have been advised to make use Of JSon, and will add most of the text on a separate file to be called on.
+Since the project can't be too large I choose to make a limited amount of story lines and make the game re-playable. To make this sort of text-heavy game I have been advised to make use Of JSon, but didn´t have perfect time to get comfortable with it.
 
 ### User goals:
 What is their goal? What problem does this product or feature solve for them?
@@ -14,16 +16,21 @@ What is their goal? What problem does this product or feature solve for them?
 - User can start the game.
 - User can give a name for the character.
 - User can read the story part, and choose from options what to do next.
+- User can get more information about the game.
 - User can end the game when they want.
 - User can choose to replay.
-- User can see items they have collected.
 
 ## Structure
 
 ### Structure of the site
+Original plan for the site
 ![](assets/images/readme-sitemap.jpeg "")
+Before the project started I had a clear image on what the game should look like, but since the amount of time is limited it was most important to concentrate to make a working game before adding any extra features. Because of this the first features are: The story box that shows the text, and two buttons to choose and change the page. I also added "start" button that changes to a "replay" button.
 ### Structure of the game
 ![](assets/images/readme-story-roadmap.jpeg "")
+I was very confident with how the story needs to go, but once I started to code I faced some limitations. Most importantly, the longer text sections needed to be in two pages, and final ending needed to be triggered right way. 
+![](assets/images/readme-story-roadmap-numbered-altered.jpeg "")
+
 
 
 ## Skeleton:
@@ -47,13 +54,17 @@ Fonts: Press Start 2P from Google Fonts
 
 ## TESTING
 User stories:
-- User can choose to start the game.
+### User can choose to start the game.
+#### User Stories:
+
+- User can start the game by clicking the "Start Game button in the main page"
 - User can give a name for the character.
 - User can read the story part, and choose from options what to do next.
+- User can get more information about the game.
 - User can see their previous decision. (This feature is removed. Story is very short and easily replayable.)
 - User can end the game when they want.(This feature is removed. Story is very short and easily replayable.)
 - User can choose to replay.
-- User can see items they have collected.
+
 
 ### Bugs and other issues:
 - Had problems with start button function that was purely JS. Changed the start-button from being JS to be in HTML instead. *Fixed*
