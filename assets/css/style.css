@@ -63,6 +63,7 @@ footer{
     text-align:end;
     padding: 1rem;
 }
+
 #game-div {
     background-color: rgb(214, 214, 214);
     border-style: dashed;
@@ -70,8 +71,8 @@ footer{
     display: flex-box;
     flex-wrap: wrap;
     height: 40rem;
-    width: 35rem;
-    margin-top: 1rem;
+    max-width: 35rem;
+    margin-top: 15rem;
     margin-right: auto;
     margin-bottom: 1rem;
     margin-left: auto;
@@ -107,6 +108,13 @@ footer{
 
 #disclaimer {
     font-weight: 600;
+}
+
+#name-div {
+    padding: 1rem;
+    background-color: #999;
+    max-width: 35rem;
+    height: auto;
 }
 
 /*Classes in alphabetical order*/

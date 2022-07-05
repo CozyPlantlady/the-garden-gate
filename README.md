@@ -72,10 +72,10 @@ User stories:
 - Value given for the name box appears in story pages, but can´t be given by user.
 - As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
 - 2/7: Was going to add 3th option button, but decided not to. It would make code more complicated with little value to add. Changing story page order so that it doesnt matter *Fixed*
-- 4/7: After adding some styling the option buttons wont disappear fully. Reason: Padding. Might have to ditch it all together.
-- Some story pages are too long and text overflows. To fix this some longer pages go to two pages. I add these to last of the list.
-- Depending of the button color and its's background color it may or may not be visible when having a empty a string of text. I want them to be invisible.
-- As fun as it is to have a lot of text in the buttons, it's not functional. Let buttons have one size, and shorten the long texts. Update: This really makes it obvious that there is an empty box. To solve this I have removed background color of the button, but to give a visual que for the user the text gets bigger when user hovers mouse over it.
+- 4/7: After adding some styling the option buttons wont disappear fully. Reason: Padding. Might have to ditch it all together. *Fixed*
+- Some story pages are too long and text overflows. To fix this some longer pages go to two pages. I add these to last of the list. *Fixed*
+- Depending of the button color and its's background color it may or may not be visible when having a empty a string of text. I want them to be invisible. *Fixed*
+- As fun as it is to have a lot of text in the buttons, it's not functional. Let buttons have one size, and shorten the long texts. Update: This really makes it obvious that there is an empty box. To solve this I have removed background color of the button, but to give a visual que for the user the text gets bigger when user hovers mouse over it. *Fixed*
 - 
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
 

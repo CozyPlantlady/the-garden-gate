@@ -6,8 +6,7 @@ const btn2 = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
 let replay = 0;
-const nameBox = document.querySelector('#name-div');
-
+let playerName = document.querySelector('#player-name').value;
 
 /* variables that trigger the final story piece*/
 let murderWeapon;
@@ -85,20 +84,18 @@ function gameFile(){
     pageNumber = 0;
     let replay = document.querySelector("#replay-number");
     replay= 0;
+    startScreen();
+    /*btnName.addEventListener('click', nameGetter); */
     
-    btnName.addEventListener('click', nameGetter);
-    
-
-    /*Get the name user have chosen and use it in the game*/
+    /*Get the name user have chosen and use it in the game
     function nameGetter(){
-        let userName = document.getElementById('#player-name');
+        let userName = document.querySelector('#player-name');
         let playerName;
-        playerName.innerText = userName.textContent;
-        console.log(userName);
-        console.log(playerName);
-        startScreen();
-    }
-
+        playerName.textContent = userName.value;
+        console.log(playerName.value);
+        if (playerName === true){
+            startScreen()};
+    // }  */
 
     /*Most important function. It receives and updates the page number */
     function pageCounter(pagenumber){
