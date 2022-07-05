@@ -1,4 +1,7 @@
 # The Garden Gate - Interactive story
+
+![](assets/images/readme-screens3.jpeg.png "")
+
 In this README-file I'm using both the words "game" and "story" to talk about same project.
 The Garden Gate is original work written by creator.
 
@@ -24,19 +27,56 @@ What is their goal? What problem does this product or feature solve for them?
 
 ### Structure of the site
 Original plan for the site
+
 ![](assets/images/readme-sitemap.jpeg "")
+
 Before the project started I had a clear image on what the game should look like, but since the amount of time is limited it was most important to concentrate to make a working game before adding any extra features. Because of this the first features are: The story box that shows the text, and two buttons to choose and change the page. I also added "start" button that changes to a "replay" button.
+
 ### Structure of the game
+
+#### Before
 ![](assets/images/readme-story-roadmap.jpeg "")
-I was very confident with how the story needs to go, but once I started to code I faced some limitations. Most importantly, the longer text sections needed to be in two pages, and final ending needed to be triggered right way. 
+
+#### After
 ![](assets/images/readme-story-roadmap-numbered-altered.jpeg "")
 
+I was very confident with how the story needs to go, but once I started to code I faced some limitations. Most importantly, the longer text sections needed to be in two pages, and final ending needed to be triggered right way. In all honesty, this makes the flow of the code confusing and caused some unnecessary bugs. However, I decided to go with it since time was limited. In the future, if I'm doing similar project, I know to plan ahead and set a chracter limit for a page before hand.
 
 
 ## Skeleton:
-
+### Original plans
 ![](assets/images/readme-screens1.jpeg "")
 ![](assets/images/readme-screens2.jpeg "")
+
+### Final product
+#### Main
+![](assets/images/readme-tgg1.jpeg "")
+
+In the main part of the screen we have
+- Header, that has the name of the page.
+- By clicking info, page scrolls to the button where info text is. 
+- Info-text changes color and size when user hovers mouse over it, to indicate it is clickable.
+- Story box, where the story will be shown
+- Start button, that starts the game
+
+#### Replay, Info and Footer
+![](assets/images/readme-tgg2.jpeg "")
+
+- Replay counter shows the amount of times user has replayed the game without refreshing.
+- Disclaimer and other info for the user to see. Info button from top of the screen connects here.
+- Name option: Player can give a name they want that will be used in the story.
+- Go back up: scrolls back to the top of the page.
+- Footer text has name of the creator
+
+#### During the game
+![](assets/images/readme-tgg3.jpeg "")
+
+When game is started it shows two option buttons. Sometimes only one option is visible.
+
+#### Replay
+![](assets/images/readme-tgg4.jpeg "")
+
+When the story line has come to an end user can choose to replay. Replay adds to a replay counter (No other function) and it's inmpossible to get the final ending without replaying.
 
 
 ## Surface:
