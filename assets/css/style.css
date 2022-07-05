@@ -71,8 +71,9 @@ footer{
 /* ID's in order of appearance */
 
 #header-info{
-    text-align:end;
+    text-align:center;
     padding: 1rem;
+    color:#555;
 }
 
 #game-div {
