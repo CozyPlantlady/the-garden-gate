@@ -42,7 +42,6 @@ Before the project started I had a clear image on what the game should look like
 
 I was very confident with how the story needs to go, but once I started to code I faced some limitations. Most importantly, the longer text sections needed to be in two pages, and final ending needed to be triggered right way. In all honesty, this makes the flow of the code confusing and caused some unnecessary bugs. However, I decided to go with it since time was limited. In the future, if I'm doing similar project, I know to plan ahead and set a chracter limit for a page before hand.
 
-
 ## Skeleton:
 ### Original plans
 ![](assets/images/readme-screens1.jpeg "")
@@ -78,25 +77,30 @@ When game is started it shows two option buttons. Sometimes only one option is v
 
 When the story line has come to an end user can choose to replay. Replay adds to a replay counter (No other function) and it's inmpossible to get the final ending without replaying.
 
-![](assets/images/readmetgg5.jpeg "")
+![](assets/images/readme-tgg5.jpeg "")
 
 When special story point is found user gets an alert.
 
+### A word about media queries
+When this project started I had media queries waiting for me to use them, but in the end this page became so simple that there was no need to use them. So, media queries have been removed from this project.
+I could have made a bigger story screen for bigger screens, or used something to fill the background but I believe that would not have served any purpose. Even more so, it would have changed the mood of the page.
+
 ## Surface:
 Style: 
-I wanted this small game to have old school Nintendo gameboy feeling, 
+- I wanted this small game to have old school Nintendo gameboy feeling, 
 mixed with "choose your own adventure"-type of text adventure mixed with gothic romance horror story.
-The style would be visible in the background, and the "game screen" would be mostly white.
+- The style could be visible in the background, and the "game screen" would be mostly white.
 - For the sake of hiding the buttons when there is no text option available the chosen border style is "hidden". This is not the best option when thinking accessability, but on my current skill set it was the way I chose to do things.
 
 Colors: Black, white and gray tones. Nothing fancy here.
 
 Fonts: Press Start 2P from Google Fonts
+
 ![](assets/images/readme-font.jpeg "")
 
 As a small touch I added favicon icon.
 
-![][assets/images/readme-faviconflower.jpeg "")
+![](assets/images/readme-favicon-flower.png "")
 
 
 ## TESTING
@@ -144,10 +148,13 @@ As a small touch I added favicon icon.
 - Some story pages are too long and text overflows. To fix this some longer pages go to two pages. I add these to last of the list. *Fixed*
 - Depending of the button color and its's background color it may or may not be visible when having a empty a string of text. I want them to be invisible. *Fixed*
 - As fun as it is to have a lot of text in the buttons, it's not functional. Let buttons have one size, and shorten the long texts. Update: This really makes it obvious that there is an empty box. To solve this I have removed background color of the button, but to give a visual que for the user the text gets bigger when user hovers mouse over it. *Fixed*
-- 
-- Value given for the name box appears in story pages, but can´t be given by user. Update: Not fixed. Game is currently reading a hidden value to show a name.
+
+
+### Not fixed
+- Value given for the name box appears in story pages, but can´t be given by user. Update: Not fixed. Game is currently reading a set value to show a name (Willow).
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose. These is main problem when playing.
 - Safari browser shows several story pages at once. No known fix.
+- User gets an alert when they find a story point. However, these stack up and before the final ending they are receiving 4 different alerts each time they finish a story line. This could be fixed just by removing the alert, and change it to something else. Original idea was to show an item to symbolize the found story point.
 
 ### Testing with code validators
 Tested with JSHint validator:
@@ -168,16 +175,14 @@ Tested with W3C CSS-validator:
 Tested with W3C markup-validator:
 - No mentionable issues
 
-Validators I used:
-JSHint https://jshint.com
-W3C CSS-validator https://jigsaw.w3.org/css-validator/
 
 ### Possible features to add
 - Choice to choose between dark and light color theme.
 - Json to hold all the text options. This would make code a lot cleaner, but I didn't have enough time to throw myself in to it.
-- Choice to choose another font for the text. Current font is a style choice, but another font would be eaiser to read.
+- Choice to choose another font for the text. Current font is a style choice, but another font would be easier to read.
 - Pixel art pictures for some story points
-
+- Pixel art background image, that would be mostly visibe in wider screens.
+- Instead of alerts show icons when ceratin story point is met.
 
 
 ### DEPLOYMENT
@@ -186,32 +191,35 @@ W3C CSS-validator https://jigsaw.w3.org/css-validator/
 - On the leftside of the page there is Pages.
 - Choose the Main branch
 - Site will be published.
-- This site is published at: 
+- This site is published at: https://cozyplantlady.github.io/the-garden-gate/
 
+
+
+## CREDITS
 ### Inspiration:
-- Interactive fiction (https://en.wikipedia.org/wiki/Interactive_fiction)
-- Text adventures
-- Choose your own adventure-books (https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure)
-- Zero Escape- game series (https://en.wikipedia.org/wiki/Zero_Escape)
+[Interactive fiction](https://en.wikipedia.org/wiki/Interactive_fiction)
 
-### CREDITS
-- People:
-- Media:
-- Codes from other sources:
+Text adventures
 
+[Choose your own adventure-books](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure)
 
-#### Other things I used while doing this page:
+[Zero Escape- game series](https://en.wikipedia.org/wiki/Zero_Escape)
 
-Twinery
-- Choose your own story builder (used in this project only to visualize the road map)
-https://twinery.org/
+### Validators:
+[JSHint](https://jshint.com)
+
+[W3C CSS-validator](https://jigsaw.w3.org/css-validator/)
+
+### Other things I used while coding this game:
+[Twinery](https://twinery.org/)
+-Choose your own story builder. In this project it was used purely to visualize the roadmap, but YOU could build your own story easily with this.
 
 Balsamiq wireframes
 
-Favicon converter
-https://favicon.io/favicon-converter/
-
+[Pixilart](https://www.pixilart.com/)
 Pixel art page and tool
-https://www.pixilart.com/
+
+[Favicon converter](https://favicon.io/favicon-converter/)
+To turn your pixel art to favicon
 
 ## Thank you for reading!
