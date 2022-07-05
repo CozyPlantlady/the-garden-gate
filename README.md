@@ -92,7 +92,11 @@ The style would be visible in the background, and the "game screen" would be mos
 Colors: Black, white and gray tones. Nothing fancy here.
 
 Fonts: Press Start 2P from Google Fonts
-- ![](assets/images/readme-font.jpeg "")
+![](assets/images/readme-font.jpeg "")
+
+As a small touch I added favicon icon.
+
+![][assets/images/readme-faviconflower.jpeg "")
 
 
 ## TESTING
@@ -150,15 +154,23 @@ Tested with JSHint validator:
 
 ![](assets/images/readme-jshint.jpeg "")
 
-- First warning comes from replayCounter function, and it should turn array to a number, that function can use.
+- First warning comes from replayCounter function, and it should turn array to a number, that function can use. 
 - Second warning is coming from buttonOption array. This notices if it's left or right button that gets clicked, and moves forward to either btnOneText or btnTwoText accordingly. I didn't find any problem with this part of the code.
 
 - Unused variable "replay" removed.
 
 - Other small bugs, like forgotten colons, fixed.
 
+Tested with W3C CSS-validator:
+- Found bugs fixed.
+- Validator gives a warning about .hidden class, since it has both white text and white background. However, this is the whole point.
+
+Tested with W3C markup-validator:
+- No mentionable issues
+
 Validators I used:
 JSHint https://jshint.com
+W3C CSS-validator https://jigsaw.w3.org/css-validator/
 
 ### Possible features to add
 - Choice to choose between dark and light color theme.
