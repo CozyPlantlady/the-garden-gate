@@ -48,8 +48,21 @@ button:hover {
     font-size: 1.4rem;
 }
 
+p {
+    margin-top: 1rem;
+}
+footer{
+    height: 50rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
 /* ID's in order of appearance */
 
+#header-info{
+    text-align:end;
+    padding: 1rem;
+}
 #game-div {
     background-color: rgb(214, 214, 214);
     border-style: dashed;
@@ -79,6 +92,21 @@ button:hover {
 
 #replay-div {
     margin-top: 20rem;
+}
+
+#info {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35rem;
+    height: auto;
+    display: flexbox;
+    flex:content;
+}
+
+#disclaimer {
+    font-weight: 600;
 }
 
 /*Classes in alphabetical order*/

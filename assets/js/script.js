@@ -8,6 +8,7 @@ const startBtn = document.querySelector('#start-button');
 let replay = 0;
 const nameBox = document.querySelector('#name-div');
 
+
 /* variables that trigger the final story piece*/
 let murderWeapon;
 let familiarFace;
@@ -84,6 +85,7 @@ function gameFile(){
     pageNumber = 0;
     let replay = document.querySelector("#replay-number");
     replay= 0;
+    
     btnName.addEventListener('click', nameGetter);
     
 
@@ -91,7 +93,7 @@ function gameFile(){
     function nameGetter(){
         let userName = document.getElementById('#player-name');
         let playerName;
-        playerName.textContent = userName.textContent;
+        playerName.innerText = userName.textContent;
         console.log(userName);
         console.log(playerName);
         startScreen();
