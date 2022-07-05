@@ -308,6 +308,11 @@ function gameFile(){
                 btn1.textContent = "";
                 btn2.textContent = ""; 
                 pageNumber = 11;
+                if (TrueEnding === true){
+                    btn1.textContent = btn1NextText.option5;
+                    btn2.textContent = ""; 
+                    pageNumber = 19;
+                }
                 break;
             case 13:
                 btn1.textContent = btn1NextText.option5;
