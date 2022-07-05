@@ -78,6 +78,9 @@ When game is started it shows two option buttons. Sometimes only one option is v
 
 When the story line has come to an end user can choose to replay. Replay adds to a replay counter (No other function) and it's inmpossible to get the final ending without replaying.
 
+![](assets/images/readme-tgg5.jpeg "")
+
+When special story point is found user gets an alert.
 
 ## Surface:
 Style: 
@@ -97,13 +100,27 @@ User stories:
 ### User can choose to start the game.
 #### User Stories:
 
-- User can start the game by clicking the "Start Game button in the main page"
-- User can give a name for the character.
-- User can read the story part, and choose from options what to do next.
-- User can get more information about the game.
-- User can see their previous decision. (This feature is removed. Story is very short and easily replayable.)
-- User can end the game when they want.(This feature is removed. Story is very short and easily replayable.)
-- User can choose to replay.
+User can start the game: 
+- Click the "Start the story" button in the main page
+
+User can give a name for the character.
+- User can write the name they want to use to the name field, and submit it. *This feature is currntly replaced by default name, Willow*
+
+User can read the story part, and choose from options what to do next.
+- When game is started, user can see the story page and two (or one) option buttons under it. User can click one to go forward in the story.
+
+User can get more information about the game.
+- Click "info", or scroll down the page to come to info section.
+
+User can see their previous decision.
+- *This feature is removed.*
+
+User can end the game when they want.
+- *This feature is removed. Story is very short.*
+
+User can choose to replay.
+- After story line has ended, "Play again?" text appears. By clicking it user goes back to the beginning of the story. Each replay adds to the counter, and if user has found one or more of the three special endings those stay in memory. When all three endings are found the final ending is unlocked.
+
 
 
 ### Bugs and other issues:
@@ -120,7 +137,6 @@ User stories:
 - 1/7: When replayed, you have to click one extra time for screen to refresh (Text getting to page zero and option buttons to appear). Solution: Function theEnd had unnecessary event listener *Fixed*
 - Replay counter shows Nan instead of a number. *Fixed*
 - Quick reminder for myself to never name name just name *Fixed*
-- Value given for the name box appears in story pages, but can´t be given by user.
 - As I got page number showing properly on it's own it felt unnecessary. I shall remove it. *Fixed*
 - 2/7: Was going to add 3th option button, but decided not to. It would make code more complicated with little value to add. Changing story page order so that it doesnt matter *Fixed*
 - 4/7: After adding some styling the option buttons wont disappear fully. Reason: Padding. Might have to ditch it all together. *Fixed*
@@ -128,7 +144,9 @@ User stories:
 - Depending of the button color and its's background color it may or may not be visible when having a empty a string of text. I want them to be invisible. *Fixed*
 - As fun as it is to have a lot of text in the buttons, it's not functional. Let buttons have one size, and shorten the long texts. Update: This really makes it obvious that there is an empty box. To solve this I have removed background color of the button, but to give a visual que for the user the text gets bigger when user hovers mouse over it. *Fixed*
 - 
-- Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose.
+- Value given for the name box appears in story pages, but can´t be given by user. Update: Not fixed. Game is currently reading a hidden value to show a name.
+- Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose. These is main problem when playing.
+- Safari browser shows several story pages at once. No known fix.
 
 
 ### Possible features to add
