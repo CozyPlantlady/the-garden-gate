@@ -1,11 +1,15 @@
-document.addEventListener("DOMContentLoaded", gameFile());
-
 /*HTML elements*/
 const leftOption = document.querySelector('#btn1');
 const rightOption = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
+let pageNumber = document.querySelector('#page-number');
+let replay = document.querySelector("#replay-number");
+const btnName = document.querySelector("#name-button");
+const form = document.querySelector("#name-form");
+let playerNameInput = document.querySelector('#player-name-input');
+let playerName = "";
+playerName.textContent = playerNameInput.value;
 const startBtn = document.querySelector('#start-button');
-let playerName = document.querySelector('#player-name');
 
 
 /* variables that trigger the final story piece*/
@@ -14,6 +18,7 @@ let familiarFace;
 let labyrinthSecret;
 let trueEnding;
 
+document.addEventListener("DOMContentLoaded", gameFile());
 
 /*text options for button 1 */
 const myButtons1 = {
@@ -79,401 +84,400 @@ const myStory = {
 /*This function holds the game inside of it*/
 function gameFile(){
     console.log("Game loading...");
-
-    let pageNumber = document.querySelector('#page-number');
     pageNumber.classList.add("hidden");
     pageNumber = 0;
-    let replay = document.querySelector("#replay-number");
-    replay= 0;
+    replay= 0;;
+    form.addEventListener('submit', nameGetter);
+} 
+
+/* Get the name user have chosen and use it in the game */
+function nameGetter(event){
+    event.preventDefault();
+    playerName = playerNameInput.value;
+    console.log(playerName);
+    console.log(playerNameInput.value);
+    form.classList.add("hidden");
     startScreen();
-    btnName.addEventListener('click', nameGetter);
-    
-    /* Get the name user have chosen and use it in the game */
-    function nameGetter(){
-        let userName = document.querySelector('#player-name');
-        playerName.textContent = userName.value;
-        console.log(playerName);
-        if (playerName === true){
-            startScreen()};
-        return;
-    } 
+    return playerName;
+}
 
-    /*Most important function. It receives and updates the page number */
-    function pageCounter(pagenumber){
-        let gamePage = `${pagenumber}`;
-        pageNumber.textContent = gamePage;
-        console.log("This is from counter: " +"Page Number" + pageNumber);
-        document.querySelector("#page-number").innerText = pageNumber;
-        return pageNumber;
+/*Most important function. It receives and updates the page number */
+function pageCounter(pagenumber){
+    let gamePage = `${pagenumber}`;
+    pageNumber.textContent = gamePage;
+    console.log("This is from counter: " +"Page Number" + pageNumber);
+    document.querySelector("#page-number").innerText = pageNumber;
+    return pageNumber;
+}
+
+/*Counts how many times user has played */
+function replayCounter(playAgain){
+    let howManyTimesPlayed = `${playAgain}`;
+    Number.howManyTimesPlayed;
+    replay.textContent = howManyTimesPlayed;
+    document.querySelector("#replay-number").innerText = howManyTimesPlayed;
+    console.log("This is from counter: " + "replay " + replay);
+    return replay;
+}
+
+
+/** Start button is visible only when the game is not started.
+* pageCounter sets the starting point */
+function startScreen() {
+    pageNumber = 0;
+    pageCounter(pageNumber);
+    if (replay === 0){
+        startBtn.innerHTML = "Start the story";
+    } else {
+        startBtn.innerHTML = "Play again?";
     }
+    startBtn.addEventListener('click', startGame);
+    return;
+}
 
-    /*Counts how many times user has played */
-    function replayCounter(playAgain){
-        let howManyTimesPlayed = `${playAgain}`;
-        Number.howManyTimesPlayed;
-        replay.textContent = howManyTimesPlayed;
-        document.querySelector("#replay-number").innerText = howManyTimesPlayed;
-        console.log("This is from counter: " + "replay " + replay);
-        return replay;
-    }
+/**This function uses the other functions to start the game. 
+* Hides start button and makes option buttons visible.
+* Holds default text that goes inside button 1 and button 2 in start*/
+function startGame() {
+    startBtn.classList.remove("visible");
+    startBtn.classList.add("hidden");
+    leftOption.classList.remove("hidden");
+    leftOption.classList.add("visible");
+    rightOption.classList.remove("hidden");
+    rightOption.classList.add("visible");
+    let leftNext = myButtons1;
+    let rightNext = myButtons2;
+    leftOption.textContent = leftNext.option0; 
+    rightOption.textContent = rightNext.option0;
+    console.log("Game has started");
+    changePage();
 
-
-    /** Start button is visible only when the game is not started.
-     * pageCounter sets the starting point */
-    function startScreen() {
-        pageNumber = 0;
-        pageCounter(pageNumber);
-
-        if (replay === 0){
-            startBtn.innerHTML = "Start the story";
-        } else {
-            startBtn.innerHTML = "Play again?";
-        }
-        startBtn.addEventListener('click', startGame);
-        return;
-    }
-
-
-    /**This function uses the other functions to start the game. 
-    * Hides start button and makes option buttons visible.
-    * Holds default text that goes inside button 1 and button 2 in start*/
-    function startGame() {
-        startBtn.classList.remove("visible");
-        startBtn.classList.add("hidden");
-        leftOption.classList.remove("hidden");
-        leftOption.classList.add("visible");
-        rightOption.classList.remove("hidden");
-        rightOption.classList.add("visible");
-        le= leftNext = myButtons1;
-        let rightNext = myButtons2;
-        leftOption.textContent = leftNext.option0; 
-        rightOption.textContent = rightNext.option0;
-        console.log("Game has started");
-        changePage();
-
-        /*In most cases user chooses between left or right option button. They have different story text to show*/
-        let buttonOption = Array.from(document.querySelectorAll('.option'));
-        buttonOption.forEach(button => {
-            if(!button)return;
-            button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
-            button.addEventListener("click",changePage);
-        });
-    }
+    /*In most cases user chooses between left or right option button. They have different story text to show*/
+    let buttonOption = Array.from(document.querySelectorAll('.option'));
+    buttonOption.forEach(button => {
+        if(!button)return;
+        button.id === "btn1" ? button.addEventListener("click", btnOneText) : button.addEventListener("click", btnTwoText);
+        button.addEventListener("click",changePage);
+    });
+}
 
 
-    /**This function triggers when button on the left is clicked 
-     *How it works: function reads the current page number.
-     *It then gives the next page number and the button options visible 
-     on that page. When there is no button text to show it prints
-     an empty string*/
-    function btnOneText(){
-        le= leftNext = myButtons1;
-        let rightNext = myButtons2;
-        switch (pageNumber) {
-            case 0:
-                leftOption.textContent = leftNext.option1; 
-                rightOption.textContent = rightNext.option2;
-                pageNumber = 1;
-                break;
-            case 1:
-                leftOption.textContent = leftNext.option2;
-                rightOption.textContent = rightNext.option1; 
-                pageNumber = 3;
-                break;
-            case 2:
-                leftOption.textContent = leftNext.option7;
-                rightOption.textContent = rightNext.option6; 
-                pageNumber = 6;
-                break;
-            case 3:
-                leftOption.textContent = leftNext.option3;
-                rightOption.textContent = ""; 
-                pageNumber = 8;
-                break;
-            case 4:
-                leftOption.textContent = "";
-                rightOption.textContent = ""; 
-                pageNumber = 10;
-                break;
-            case 5:
+/**This function triggers when button on the left is clicked 
+*How it works: function reads the current page number.
+*It then gives the next page number and the button options visible 
+on that page. When there is no button text to show it prints
+an empty string*/
+function btnOneText(){
+    let leftNext = myButtons1;
+    let rightNext = myButtons2;
+    switch (pageNumber) {
+        default:
+            leftOption.textContent = "";
+            rightOption.textContent = "";
+            break;
+        case 0:
+            leftOption.textContent = leftNext.option1; 
+            rightOption.textContent = rightNext.option2;
+            pageNumber = 1;
+            break;
+        case 1:
+            leftOption.textContent = leftNext.option2;
+            rightOption.textContent = rightNext.option1; 
+            pageNumber = 3;
+            break;
+        case 2:
+            leftOption.textContent = leftNext.option7;
+            rightOption.textContent = rightNext.option6; 
+            pageNumber = 6;
+            break;
+        case 3:
+            leftOption.textContent = leftNext.option3;
+            rightOption.textContent = ""; 
+            pageNumber = 8;
+            break;
+        case 4:
+            leftOption.textContent = "";
+            rightOption.textContent = ""; 
+            pageNumber = 10;
+            break;
+        case 5:
+            leftOption.textContent = leftNext.option11;
+            rightOption.textContent = ""; 
+            pageNumber = 11;
+            if (trueEnding === true){
                 leftOption.textContent = leftNext.option11;
                 rightOption.textContent = ""; 
-                pageNumber = 11;
-                if (trueEnding === true){
-                    leftOption.textContent = leftNext.option11;
-                    rightOption.textContent = ""; 
-                    pageNumber = 19;
-                }
-                break;
-            case 6:
-                leftOption.textContent = "";
-                rightOption.textContent = rightNext.option7; 
-                pageNumber = 13;
-                break;
-            case 7:
-                leftOption.textContent = "";
-                rightOption.textContent = ""; 
-                pageNumber = 17;
-                break;
-            case 8:
-                leftOption.textContent = leftNext.option9;
-                rightOption.textContent = ""; 
-                pageNumber = 9;
-                break;
-            case 9:
-                leftOption.textcontent = "";
-                rightOption.textContent = "";
-                pageNumber = 21;
-                break;
-            case 11:
-                leftOption.textContent = "";
-                rightOption.textContent = myButtons2.option11; 
-                pageNumber = 23;
-                break;
-            case 14:
-                leftOption.textContent = leftNext.option8;
-                rightOption.textContent = rightNext.option9; 
-                pageNumber = 18;
-                break;
-            case 15:
-                leftOption.textContent = leftNext.option10;
-                rightOption.textContent = rightNext.option10; 
-                pageNumber = 17;
-                break;
-            case 19:
-                leftOption.textContent = leftNext.option11;
-                rightOption.textContent = ""; 
-                pageNumber = 24;
-                break;
-            case 24:
-                leftOption.textContent = "";
-                rightOption.textContent = ""; 
-                pageNumber = 20;
-                break;
-            default:
-                leftOption.textContent = "Error. Please refresh the page.";
-        }
-        console.log("Turning page now (1)");
-    }          
+                pageNumber = 19;
+            }
+            break;
+        case 6:
+            leftOption.textContent = "";
+            rightOption.textContent = rightNext.option7; 
+            pageNumber = 13;
+            break;
+        case 7:
+            leftOption.textContent = "";
+            rightOption.textContent = ""; 
+            pageNumber = 17;
+            break;
+        case 8:
+            leftOption.textContent = leftNext.option9;
+            rightOption.textContent = ""; 
+            pageNumber = 9;
+            break;
+        case 9:
+            leftOption.textcontent = "";
+            rightOption.textContent = "";
+            pageNumber = 21;
+            break;
+        case 11:
+            leftOption.textContent = "";
+            rightOption.textContent = myButtons2.option11; 
+            pageNumber = 23;
+            break;
+        case 14:
+            leftOption.textContent = leftNext.option8;
+            rightOption.textContent = rightNext.option9; 
+            pageNumber = 18;
+            break;
+        case 15:
+            leftOption.textContent = leftNext.option10;
+            rightOption.textContent = rightNext.option10; 
+            pageNumber = 17;
+            break;
+        case 19:
+            leftOption.textContent = leftNext.option11;
+            rightOption.textContent = ""; 
+            pageNumber = 24;
+            break;
+        case 24:
+            leftOption.textContent = "";
+            rightOption.textContent = ""; 
+            pageNumber = 20;
+    }
+    console.log("Turning page now (1)");
+}          
    
-    /**This function triggers when button on the right is clicked 
-    *How it works: function reads the current page number.
-    *It then gives the next page number and the button options visible 
-    *on that page. When there is no button text to show it prints
-    *an empty string*/
-    function btnTwoText(){
-        let rightNext = myButtons2;
-        le= leftNext = myButtons1;
-        switch (pageNumber) {
-            case 0:
-                leftOption.textContent = leftNext.option6;
-                rightOption.textContent = rightNext.option8; 
-                pageNumber = 2;
-                break;
-            case 1:
-                leftOption.textContent = leftNext.option4;
-                rightOption.textContent = rightNext.option3; 
-                pageNumber = 4;
-                break;
-            case 2:
-                leftOption.textContent = leftNext.option10;
+/**This function triggers when button on the right is clicked 
+*How it works: function reads the current page number.
+*It then gives the next page number and the button options visible 
+*on that page. When there is no button text to show it prints
+*an empty string
+*/
+function btnTwoText(){
+    let rightNext = myButtons2;
+    let leftNext = myButtons1;
+    switch (pageNumber) {
+        case 0:
+            leftOption.textContent = leftNext.option6;
+            rightOption.textContent = rightNext.option8; 
+            pageNumber = 2;
+            break;
+        case 1:
+            leftOption.textContent = leftNext.option4;
+            rightOption.textContent = rightNext.option3; 
+            pageNumber = 4;
+            break;
+        case 2:
+            leftOption.textContent = leftNext.option10;
+            rightOption.textContent = ""; 
+            pageNumber = 7;
+            break;
+        case 3:
+            leftOption.textContent = "";
+            rightOption.textContent = rightNext.option4; 
+            pageNumber = 9;
+            break;
+        case 4:
+            leftOption.textContent = leftNext.option5;
+            rightOption.textContent = rightNext.option4; 
+            pageNumber = 5;
+            break;
+        case 5:
+            leftOption.textContent = "";
+            rightOption.textContent = rightNext.option5; 
+            pageNumber = 12;
+            break;
+        case 6:
+            leftOption.textContent = leftNext.option8;
+            rightOption.textContent = rightNext.option9; 
+            pageNumber = 14;
+            break;
+        case 7:
+            leftOption.textContent = "";
+            rightOption.textContent = ""; 
+            pageNumber = 17;
+            break;
+        case 9:
+            leftOption.textContent = "";
+            rightOption.textContent = ""; 
+            pageNumber = 21;
+            break;
+        case 11:
+            leftOption.textContent = "";
+            rightOption.textContent = myButtons2.option11;
+            pageNumber = 23;
+            break;
+        case 12:
+            leftOption.textContent = "";
+            rightOption.textContent = rightNext.option11; 
+            pageNumber = 11;
+            if (trueEnding === true){
+                leftOption.textContent = leftNext.option11;
                 rightOption.textContent = ""; 
-                pageNumber = 7;
-                break;
-            case 3:
-                leftOption.textContent = "";
-                rightOption.textContent = rightNext.option4; 
-                pageNumber = 9;
-                break;
-            case 4:
-                leftOption.textContent = leftNext.option5;
-                rightOption.textContent = rightNext.option4; 
-                pageNumber = 5;
-                break;
-            case 5:
-                leftOption.textContent = "";
-                rightOption.textContent = rightNext.option5; 
-                pageNumber = 12;
-                break;
-            case 6:
-                leftOption.textContent = leftNext.option8;
-                rightOption.textContent = rightNext.option9; 
-                pageNumber = 14;
-                break;
-            case 7:
-                leftOption.textContent = "";
-                rightOption.textContent = ""; 
-                pageNumber = 17;
-                break;
-            case 9:
-                leftOption.textContent = "";
-                rightOption.textContent = ""; 
-                pageNumber = 21;
-                break;
-            case 11:
-                leftOption.textContent = "";
-                rightOption.textContent = myButtons2.option11;
-                pageNumber = 23;
-                break;
-            case 12:
-                leftOption.textContent = "";
-                rightOption.textContent = rightNext.option11; 
-                pageNumber = 11;
-                if (trueEnding === true){
-                    leftOption.textContent = leftNext.option11;
-                    rightOption.textContent = ""; 
-                    pageNumber = 19;
-                }
-                break;
-            case 13:
-                leftOption.textContent = leftNext.option5;
-                rightOption.textContent = rightNext.option4; 
-                pageNumber = 5;
-                break;
-            case 14:
-                leftOption.textContent = leftNext.option10;
-                rightOption.textContent = rightNext.option10; 
-                pageNumber = 15;
-                break;
-            case 15:
-                leftOption.textContent = "";
-                rightOption.textContent = leftNext.option11;
-                pageNumber = 16;
-                break;
-            case 16:
-                leftOption.textContent = "";
-                rightOption.textContent = "";
-                pageNumber = 22;
-                break;
-            default:
-                rightOption.textContent = "Error. Please refresh the page.";
-        }
-        console.log("Turning page now (2)");
+                pageNumber = 19;
+            }
+            break;
+        case 13:
+            leftOption.textContent = leftNext.option5;
+            rightOption.textContent = rightNext.option4; 
+            pageNumber = 5;
+            break;
+        case 14:
+            leftOption.textContent = leftNext.option10;
+            rightOption.textContent = rightNext.option10; 
+            pageNumber = 15;
+            break;
+        case 15:
+            leftOption.textContent = "";
+            rightOption.textContent = leftNext.option11;
+            pageNumber = 16;
+            break;
+        case 16:
+            leftOption.textContent = "";
+            rightOption.textContent = "";
+            pageNumber = 22;
+            break;
+        default:
+            rightOption.textContent = "Error. Please refresh the page.";
     }
+    console.log("Turning page now (2)");
+}
             
 
-    /**This function moves story to the next chosen page
-     * When it's the last page of a storyline, it starts theEnd function
-     * that lets the user to replay*/
-    function changePage(){
-        switch (pageNumber) {
-            case 0:
-                storyBox.innerHTML = myStory.page0; 
-                break;
-            case 1:
-                storyBox.innerHTML = myStory.page1;
-                break;
-            case 2:
-                storyBox.innerHTML = myStory.page2;
-                break;
-            case 3:
-                storyBox.innerHTML = myStory.page3;
-                break;
-            case 4:
-                storyBox.innerHTML = myStory.page4;
-                break;
-            case 5:
-                storyBox.innerHTML = myStory.page5;
-                break;
-            case 6:
-                storyBox.innerHTML = myStory.page6; 
-                break;
-            case 7:
-                storyBox.innerHTML = myStory.page7; 
-                break;
-            case 8:
-                storyBox.innerHTML = myStory.page8; 
-                break;
-            case 9:
-                storyBox.innerHTML = myStory.page9;
-                break;
-            case 10:
-                storyBox.innerHTML = myStory.page10; 
-                murderWeapon = true;
-                theEnd();
-                break;
-            case 11:
-                storyBox.innerHTML = myStory.page11; 
-                break;
-            case 12:
-                storyBox.innerHTML = myStory.page12; 
-                break;
-            case 13:
-                storyBox.innerHTML = myStory.page13; 
-                break;
-            case 14:
-                storyBox.innerHTML = myStory.page14;
-                break;
-            case 15:
-                storyBox.innerHTML = myStory.page15;
-                break;
-            case 16:
-                storyBox.innerHTML = myStory.page16;
-                break;
-            case 17:
-                storyBox.innerHTML = myStory.page17;
-                theEnd();
-                break;
-            case 18:
-                storyBox.innerHTML = myStory.page18;
-                theEnd();
-                break;
-            case 19:
-                storyBox.innerHTML = myStory.page19;
-                break;
-            case 20:
-                storyBox.innerHTML = myStory.page20;
-                theEnd();
-                break;
-            case 21:
-                storyBox.innerHTML = myStory.page21;
-                labyrinthSecret = true;
-                theEnd();
-                break;
-            case 22:
-                storyBox.innerHTML = myStory.page22;
-                familiarFace = true;
-                theEnd();
-                break;
-            case 23:
-                storyBox.innerHTML = myStory.page23;
-                theEnd();
-                break;
-            case 24:
-                storyBox.innerHTML = myStory.page24;
-                break;
-            
-            default: 
+/**This function moves story to the next chosen page
+* When it's the last page of a storyline, it starts theEnd function
+* that lets the user to replay
+*/
+function changePage(){
+    switch (pageNumber) {
+        case 0:
+            storyBox.innerHTML = myStory.page0; 
+            break;
+        case 1:
+            storyBox.innerHTML = myStory.page1;
+            break;
+        case 2:
+            storyBox.innerHTML = myStory.page2;
+            break;
+        case 3:
+            storyBox.innerHTML = myStory.page3;
+            break;
+        case 4:
+            storyBox.innerHTML = myStory.page4;
+            break;
+        case 5:
+            storyBox.innerHTML = myStory.page5;
+            break;
+        case 6:
+            storyBox.innerHTML = myStory.page6; 
+            break;
+        case 7:
+            storyBox.innerHTML = myStory.page7; 
+            break;
+        case 8:
+            storyBox.innerHTML = myStory.page8; 
+            break;
+        case 9:
+            storyBox.innerHTML = myStory.page9;
+            break;
+        case 10:
+            storyBox.innerHTML = myStory.page10; 
+            murderWeapon = true;
+            theEnd();
+            break;
+        case 11:
+            storyBox.innerHTML = myStory.page11; 
+            break;
+        case 12:
+            storyBox.innerHTML = myStory.page12; 
+            break;
+        case 13:
+            storyBox.innerHTML = myStory.page13; 
+            break;
+        case 14:
+            storyBox.innerHTML = myStory.page14;
+            break;
+        case 15:
+            storyBox.innerHTML = myStory.page15;
+            break;
+        case 16:
+            storyBox.innerHTML = myStory.page16;
+            break;
+        case 17:
+            storyBox.innerHTML = myStory.page17;
+            theEnd();
+            break;
+        case 18:
+            storyBox.innerHTML = myStory.page18;
+            theEnd();
+            break;
+        case 19:
+            storyBox.innerHTML = myStory.page19;
+            break;
+        case 20:
+            storyBox.innerHTML = myStory.page20;
+            theEnd();
+            break;
+        case 21:
+            storyBox.innerHTML = myStory.page21;
+            labyrinthSecret = true;
+            theEnd();
+            break;
+        case 22:
+            storyBox.innerHTML = myStory.page22;
+            familiarFace = true;
+            theEnd();
+            break;
+        case 23:
+            storyBox.innerHTML = myStory.page23;
+            theEnd();
+            break;
+        case 24:
+            storyBox.innerHTML = myStory.page24;
+            break;
+        default: 
                 storyBox.innerHTML = "An error has occured. PLease refresh the page.";
                 console.log("Oops");
         }
     console.log("This is page " + pageNumber);
     pageCounter(pageNumber);
-    }
+    console.log(playerName);
+    console.log(playerNameInput.value);
+}
 
-    /**theEnd wraps up the game. If certain storypoints are met
-    it unlocks the final part of the story*/
-    function theEnd(){
-    leftOption.classList.add("hidden");
-    leftOption.classList.remove("visible");
-    rightOption.classList.add("hidden");
-    rightOption.classList.remove("visible");
-    startBtn.classList.add("visible");
-    if (murderWeapon === true){
-        alert("You discovered the murder weapon!");
-    }
-    if (familiarFace === true){
-        alert("You found the reason you came here!");
-    }
-    if (labyrinthSecret === true){
-        alert("You found the murderer!");
-    }
-    if (murderWeapon && familiarFace && labyrinthSecret === true){
-        trueEnding = true;
-        alert("You unlocked the secret ending! Head to the garden gate!");
-    }
-    ++replay;
-    replayCounter(replay);
-    startScreen();
-    }
+/**theEnd wraps up the game. If certain storypoints are met
+it unlocks the final part of the story*/
+function theEnd(){
+leftOption.classList.add("hidden");
+leftOption.classList.remove("visible");
+rightOption.classList.add("hidden");
+rightOption.classList.remove("visible");
+startBtn.classList.add("visible");
+if (murderWeapon === true){
+    alert("You discovered the murder weapon!");
+}
+if (familiarFace === true){
+    alert("You found the reason you came here!");
+}
+if (labyrinthSecret === true){
+    alert("You found the murderer!");
+}
+if (murderWeapon && familiarFace && labyrinthSecret === true){
+    trueEnding = true;
+    alert("You unlocked the secret ending! Head to the garden gate!");
+}
+++replay;
+replayCounter(replay);
+startScreen();
 }
