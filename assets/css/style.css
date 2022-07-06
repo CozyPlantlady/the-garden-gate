@@ -29,7 +29,7 @@ header {
     height: 3rem;
     margin-top: 5rem;
     margin-right: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 10rem;
     margin-left: auto;
 }
 
@@ -76,6 +76,17 @@ footer{
     color:#555;
 }
 
+#name-div {
+    padding: 1rem;
+    background-color: #999;
+    max-width: 35rem;
+    height: auto;
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
 #game-div {
     background-color: rgb(214, 214, 214);
     border-style: dashed;
@@ -112,6 +123,7 @@ footer{
     margin-top: 45rem;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10rem;
     width: 35rem;
     height: auto;
     display: flex;
@@ -122,18 +134,12 @@ footer{
     font-weight: 600;
 }
 
-#name-div {
-    padding: 1rem;
-    background-color: #999;
-    max-width: 35rem;
-    height: auto;
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
+/*Classes in alphabetical order*/
+
+.box{
+    background-color:#999;
 }
 
-/*Classes in alphabetical order*/
 .center {
     text-align: center;
 }

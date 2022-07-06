@@ -34,8 +34,6 @@ I have cut away some of the features originally planned. Because of this the fir
 - Two option buttons
 - Start button
 - Form to give a player name
-
-Things that are added:
 - Replay counter
 
 ### Structure of the game
@@ -63,10 +61,10 @@ Once I started to code I faced some limitations. Most importantly, the longer te
 In the main part of the screen we have
 - **Header**, that has the name of the page.
 - By clicking **info**, page scrolls to the button where info text is. 
+- **Name field** that let's user give a name that is then used in the story.
 - **Info**-text changes color and size when user hovers mouse over it, to indicate it is clickable.
 - **Story page**, where the story will be shown.
 - **Start** button, that starts the game.
-- **Name field** that let's user give a name that is then used in the story.
 
 #### Replay, Info and Footer
 ![](doc/readme-screenshots/readme-tgg2.jpeg "")
@@ -127,10 +125,11 @@ Favicon icon made with Pixilart and converted with Favicon converter. Made by cr
 
 ### User Stories:
 
-#### **As a user I can start the game.**
-When arriving to the main page I as a user scale the content downwards, first seeing the title, story page and **Start the story** underneath it. This gives me information that once I click the button the story will go forward. When I hover the mouse over the **Start button** it responds by getting larger. Button disappears once it gets clicked.
-
 #### **As a user I can give a name for the character that is used in the game.**
+When I arrive to the page I see that there is a box asking me who I am. I write my name, and push button **Use name in Story**. Clicking it makes the **start the story** button appear under the story page, and the button to submit name again disappears. In the story I see that the name I had given is used in the text.
+
+#### **As a user I can start the game.**
+When arriving to the main page I as a user scale the content downwards, and see that I can't start the game before submitting a name to use in the game. Once I do that, **Start the story** button appears under the first *story page*. This gives me information that once I click the button the story will go forward. When I hover the mouse over the **Start button** it responds by getting larger. Button disappears once it gets clicked.
 
 #### **As a user I can read the story and choose what to do next.**
 Once the game has started I see new story page. It has the name I have given previously, and under the story page there is two options to choose. Once I click an option the story page changes to reflect my choice. 
@@ -141,7 +140,6 @@ gets added by 1.
 
 #### **As a user I can find more information about the game.**
 When I arrive to the page I can see that there is a text saying **info** at the top of the page. When I hover the mouse over it it changes color from black to grey and shrinks, indicating that it is clickable. Once I click it I'm send to the lower part of the page, where I can see **Disclaimer** text and **info** what the game is about. I can click **Go back up** to get back to the top of the page.
-
 
 ### Bugs and other issues:
 
@@ -165,13 +163,15 @@ When I arrive to the page I can see that there is a text saying **info** at the 
 - Some story pages are too long and text overflows. To fix this some longer pages go to two pages. I add these to last of the list.
 - Depending of the button color and its's background color it may or may not be visible when having a empty a string of text. I want them to be invisible.
 - As fun as it is to have a lot of text in the buttons, it's not functional. Let buttons have one size, and shorten the long texts. Update: This really makes it obvious that there is an empty box. To solve this I have removed background color of the button, but to give a visual que for the user the text gets bigger when user hovers mouse over it.
+- Value given for the name box appears in story pages, but can´t be given by user. Update: Resolved after *storyPages* were moved inside *changePage* function. The problem was that storyPages were read before the playerName had been set. 
 
 
 ### Not fixed
-- Value given for the name box appears in story pages, but can´t be given by user. Update: Not fixed. Game is currently reading a set value to show a name (Willow).
+
 - Other known issues: buttons are functional even when hidden, so they can be clicked by accident or by on purpose. These is main problem when playing.
 - Safari browser shows several story pages at once. No known fix.
 - User gets an alert when they find a story point. However, these stack up and before the final ending they are receiving 4 different alerts each time they finish a story line. This could be fixed just by removing the alert, and change it to something else. Original idea was to show an item to symbolize the found story point.
+- Can't hide the input field for the name after game starts.
 
 ### Possible features to add
 - Choice to choose between dark and light color theme, or for color scheme that looks more authentic to first **Gameboy** screens.
