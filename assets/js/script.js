@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", gameFile());
 
 /*HTML elements*/
-const btn1 = document.querySelector('#btn1');
-const btn2 = document.querySelector('#btn2');
+const leftOption = document.querySelector('#btn1');
+const rightOption = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
 let playerName = document.querySelector('#player-name').value;
@@ -139,14 +139,14 @@ function gameFile(){
     function startGame() {
         startBtn.classList.remove("visible");
         startBtn.classList.add("hidden");
-        btn1.classList.remove("hidden");
-        btn1.classList.add("visible");
-        btn2.classList.remove("hidden");
-        btn2.classList.add("visible");
-        let btn1NextText = myButtons1;
-        let btn2NextText = myButtons2;
-        btn1.textContent = btn1NextText.option0; 
-        btn2.textContent = btn2NextText.option0;
+        leftOption.classList.remove("hidden");
+        leftOption.classList.add("visible");
+        rightOption.classList.remove("hidden");
+        rightOption.classList.add("visible");
+        let leftOptionNextText = myButtons1;
+        let rightOptionNextText = myButtons2;
+        leftOption.textContent = leftOptionNextText.option0; 
+        rightOption.textContent = rightOptionNextText.option0;
         console.log("Game has started");
         changePage();
 
@@ -166,91 +166,91 @@ function gameFile(){
      on that page. When there is no button text to show it prints
      an empty string*/
     function btnOneText(){
-        let btn1NextText = myButtons1;
-        let btn2NextText = myButtons2;
+        let leftOptionNextText = myButtons1;
+        let rightOptionNextText = myButtons2;
         switch (pageNumber) {
             case 0:
-                btn1.textContent = btn1NextText.option1; 
-                btn2.textContent = btn2NextText.option2;
+                leftOption.textContent = leftOptionNextText.option1; 
+                rightOption.textContent = rightOptionNextText.option2;
                 pageNumber = 1;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option2;
-                btn2.textContent = btn2NextText.option1; 
+                leftOption.textContent = leftOptionNextText.option2;
+                rightOption.textContent = rightOptionNextText.option1; 
                 pageNumber = 3;
                 break;
             case 2:
-                btn1.textContent = btn1NextText.option7;
-                btn2.textContent = btn2NextText.option6; 
+                leftOption.textContent = leftOptionNextText.option7;
+                rightOption.textContent = rightOptionNextText.option6; 
                 pageNumber = 6;
                 break;
             case 3:
-                btn1.textContent = btn1NextText.option3;
-                btn2.textContent = ""; 
+                leftOption.textContent = leftOptionNextText.option3;
+                rightOption.textContent = ""; 
                 pageNumber = 8;
                 break;
             case 4:
-                btn1.textContent = "";
-                btn2.textContent = ""; 
+                leftOption.textContent = "";
+                rightOption.textContent = ""; 
                 pageNumber = 10;
                 break;
             case 5:
-                btn1.textContent = btn1NextText.option11;
-                btn2.textContent = ""; 
+                leftOption.textContent = leftOptionNextText.option11;
+                rightOption.textContent = ""; 
                 pageNumber = 11;
                 if (trueEnding === true){
-                    btn1.textContent = btn1NextText.option11;
-                    btn2.textContent = ""; 
+                    leftOption.textContent = leftOptionNextText.option11;
+                    rightOption.textContent = ""; 
                     pageNumber = 19;
                 }
                 break;
             case 6:
-                btn1.textContent = "";
-                btn2.textContent = btn2NextText.option7; 
+                leftOption.textContent = "";
+                rightOption.textContent = rightOptionNextText.option7; 
                 pageNumber = 13;
                 break;
             case 7:
-                btn1.textContent = "";
-                btn2.textContent = ""; 
+                leftOption.textContent = "";
+                rightOption.textContent = ""; 
                 pageNumber = 17;
                 break;
             case 8:
-                btn1.textContent = btn1NextText.option9;
-                btn2.textContent = ""; 
+                leftOption.textContent = leftOptionNextText.option9;
+                rightOption.textContent = ""; 
                 pageNumber = 9;
                 break;
             case 9:
-                btn1.textcontent = "";
-                btn2.textContent = "";
+                leftOption.textcontent = "";
+                rightOption.textContent = "";
                 pageNumber = 21;
                 break;
             case 11:
-                btn1.textContent = "";
-                btn2.textContent = myButtons2.option11; 
+                leftOption.textContent = "";
+                rightOption.textContent = myButtons2.option11; 
                 pageNumber = 23;
                 break;
             case 14:
-                btn1.textContent = btn1NextText.option8;
-                btn2.textContent = btn2NextText.option9; 
+                leftOption.textContent = leftOptionNextText.option8;
+                rightOption.textContent = rightOptionNextText.option9; 
                 pageNumber = 18;
                 break;
             case 15:
-                btn1.textContent = btn1NextText.option10;
-                btn2.textContent = btn2NextText.option10; 
+                leftOption.textContent = leftOptionNextText.option10;
+                rightOption.textContent = rightOptionNextText.option10; 
                 pageNumber = 17;
                 break;
             case 19:
-                btn1.textContent = btn1NextText.option11;
-                btn2.textContent = ""; 
+                leftOption.textContent = leftOptionNextText.option11;
+                rightOption.textContent = ""; 
                 pageNumber = 24;
                 break;
             case 24:
-                btn1.textContent = "";
-                btn2.textContent = ""; 
+                leftOption.textContent = "";
+                rightOption.textContent = ""; 
                 pageNumber = 20;
                 break;
             default:
-                btn1.textContent = "Error. Please refresh the page.";
+                leftOption.textContent = "Error. Please refresh the page.";
         }
         console.log("Turning page now (1)");
     }          
@@ -261,91 +261,91 @@ function gameFile(){
     *on that page. When there is no button text to show it prints
     *an empty string*/
     function btnTwoText(){
-        let btn2NextText = myButtons2;
-        let btn1NextText = myButtons1;
+        let rightOptionNextText = myButtons2;
+        let leftOptionNextText = myButtons1;
         switch (pageNumber) {
             case 0:
-                btn1.textContent = btn1NextText.option6;
-                btn2.textContent = btn2NextText.option8; 
+                leftOption.textContent = leftOptionNextText.option6;
+                rightOption.textContent = rightOptionNextText.option8; 
                 pageNumber = 2;
                 break;
             case 1:
-                btn1.textContent = btn1NextText.option4;
-                btn2.textContent = btn2NextText.option3; 
+                leftOption.textContent = leftOptionNextText.option4;
+                rightOption.textContent = rightOptionNextText.option3; 
                 pageNumber = 4;
                 break;
             case 2:
-                btn1.textContent = btn1NextText.option10;
-                btn2.textContent = ""; 
+                leftOption.textContent = leftOptionNextText.option10;
+                rightOption.textContent = ""; 
                 pageNumber = 7;
                 break;
             case 3:
-                btn1.textContent = "";
-                btn2.textContent = btn2NextText.option4; 
+                leftOption.textContent = "";
+                rightOption.textContent = rightOptionNextText.option4; 
                 pageNumber = 9;
                 break;
             case 4:
-                btn1.textContent = btn1NextText.option5;
-                btn2.textContent = btn2NextText.option4; 
+                leftOption.textContent = leftOptionNextText.option5;
+                rightOption.textContent = rightOptionNextText.option4; 
                 pageNumber = 5;
                 break;
             case 5:
-                btn1.textContent = "";
-                btn2.textContent = btn2NextText.option5; 
+                leftOption.textContent = "";
+                rightOption.textContent = rightOptionNextText.option5; 
                 pageNumber = 12;
                 break;
             case 6:
-                btn1.textContent = btn1NextText.option8;
-                btn2.textContent = btn2NextText.option9; 
+                leftOption.textContent = leftOptionNextText.option8;
+                rightOption.textContent = rightOptionNextText.option9; 
                 pageNumber = 14;
                 break;
             case 7:
-                btn1.textContent = "";
-                btn2.textContent = ""; 
+                leftOption.textContent = "";
+                rightOption.textContent = ""; 
                 pageNumber = 17;
                 break;
             case 9:
-                btn1.textContent = "";
-                btn2.textContent = ""; 
+                leftOption.textContent = "";
+                rightOption.textContent = ""; 
                 pageNumber = 21;
                 break;
             case 11:
-                btn1.textContent = "";
-                btn2.textContent = myButtons2.option11;
+                leftOption.textContent = "";
+                rightOption.textContent = myButtons2.option11;
                 pageNumber = 23;
                 break;
             case 12:
-                btn1.textContent = "";
-                btn2.textContent = btn2NextText.option11; 
+                leftOption.textContent = "";
+                rightOption.textContent = rightOptionNextText.option11; 
                 pageNumber = 11;
                 if (trueEnding === true){
-                    btn1.textContent = btn1NextText.option11;
-                    btn2.textContent = ""; 
+                    leftOption.textContent = leftOptionNextText.option11;
+                    rightOption.textContent = ""; 
                     pageNumber = 19;
                 }
                 break;
             case 13:
-                btn1.textContent = btn1NextText.option5;
-                btn2.textContent = btn2NextText.option4; 
+                leftOption.textContent = leftOptionNextText.option5;
+                rightOption.textContent = rightOptionNextText.option4; 
                 pageNumber = 5;
                 break;
             case 14:
-                btn1.textContent = btn1NextText.option10;
-                btn2.textContent = btn2NextText.option10; 
+                leftOption.textContent = leftOptionNextText.option10;
+                rightOption.textContent = rightOptionNextText.option10; 
                 pageNumber = 15;
                 break;
             case 15:
-                btn1.textContent = "";
-                btn2.textContent = btn1NextText.option11;
+                leftOption.textContent = "";
+                rightOption.textContent = leftOptionNextText.option11;
                 pageNumber = 16;
                 break;
             case 16:
-                btn1.textContent = "";
-                btn2.textContent = "";
+                leftOption.textContent = "";
+                rightOption.textContent = "";
                 pageNumber = 22;
                 break;
             default:
-                btn2.textContent = "Error. Please refresh the page.";
+                rightOption.textContent = "Error. Please refresh the page.";
         }
         console.log("Turning page now (2)");
     }
@@ -453,10 +453,10 @@ function gameFile(){
     /**theEnd wraps up the game. If certain storypoints are met
     it unlocks the final part of the story*/
     function theEnd(){
-    btn1.classList.add("hidden");
-    btn1.classList.remove("visible");
-    btn2.classList.add("hidden");
-    btn2.classList.remove("visible");
+    leftOption.classList.add("hidden");
+    leftOption.classList.remove("visible");
+    rightOption.classList.add("hidden");
+    rightOption.classList.remove("visible");
     startBtn.classList.add("visible");
     if (murderWeapon === true){
         alert("You discovered the murder weapon!");
