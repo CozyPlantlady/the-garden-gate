@@ -1,6 +1,6 @@
 # The Garden Gate - Interactive story
 
-![](assets/images/readme-screens3.jpeg.png "")
+![](doc/readme-images/readme-screens3.jpeg "")
 
 In this README-file I'm using both the words *game* and *story* to talk about same project.
 The Garden Gate is original work written by creator.
@@ -27,7 +27,7 @@ What is their goal? What problem does this product or feature solve for them?
 ### Structure of the site
 Original plan for the site
 
-![](assets/images/readme-sitemap.jpeg "")
+![](doc/readme-images/readme-sitemap.jpeg "")
 
 I have cut away some of the features originally planned. Because of this the first features are: 
 - The story page that shows the text
@@ -42,23 +42,23 @@ Things that are added:
 
 **Before**
 
-![](assets/images/readme-story-roadmap.jpeg "")
+![](doc/readme-images/readme-story-roadmap.jpeg "")
 
 **After**
 
-![](assets/images/readme-story-roadmap-numbered-altered.jpeg "")
+![](doc/readme-images/readme-story-roadmap-numbered-altered.jpeg "")
 
 ### Mentionable changes:
 Once I started to code I faced some limitations. Most importantly, the longer text sections needed to be in two pages, and final ending needed to be triggered the right way. In all honesty, this makes order of the pages in the code confusing. I decided to go with it since time was limited. In the future if I'm doing similar project, I know to plan ahead more.
 
 ## Skeleton:
 ### Original plans
-![](assets/images/readme-screens1.jpeg "")
-![](assets/images/readme-screens2.jpeg "")
+![](doc/readme-images/readme-screens1.jpeg "")
+![](doc/readme-images/readme-screens2.jpeg "")
 
 ### Final product
 #### Main
-![](assets/images/readme-tgg1.jpeg "")
+![](doc/readme-screenshots/readme-tgg1.jpeg "")
 
 In the main part of the screen we have
 - **Header**, that has the name of the page.
@@ -69,23 +69,23 @@ In the main part of the screen we have
 - **Name field** that let's user give a name that is then used in the story.
 
 #### Replay, Info and Footer
-![](assets/images/readme-tgg2.jpeg "")
+![](doc/readme-screenshots/readme-tgg2.jpeg "")
 
 - **Replay counter** shows the amount of times user has replayed the game without refreshing.
 - **Go back up** scrolls back to the top of the page.
 - **Footer text** has name of the creator.
 
 #### During the game
-![](assets/images/readme-tgg3.jpeg "")
+![](doc/readme-screenshots/readme-tgg3.jpeg "")
 
 When game is started it shows **two option** buttons. Sometimes only one option is visible.
 
 #### Replay
-![](assets/images/readme-tgg4.jpeg "")
+![](doc/readme-screenshots/readme-tgg4.jpeg "")
 
 When the story line has come to an end user can choose to **replay**. Replay adds to a **replay counter** (No other function) and it's inmpossible to get the final ending without replaying.
 
-![](assets/images/readme-tgg5.jpeg "")
+![](doc/readme-screenshots/readme-tgg5.jpeg "")
 
 When special story point is found user gets an **alert**.
 
@@ -100,7 +100,7 @@ mixed with "choose your own adventure"-type of text adventure mixed with gothic 
 - For the sake of hiding the buttons when there is no text option available the chosen border style is "hidden". This is not the best option when thinking accessability, but on my current skill set it was the way I chose to do things.
 
 ### Colors: 
-![](assets/images/color-palette.jpeg "")
+![](doc/readme-images/color-palette.jpeg "")
 
 I chose to use very simple color scheme.
 - Black #000
@@ -112,15 +112,15 @@ I chose to use very simple color scheme.
 
 [Press Start 2P from Google Fonts](https://fonts.google.com/specimen/Press+Start+2P) by CodeMan38
 
-![](assets/images/readme-font.jpeg "")
+![](doc/readme-images/readme-font.jpeg "")
 
 This font is chosen to give the feel of an retro game.
 
 ### Favicon
 
-Favicon icon made with Pixilart and converted with Favicon converter.
+Favicon icon made with Pixilart and converted with Favicon converter. Made by creator.
 
-![](assets/images/readme-favicon-flower.png "")
+![](doc/readme-images/readme-favicon-flower.png "")
 
 
 ## TESTING
@@ -174,7 +174,7 @@ When I arrive to the page I can see that there is a text saying **info** at the 
 - User gets an alert when they find a story point. However, these stack up and before the final ending they are receiving 4 different alerts each time they finish a story line. This could be fixed just by removing the alert, and change it to something else. Original idea was to show an item to symbolize the found story point.
 
 ### Possible features to add
-- Choice to choose between dark and light color theme.
+- Choice to choose between dark and light color theme, or for color scheme that looks more authentic to first **Gameboy** screens.
 - Json to hold all the text options as arrays. This would make code a lot cleaner, but I didn't have enough time to throw myself in to it.
 - Choice to choose another font for the text. Current font is a style choice, but another font would be easier to read and there are surely users whe would prefer it.
 - Pixel art pictures for some story points
@@ -186,12 +186,12 @@ When I arrive to the page I can see that there is a text saying **info** at the 
 ### Testing with code validators
 Tested with **JSHint validator**:
 
-![](assets/images/readme-jshint.jpeg "")
+![](doc/readme-screenshots/readme-jshint.jpeg "")
 
 - First warning comes from replayCounter function, and it should turn array to a number, that function can use. 
 - Second warning is coming from **buttonOption** array. This notices if it's left or right button that gets clicked, and moves forward to either btnOneText or btnTwoText accordingly. I didn't find any problem with this part of the code.
 
-- Unused variable "replay" removed.
+- Unused variable *replay** removed.
 
 - Other small bugs, like forgotten semicolons, fixed.
 
@@ -204,7 +204,7 @@ Tested with **W3C markup-validator**:
 
 Tested with  **Chrome developer tool Lighthouse**:
 
-![](assets/images/readme-lighthouse.jpeg "")
+![](doc/readme-screenshots/readme-lighthouse.jpeg "")
 
 Page received 100 point from all the tested areas.
 
