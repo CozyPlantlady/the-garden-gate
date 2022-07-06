@@ -5,7 +5,8 @@ const leftOption = document.querySelector('#btn1');
 const rightOption = document.querySelector('#btn2');
 const storyBox = document.querySelector('#story');
 const startBtn = document.querySelector('#start-button');
-let playerName = document.querySelector('#player-name').value;
+let playerName = document.querySelector('#player-name');
+
 
 /* variables that trigger the final story piece*/
 let murderWeapon;
@@ -78,24 +79,24 @@ const myStory = {
 /*This function holds the game inside of it*/
 function gameFile(){
     console.log("Game loading...");
-    const btnName = document.querySelector('#name-button');
+
     let pageNumber = document.querySelector('#page-number');
     pageNumber.classList.add("hidden");
     pageNumber = 0;
     let replay = document.querySelector("#replay-number");
     replay= 0;
     startScreen();
-    /*btnName.addEventListener('click', nameGetter); */
+    btnName.addEventListener('click', nameGetter);
     
-    /*Get the name user have chosen and use it in the game
+    /* Get the name user have chosen and use it in the game */
     function nameGetter(){
         let userName = document.querySelector('#player-name');
-        let playerName;
         playerName.textContent = userName.value;
-        console.log(playerName.value);
+        console.log(playerName);
         if (playerName === true){
             startScreen()};
-    // }  */
+        return;
+    } 
 
     /*Most important function. It receives and updates the page number */
     function pageCounter(pagenumber){
@@ -120,7 +121,6 @@ function gameFile(){
     /** Start button is visible only when the game is not started.
      * pageCounter sets the starting point */
     function startScreen() {
-        const startBtn = document.querySelector('#start-button');
         pageNumber = 0;
         pageCounter(pageNumber);
 
@@ -130,6 +130,7 @@ function gameFile(){
             startBtn.innerHTML = "Play again?";
         }
         startBtn.addEventListener('click', startGame);
+        return;
     }
 
 
@@ -143,10 +144,10 @@ function gameFile(){
         leftOption.classList.add("visible");
         rightOption.classList.remove("hidden");
         rightOption.classList.add("visible");
-        let leftOptionNextText = myButtons1;
-        let rightOptionNextText = myButtons2;
-        leftOption.textContent = leftOptionNextText.option0; 
-        rightOption.textContent = rightOptionNextText.option0;
+        le= leftNext = myButtons1;
+        let rightNext = myButtons2;
+        leftOption.textContent = leftNext.option0; 
+        rightOption.textContent = rightNext.option0;
         console.log("Game has started");
         changePage();
 
@@ -166,26 +167,26 @@ function gameFile(){
      on that page. When there is no button text to show it prints
      an empty string*/
     function btnOneText(){
-        let leftOptionNextText = myButtons1;
-        let rightOptionNextText = myButtons2;
+        le= leftNext = myButtons1;
+        let rightNext = myButtons2;
         switch (pageNumber) {
             case 0:
-                leftOption.textContent = leftOptionNextText.option1; 
-                rightOption.textContent = rightOptionNextText.option2;
+                leftOption.textContent = leftNext.option1; 
+                rightOption.textContent = rightNext.option2;
                 pageNumber = 1;
                 break;
             case 1:
-                leftOption.textContent = leftOptionNextText.option2;
-                rightOption.textContent = rightOptionNextText.option1; 
+                leftOption.textContent = leftNext.option2;
+                rightOption.textContent = rightNext.option1; 
                 pageNumber = 3;
                 break;
             case 2:
-                leftOption.textContent = leftOptionNextText.option7;
-                rightOption.textContent = rightOptionNextText.option6; 
+                leftOption.textContent = leftNext.option7;
+                rightOption.textContent = rightNext.option6; 
                 pageNumber = 6;
                 break;
             case 3:
-                leftOption.textContent = leftOptionNextText.option3;
+                leftOption.textContent = leftNext.option3;
                 rightOption.textContent = ""; 
                 pageNumber = 8;
                 break;
@@ -195,18 +196,18 @@ function gameFile(){
                 pageNumber = 10;
                 break;
             case 5:
-                leftOption.textContent = leftOptionNextText.option11;
+                leftOption.textContent = leftNext.option11;
                 rightOption.textContent = ""; 
                 pageNumber = 11;
                 if (trueEnding === true){
-                    leftOption.textContent = leftOptionNextText.option11;
+                    leftOption.textContent = leftNext.option11;
                     rightOption.textContent = ""; 
                     pageNumber = 19;
                 }
                 break;
             case 6:
                 leftOption.textContent = "";
-                rightOption.textContent = rightOptionNextText.option7; 
+                rightOption.textContent = rightNext.option7; 
                 pageNumber = 13;
                 break;
             case 7:
@@ -215,7 +216,7 @@ function gameFile(){
                 pageNumber = 17;
                 break;
             case 8:
-                leftOption.textContent = leftOptionNextText.option9;
+                leftOption.textContent = leftNext.option9;
                 rightOption.textContent = ""; 
                 pageNumber = 9;
                 break;
@@ -230,17 +231,17 @@ function gameFile(){
                 pageNumber = 23;
                 break;
             case 14:
-                leftOption.textContent = leftOptionNextText.option8;
-                rightOption.textContent = rightOptionNextText.option9; 
+                leftOption.textContent = leftNext.option8;
+                rightOption.textContent = rightNext.option9; 
                 pageNumber = 18;
                 break;
             case 15:
-                leftOption.textContent = leftOptionNextText.option10;
-                rightOption.textContent = rightOptionNextText.option10; 
+                leftOption.textContent = leftNext.option10;
+                rightOption.textContent = rightNext.option10; 
                 pageNumber = 17;
                 break;
             case 19:
-                leftOption.textContent = leftOptionNextText.option11;
+                leftOption.textContent = leftNext.option11;
                 rightOption.textContent = ""; 
                 pageNumber = 24;
                 break;
@@ -261,42 +262,42 @@ function gameFile(){
     *on that page. When there is no button text to show it prints
     *an empty string*/
     function btnTwoText(){
-        let rightOptionNextText = myButtons2;
-        let leftOptionNextText = myButtons1;
+        let rightNext = myButtons2;
+        le= leftNext = myButtons1;
         switch (pageNumber) {
             case 0:
-                leftOption.textContent = leftOptionNextText.option6;
-                rightOption.textContent = rightOptionNextText.option8; 
+                leftOption.textContent = leftNext.option6;
+                rightOption.textContent = rightNext.option8; 
                 pageNumber = 2;
                 break;
             case 1:
-                leftOption.textContent = leftOptionNextText.option4;
-                rightOption.textContent = rightOptionNextText.option3; 
+                leftOption.textContent = leftNext.option4;
+                rightOption.textContent = rightNext.option3; 
                 pageNumber = 4;
                 break;
             case 2:
-                leftOption.textContent = leftOptionNextText.option10;
+                leftOption.textContent = leftNext.option10;
                 rightOption.textContent = ""; 
                 pageNumber = 7;
                 break;
             case 3:
                 leftOption.textContent = "";
-                rightOption.textContent = rightOptionNextText.option4; 
+                rightOption.textContent = rightNext.option4; 
                 pageNumber = 9;
                 break;
             case 4:
-                leftOption.textContent = leftOptionNextText.option5;
-                rightOption.textContent = rightOptionNextText.option4; 
+                leftOption.textContent = leftNext.option5;
+                rightOption.textContent = rightNext.option4; 
                 pageNumber = 5;
                 break;
             case 5:
                 leftOption.textContent = "";
-                rightOption.textContent = rightOptionNextText.option5; 
+                rightOption.textContent = rightNext.option5; 
                 pageNumber = 12;
                 break;
             case 6:
-                leftOption.textContent = leftOptionNextText.option8;
-                rightOption.textContent = rightOptionNextText.option9; 
+                leftOption.textContent = leftNext.option8;
+                rightOption.textContent = rightNext.option9; 
                 pageNumber = 14;
                 break;
             case 7:
@@ -316,27 +317,27 @@ function gameFile(){
                 break;
             case 12:
                 leftOption.textContent = "";
-                rightOption.textContent = rightOptionNextText.option11; 
+                rightOption.textContent = rightNext.option11; 
                 pageNumber = 11;
                 if (trueEnding === true){
-                    leftOption.textContent = leftOptionNextText.option11;
+                    leftOption.textContent = leftNext.option11;
                     rightOption.textContent = ""; 
                     pageNumber = 19;
                 }
                 break;
             case 13:
-                leftOption.textContent = leftOptionNextText.option5;
-                rightOption.textContent = rightOptionNextText.option4; 
+                leftOption.textContent = leftNext.option5;
+                rightOption.textContent = rightNext.option4; 
                 pageNumber = 5;
                 break;
             case 14:
-                leftOption.textContent = leftOptionNextText.option10;
-                rightOption.textContent = rightOptionNextText.option10; 
+                leftOption.textContent = leftNext.option10;
+                rightOption.textContent = rightNext.option10; 
                 pageNumber = 15;
                 break;
             case 15:
                 leftOption.textContent = "";
-                rightOption.textContent = leftOptionNextText.option11;
+                rightOption.textContent = leftNext.option11;
                 pageNumber = 16;
                 break;
             case 16:

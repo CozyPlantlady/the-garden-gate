@@ -16,6 +16,13 @@
         <p id="header-info"><a href="#info">info
         </a></p>
     </header>
+
+<!-- Submit a name to be used in the game -->
+    <form id="name-div" class="center">
+        <label for="player-name">Who are you?:</label>
+        <input id="player-name" name="player-name" type="text" placeholder="Willow" maxlength="10" required>
+        <input id="name-button" type="submit" value="Use name in story">
+    </form>
     
 <!-- This div will be holding the game -->
     <div id="game-div">
@@ -44,12 +51,6 @@
             For this you need to find three story points. You can't miss them, I'll notify you when the point is found.</p>
         <p>Thank you for testing this game!</p>
     </div>
-
-    <form id="name-div" class="center">
-        <label for="player-name">Who are you?:</label>
-        <input id="player-name" name="player-name" type="text" placeholder="Willow" maxlength="10" value="Willow" required>
-        <input id="name-button" type="submit" value="Use name in story">
-    </form>
 
     <div class="center">
         <p><a href="#header" class="center">Go back up</a></p>
